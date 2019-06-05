@@ -1,0 +1,28 @@
+pyvanilla: 
+(immer die einfachsten/ersten Rezepte)
+10 Ralesia -> 5 Bone Meal
+45 Sekunden bei 150 kW
+= 6740 kJ
+
+35 Soil + 300 Hydrogen -> 10 Ralesia
+25,6 Sekunden bei 200 kW
+= 5132 kJ
+
+35 Soil brauchen rund 10 Sekunden bei 400 kW
+= 4000 kJ
+
+300 Hydrogen brauchen 12 Sekunden bei 800 kW
+= 9600 kJ
+
+Insgesamt
+5094 kJ/Stk 
+
+pyveganism: 
+Knochensträucher! :)
+Brauchen Limestone, Soil und Wasser als ingredient, werden zu Bone Meal zermöllert. 
+in Botanical Nursery
+
+m Limestone + n Soil + o Water -> p Knochensträucher
+p Knochenbaumstämme -> q Bone Meal + r Holz (noch irgendein nerviges Abprodukt?)
+in Wood Processing Unit
+

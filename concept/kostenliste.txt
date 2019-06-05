@@ -1,0 +1,6 @@
+32 kJ pro Hydrogen
+114 kJ pro Soil
+1873 kJ pro Ralesia
+2000 kJ pro Limestone (im Soil Extractor, billiger im Solid Separator)
+2580 kJ pro Log (Wasserrezept)
+756 kJ pro Wood

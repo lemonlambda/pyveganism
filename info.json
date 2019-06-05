@@ -1,0 +1,18 @@
+{
+    "name": "pyveganism",
+    "version": "0.0.1",
+    "title": "pY Veganism",
+    "author": "koun",
+    "contact": "",
+    "homepage": "",
+    "factorio_version": "0.17",
+    "dependencies": [
+        "base >= 0.17",
+        "pycoalprocessing",
+        "pyfusionenergy",
+        "?pyhightech",
+        "?pyrawores",
+        "?pypetroleumhandling"
+    ],
+    "description": "WIP. Add plants and biotechnical processes to allow you to play pySuite without exploiting virtual animals."
+}
