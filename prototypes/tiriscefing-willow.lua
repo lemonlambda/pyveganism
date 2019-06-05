@@ -69,7 +69,7 @@ RECIPE {
         {type = "item", name = "wood", amount = 3},
         {type = "item", name = "organics", amount = 5}
     },
-    main_product = "tiriscefing-willow",
+    main_product = "bonemeal",
     icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
     icon_size = 32,
     subgroup = "py-tiriscefing-willow",

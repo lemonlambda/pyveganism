@@ -5,8 +5,8 @@ data:extend {
         order = "z",
         inventory_order = "z",
         order = "z",
-        icon = "__pyveganism__/graphics/icon/item-group.png",
-        icon_size = 64
+        icon = "__pyveganism__/graphics/icons/item-group.png",
+        icon_size = 144
     },
     {
         type = "item-subgroup",
