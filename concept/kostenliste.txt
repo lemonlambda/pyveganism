@@ -4,3 +4,4 @@
 2000 kJ pro Limestone (im Soil Extractor, billiger im Solid Separator)
 2580 kJ pro Log (Wasserrezept)
 756 kJ pro Wood
+51,6 kJ pro Organic Matter (aus Logs)
