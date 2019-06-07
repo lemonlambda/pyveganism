@@ -5,3 +5,7 @@
 2580 kJ pro Log (Wasserrezept)
 756 kJ pro Wood
 51,6 kJ pro Organic Matter (aus Logs)
+416 kJ pro Fawogae
+670 kJ pro Coal aus Fawogae
+5094 kJ pro Bone Meal aus Ulrics
+166 kJ pro Urea aus Fawogae

@@ -43,7 +43,7 @@ RECIPE {
     main_product = "tiriscefing-willow",
     icon = "__pyveganism__/graphics/icons/tiriscefing-willow.png",
     icon_size = 64,
-    subgroup = "py-tiriscefing-willow",
+    subgroup = "py-veganism-tiriscefing-willow",
     order = "aaa"
 }:add_unlock("coal-processing-1")
 
@@ -65,7 +65,7 @@ RECIPE {
     main_product = "tiriscefing-willow",
     icon = "__pyveganism__/graphics/icons/tiriscefing-willow.png",
     icon_size = 64,
-    subgroup = "py-tiriscefing-willow",
+    subgroup = "py-veganism-tiriscefing-willow",
     order = "aab"
 }:add_unlock("coal-processing-1")
 
@@ -85,7 +85,7 @@ RECIPE {
     main_product = "tiriscefing-willow-bork",
     icon = "__pyveganism__/graphics/icons/tiriscefing-willow-bork.png",
     icon_size = 64,
-    subgroup = "py-tiriscefing-willow",
+    subgroup = "py-veganism-tiriscefing-willow",
     order = "aba"
 }:add_unlock("coal-processing-1")
 
@@ -105,6 +105,6 @@ RECIPE {
     main_product = "bonemeal",
     icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
     icon_size = 32,
-    subgroup = "py-tiriscefing-willow",
+    subgroup = "py-veganism-tiriscefing-willow",
     order = "aca"
 }:add_unlock("separation")

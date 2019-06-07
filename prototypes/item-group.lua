@@ -16,7 +16,13 @@ data:extend {
     },
     {
         type = "item-subgroup",
-        name = "py-tiriscefing-willow",
+        name = "py-veganism-tiriscefing-willow",
+        group = "py-veganism",
+        order = "a"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-solfaen",
         group = "py-veganism",
         order = "a"
     }
