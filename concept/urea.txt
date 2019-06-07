@@ -1,0 +1,24 @@
+Methode zur Herstellung von Urea im Early Game
+
+Archaebakterium bindet Stickstoff aus Luft, benötigt hohe Temperaturen (durch Dampf oder heiße Luft, wenn pyph aktiv ist)
+Ein zweiter Mikroorganismus verarbeitet die Erzeugnisse der Archaeen zu Harnstoff, da Stress
+
+Insgesamt könnte der Prozess energieaufwändiger, aber schneller/kompakter als die Fawogae/Auog-Methode sein. 
+
+Breeding:
+Pressurized Air + Water + Steam + Soil -> Archaeen
+oder
+Water + Hot Air + Soil -> Archaeen
+oder
+Pressurized Air + Water + Steam + Archaeen -> mehr Archaeen
+oder
+Water + Hot Air + Archaeen -> mehr Archaeen
+in Bio Reactor
+Problem: Bio Reactor hat nur 2 Eingänge
+
+Hypothermischer Stress: 
+Archaeen + Water + mehr Steam + Pressurized Air -> Nitrous Solution
+oder
+Archaeen + Water + mehr Hot Air -> Nitrous Solution
+in Bio Reactor
+

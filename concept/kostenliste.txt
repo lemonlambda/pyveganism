@@ -9,3 +9,8 @@
 670 kJ pro Coal aus Fawogae
 5094 kJ pro Bone Meal aus Ulrics
 166 kJ pro Urea aus Fawogae
+15 kJ pro Vacuum
+7,5 kJ pro Pressurized Air
+1,875 kJ pro Pressurized Water
+30 kJ pro Steam
+5,325 kJ pro Hot Air
