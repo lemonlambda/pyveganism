@@ -5,6 +5,8 @@ Ein zweiter Mikroorganismus verarbeitet die Erzeugnisse der Archaeen zu Harnstof
 
 Insgesamt könnte der Prozess energieaufwändiger, aber schneller/kompakter als die Fawogae/Auog-Methode sein. 
 
+Archaebakterium: Archaeum Frur
+
 Breeding:
 Pressurized Air + Water + Steam + Soil -> Archaeen
 oder
@@ -16,7 +18,7 @@ Water + Hot Air + Archaeen -> mehr Archaeen
 in Bio Reactor
 Problem: Bio Reactor hat nur 2 Eingänge
 
-Hypothermischer Stress: 
+Hyperthermischer Stress: 
 Archaeen + Water + mehr Steam + Pressurized Air -> Nitrous Solution
 oder
 Archaeen + Water + mehr Hot Air -> Nitrous Solution

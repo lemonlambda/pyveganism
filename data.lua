@@ -1,7 +1,6 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 
 require("prototypes.item-group")
-require("prototypes.py-changes")
 require("prototypes.tiriscefing-willow")
 
 if mods["pyhightech"] then
