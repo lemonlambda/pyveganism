@@ -14,3 +14,11 @@
 1,875 kJ pro Pressurized Water
 30 kJ pro Steam
 5,325 kJ pro Hot Air
+5,72 kJ pro Carbon Dioxide (aus OM aus Logs)
+4 kJ pro Carbon Diodide (wenn OM kostenlos ist)
+
+
+Eigene Sachen: 
+100 kJ pro Solfaen
+1200 kJ pro dried Solfaen
+1240 kJ pro washed Solfaen

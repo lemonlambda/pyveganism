@@ -2,4 +2,6 @@
 Version: 0.0.1
 Date: 05. 06. 2019
   Features: 
-    - Added tiriscefing willows as a way to obtain bone meal
+    - Added tiriscefing willows and bone meal chain
+    - Added solfaen and agarose-gel chain
+    - Added fiicorum, zirella and urea chain

@@ -5,6 +5,8 @@ require("prototypes.tiriscefing-willow")
 
 if mods["pyhightech"] then
     require("prototypes.solfaen")
+    require("prototypes.fiicorum")
+    require("prototypes.zirrella")
 end
 
 

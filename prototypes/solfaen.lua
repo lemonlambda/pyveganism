@@ -9,7 +9,8 @@ FLUID {
     flow_color = {r = 0.958, g = 0.166, b = 0.054},
     max_temperature = 100,
     pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59
+    flow_to_energy_ratio = 0.59,
+    subgroup = "py-veganism-mo"
 }
 
 ITEM {
