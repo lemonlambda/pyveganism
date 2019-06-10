@@ -1,0 +1,22 @@
+30 Ralesia Seeds (36450 kJ)
+5 Fawogae (2080 kJ)
+11400 kJ Mukmoux Pasture
+= 15 Lard 
+-> 3328 kJ pro Lard
+
+Schmalz ist ein Gemisch von Triglyceriden mit gesättigten und ungesättigten Fettsäuren. 
+Der Anteil der ungesättigten Fettsäuren überwiegt mit etwa 60 % und davon rund 10 % mehrfach ungesättigte Fettsäuren.
+Schmalz wird idR Wasser und Eiweiße entzogen, um es haltbarer zu machen. 
+
+feste Pflanzenfette: 
+    Palmöl
+    Palmkernöl
+    Kokosfett
+    Kakaobutter
+
+Nicht ganz realistisch, aber spielerisch interessante Idee: 
+verschiedene, fetthaltige Pflanzen
+-> werden zu festen Fetten, Ölen und Biomasse verarbeitet (in ganz normalen assembling machines, weil keine passende maschinen von pyanodon da sind)
+-> eine Mischung aus festen Fetten und Ölen wird im high pressure furnace zu lard verarbeitet
+
+Ziel: langsamer und platzintensiver als die omni-variante, dafür energieneutral möglich

@@ -21,13 +21,13 @@ data:extend {
         group = "py-veganism",
         order = "aab"
     },
-    --recipes
     {
         type = "item-subgroup",
-        name = "py-veganism-mixer",
+        name = "py-veganism-biomass",
         group = "py-veganism",
-        order = "baa"
+        order = "aac"
     },
+    --recipes
     {
         type = "item-subgroup",
         name = "py-veganism-tiriscefing-willow",
@@ -51,5 +51,11 @@ data:extend {
         name = "py-veganism-zirrella",
         group = "py-veganism",
         order = "bbd"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-oil-plants",
+        group = "py-veganism",
+        order = "bbe"
     }
 }
