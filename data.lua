@@ -3,8 +3,11 @@ require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 require("prototypes.item-group")
 require("prototypes.biomass")
 require("prototypes.tiriscefing-willow")
+
 require("prototypes.oil-palm")
 require("prototypes.coconut")
+require("prototypes.cocoa")
+require("prototypes.lard")
 
 if mods["pyhightech"] then
     require("prototypes.solfaen")

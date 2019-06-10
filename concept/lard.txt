@@ -14,9 +14,30 @@ feste Pflanzenfette:
     Kokosfett
     Kakaobutter
 
+Ölpflanzen: 
+    Kakao, Avocado, Oliven, Sesam, Lein, Raps, Hanf, Soja, Sonnenblumen, Ölpalme, Kokos, Mandel, Rizinus, Erdnuss, Soja, Baumwollsaat
+
 Nicht ganz realistisch, aber spielerisch interessante Idee: 
-verschiedene, fetthaltige Pflanzen
--> werden zu festen Fetten, Ölen und Biomasse verarbeitet (in ganz normalen assembling machines, weil keine passende maschinen von pyanodon da sind)
+verschiedene, Ölpflanzen
+-> werden zu festen Fetten, Ölen und Biomasse verarbeitet (in ganz normalen assembling machines, weil keine passenden maschinen von pyanodon da sind)
 -> eine Mischung aus festen Fetten und Ölen wird im high pressure furnace zu lard verarbeitet
 
 Ziel: langsamer und platzintensiver als die omni-variante, dafür energieneutral möglich
+
+
+Die Pflanzenöle werden durch verschiedene Verfahren gewonnen:
+
+    Pressen (Kaltpressen, Heißpressen)
+    Extraktion mit Lösungsmitteln (Hexan, Petrolether)(früher Benzol, Benzin, Schwefelkohlenstoff u. a.)
+    Extraktion mit Superkritischen Fluiden (Supercritical Fluid Extraction = SFE) (CO2)
+    Eine Unterstützung durch Mikrowellen oder Ultraschall ist bei allen Press- und Extraktionsverfahren möglich.[4]
+    Reinigung/Raffination mit Alkalien
+
+Die Grundlage bilden von Natur aus feste Pflanzenfette mit einem hohen Anteil von gesättigten Fettsäuren (etwa 50–90 %) wie Palmöl und Palmkernöl, Kokosfett oder Kakaobutter. 
+Um eine weichere, „schmalzige“ Konsistenz zu erreichen, wird das heiße Fett mit einem Anteil Pflanzenöl vermischt
+
+6 festes Fett + 40 fettes Öl -> ? Lard
+in hpf
+
+Coconut
+
