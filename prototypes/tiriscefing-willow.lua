@@ -35,13 +35,13 @@ RECIPE {
     ingredients = {
         {type = "item", name = "soil", amount = 30},
         {type = "item", name = "limestone", amount = 20},
-        {type = "fluid", name = "water", amount = 500},
+        {type = "fluid", name = "water", amount = 500}
     },
     results = {
         {type = "item", name = "tiriscefing-willow", amount = 3}
     },
     main_product = "tiriscefing-willow",
-    icon = "__pyveganism__/graphics/icons/tiriscefing-willow.png",
+    icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png",
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
     order = "aaa"
@@ -63,7 +63,10 @@ RECIPE {
         {type = "item", name = "tiriscefing-willow", amount = 6}
     },
     main_product = "tiriscefing-willow",
-    icon = "__pyveganism__/graphics/icons/tiriscefing-willow.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png"},
+        {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
     order = "aab"
@@ -80,7 +83,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "tiriscefing-willow-bork", amount = 3},
-        {type = "item", name = "wood", amount = 3},
+        {type = "item", name = "wood", amount = 3}
     },
     main_product = "tiriscefing-willow-bork",
     icon = "__pyveganism__/graphics/icons/tiriscefing-willow-bork.png",

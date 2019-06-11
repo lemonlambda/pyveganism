@@ -12,20 +12,19 @@ ITEM {
 
 RECIPE {
     type = "recipe",
-    name = "grow-coconut",
+    name = "grow-coconut-palm",
     category = "nursery",
     enabled = false,
     energy_required = 60,
     ingredients = {
-        {type = "item", name = "sand", amount = 10},
+        {type = "item", name = "soil", amount = 10},
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
         {type = "item", name = "coconut", amount = 5}
     },
-    main_product = "tiriscefing-willow",
-    icon = "__pyveganism__/graphics/icons/tiriscefing-willow.png",
+    icons = {{icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"}},
     icon_size = 64,
-    subgroup = "py-veganism-tiriscefing-willow",
+    subgroup = "py-veganism-oil-plants",
     order = "aaa"
-}:add_unlock("coal-processing-1")
+}:add_unlock("coal-processing-2")

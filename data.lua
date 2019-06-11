@@ -15,6 +15,7 @@ if mods["pyhightech"] then
     require("prototypes.zirrella")
 end
 
+require("prototypes.generic-growing-recipes")
 
 local DEBUG = true
 
