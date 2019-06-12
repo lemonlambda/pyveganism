@@ -17,13 +17,14 @@ feste Pflanzenfette:
 Ölpflanzen: 
     Kakao, Avocado, Oliven, Sesam, Lein, Raps, Hanf, Soja, Sonnenblumen, Ölpalme, Kokos, Mandel, Rizinus, Erdnuss, Soja, Baumwollsaat
 
-Nicht ganz realistisch, aber spielerisch interessante Idee: 
 verschiedene, Ölpflanzen
 -> werden zu festen Fetten, Ölen und Biomasse verarbeitet (in ganz normalen assembling machines, weil keine passenden maschinen von pyanodon da sind)
 -> eine Mischung aus festen Fetten und Ölen wird im high pressure furnace zu lard verarbeitet
 
-Ziel: langsamer und platzintensiver als die omni-variante, dafür energieneutral möglich
-
+Ziel: 
+Energiesparender durch brennbare Nebenprodukte
+nützliche Nebenprodukte (Nährmedien, Oleochemicals, Glycerol, ...)
+oder platzsparender, aber energieaufwändigere Verarbeitung
 
 Die Pflanzenöle werden durch verschiedene Verfahren gewonnen:
 
@@ -36,8 +37,57 @@ Die Pflanzenöle werden durch verschiedene Verfahren gewonnen:
 Die Grundlage bilden von Natur aus feste Pflanzenfette mit einem hohen Anteil von gesättigten Fettsäuren (etwa 50–90 %) wie Palmöl und Palmkernöl, Kokosfett oder Kakaobutter. 
 Um eine weichere, „schmalzige“ Konsistenz zu erreichen, wird das heiße Fett mit einem Anteil Pflanzenöl vermischt
 
-6 festes Fett + 40 fettes Öl -> ? Lard
+Fetthärtung ist ein Verfahren, bei dem fette Öle verfestigt werden. 
+Dabei werden durch Hydrierung die Doppelbindungen der ungesättigten Fettsäuren-Reste mit Wasserstoff – in Gegenwart geeigneter Katalysatoren (Nickel) – abgesättigt. 
+Aus den (mehrfach) ungesättigten Fettsäureglycerinestern (z. B. in Pflanzenölen) bilden sich Glycerinester gesättigter Fettsäuren. Dabei werden Öle in feste Fette gewandelt. 
+
+6 festes Fett + 80 fettes Öl -> 4 Lard
 in hpf
 
-Coconut
+1,5 festes Fett, 20 fettes Öl ^= 1 Lard ^= 3328 kJ
+10 fettes Öl ^= 1 festes Fett
+1 Lard ^= 35 fettes Öl
 
+1 fettes Öl ~ 100 kJ
+1 festes Fett ~ 1000 kJ
+
+7740 kJ Botanical Nursery
+1140 kJ Soil
+
+Bei der chemischen Raffination werden dem Öl geruchs- 
+und geschmacksintensive Begleitstoffe wie Carbonylverbindungen, 
+Kohlenwasserstoffe und freie Fettsäuren, aber auch flüchtige Verbindungen 
+und Pestizide durch Wasserdampfdestillation unter Vakuum („Dämpfung“) entzogen. 
+Dafür wird in das getrocknete und auf 200 bis 230 °C erhitzte Öl Wasserdampf („Strippdampf“) 
+eingeblasen. Der Prozess dauert zwischen 20 und 60 Minuten und ist energieintensiv, 
+da pro Tonne Öl 8 bis 12 Kilogramm Wasserdampf benötigt werden.
+
+cocoa: 
+Reinigen
+Rösten
+Schälen
+Mahlen
+Pressen
+Entölen
+
+oil-palm:
+Pressen -> orange-gelbes Palmöl und Faserkuchen
+Trennen von Steinen und Fasern
+Trocknen der Steine
+Öffnen und Entkernen der Steine
+Trocknen der Kerne
+Pressen der Kerne unter Hitze
+
+coconut:
+Trennen von Fruchtfleisch("Kopra") und restlichen Pflanzenbestandteilen
+Zerkleinern
+Trocknen
+Auspressen
+Raffination/Desodorierung
+
+soja:
+Schroten der Bohnen
+Einstellen Wassergehalt (?)
+Pressen in Flocken
+eventuell Extraktion mit Hexan
+Hydrierung

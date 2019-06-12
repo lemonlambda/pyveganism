@@ -57,5 +57,23 @@ data:extend {
         name = "py-veganism-oil-plants",
         group = "py-veganism",
         order = "bbe"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-cocoa",
+        group = "py-veganism",
+        order = "bbea"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-coconut",
+        group = "py-veganism",
+        order = "bbeb"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-oil-palm",
+        group = "py-veganism",
+        order = "bbec"
     }
 }

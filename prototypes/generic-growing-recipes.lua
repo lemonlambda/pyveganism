@@ -1,5 +1,4 @@
 --TODO: refactor this mess
--- better with-icons (too small)
 
 local appendix_carbon_dioxide = "-carbon-dioxide"
 local list_carbon_dioxide = {
@@ -29,7 +28,7 @@ local list_dirty_water = {
     ["grow-cocoa"] = {amount = 300, effect = 0.5}
 }
 
-list_unlocks = {
+local list_unlocks = {
     ["grow-coconut-palm"] = "oil-plants",
     ["grow-oil-palm"] = "oil-plants",
     ["grow-cocoa"] = "oil-plants"

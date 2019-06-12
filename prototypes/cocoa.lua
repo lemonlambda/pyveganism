@@ -25,6 +25,6 @@ RECIPE {
     },
     icons = {{icon = "__pyveganism__/graphics/icons/grow-cocoa.png"}},
     icon_size = 64,
-    subgroup = "py-veganism-oil-plants",
-    order = "aaa"
+    subgroup = "py-veganism-cocoa",
+    order = "aba"
 }:add_unlock("oil-plants")

@@ -6,7 +6,7 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "item", name = "solid-fat", amount = 6},
-        {type = "fluid", name = "plant-oil", amount = 40}
+        {type = "fluid", name = "plant-oil", amount = 80}
     },
     results = {
         {type = "item", name = "mukmoux-fat", amount = 4}
@@ -14,7 +14,27 @@ RECIPE {
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
     icon_size = 32,
     subgroup = "py-veganism-oil-plants",
-    order = "aba"
+    order = "aaa"
+}:add_unlock("oil-plants")
+
+RECIPE {
+    type = "recipe",
+    name = "fat-hardening",
+    category = "hpf",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "fluid", name = "plant-oil", amount = 200}, 
+        {type = "fluid", name = "hydrogen", amount = 100}, 
+        {type = "item", name = "nickel-plate", mount = 1}
+    },
+    results = {
+        {type = "item", name = "solid-fat", amount = 20}
+    },
+    icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
+    icon_size = 32,
+    subgroup = "py-veganism-oil-plants",
+    order = "aab"
 }:add_unlock("oil-plants")
 
 TECHNOLOGY {
