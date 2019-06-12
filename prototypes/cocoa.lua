@@ -21,10 +21,10 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "cocoa", amount = 5}
+        {type = "item", name = "cocoa-fruit", amount = 5}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/grow-cocoa.png"}},
     icon_size = 64,
     subgroup = "py-veganism-oil-plants",
     order = "aaa"
-}:add_unlock("coal-processing-2")
+}:add_unlock("oil-plants")

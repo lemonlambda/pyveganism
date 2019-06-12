@@ -7,7 +7,7 @@ require("prototypes.tiriscefing-willow")
 require("prototypes.oil-palm")
 require("prototypes.coconut")
 require("prototypes.cocoa")
-require("prototypes.lard")
+require("prototypes.oil-plants")
 
 if mods["pyhightech"] then
     require("prototypes.solfaen")

@@ -27,4 +27,4 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-oil-plants",
     order = "aaa"
-}:add_unlock("coal-processing-2")
+}:add_unlock("oil-plants")
