@@ -1,5 +1,5 @@
 local testicons = {
-    "oil-palm-fruit", "fatty-oil", "biomass-burnable", "solid-fat"
+    "canola"
 }
 
 for i, icon in pairs(testicons) do

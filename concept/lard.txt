@@ -63,31 +63,51 @@ eingeblasen. Der Prozess dauert zwischen 20 und 60 Minuten und ist energieintens
 da pro Tonne Öl 8 bis 12 Kilogramm Wasserdampf benötigt werden.
 
 cocoa: 
-Reinigen
-Rösten
-Schälen
-Mahlen
-Pressen
-Entölen
+Reinigen - Washer
+Rösten - HPF
+Schälen - Solid Separator
+Pressen - Pulp Mill / assembling machine
+
+Vorteil: nur solid fat
+Nachteil: niedrige Ausbeute
 
 oil-palm:
-Pressen -> orange-gelbes Palmöl und Faserkuchen
-Trennen von Steinen und Fasern
-Trocknen der Steine
-Öffnen und Entkernen der Steine
-Trocknen der Kerne
-Pressen der Kerne unter Hitze
+Pressen -> orange-gelbes Palmöl und Faserkuchen - Pulp Mill / assembling machine
+Trennen von Steinen und Fasern - Solid Separator
+Trocknen der Steine - Evaporator
+Öffnen und Entkernen der Steine - Solid Separator
+Trocknen der Kerne - Evaporator
+Pressen der Kerne unter Hitze - Pulp Mill / assembling machine
+
+Vorteil: hohe Ausbeute
+Nachteil: Lange Verarbeitungskette
 
 coconut:
-Trennen von Fruchtfleisch("Kopra") und restlichen Pflanzenbestandteilen
-Zerkleinern
-Trocknen
-Auspressen
-Raffination/Desodorierung
+Trennen von Fruchtfleisch("Kopra") und restlichen Pflanzenbestandteilen - Solid Separator
+Zerkleinern - assembling machine
+Trocknen - Evaporator
+Auspressen - Pulp Mill
+Raffination/Desodorierung - Multi Purpose Cracker / Chem plant
+
+Vorteil: Fast perfekter Mix solid fat/plant oil
+Nachteil: Lange Verarbeitungskette / Energieaufwendig
 
 soja:
 Schroten der Bohnen
 Einstellen Wassergehalt (?)
 Pressen in Flocken
+
 eventuell Extraktion mit Hexan
 Hydrierung
+
+Vorteil: nützliche Nebenprodukte zur Nährmedienherstellung (optionale Prozesse), kurze Verarbeitung
+Nachteil: niedrige Ausbeute (zumindest was Fette angeht)
+
+canola:
+Trennen von Saat und Rest der Pflanze
+Trocknen
+Schälen
+Pressen
+
+Vorteil: Glycerin als Nebenprodukt
+Nachteil: nur plant oil

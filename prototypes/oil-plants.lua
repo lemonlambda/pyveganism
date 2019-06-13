@@ -26,7 +26,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "plant-oil", amount = 200}, 
         {type = "fluid", name = "hydrogen", amount = 100}, 
-        {type = "item", name = "nickel-plate", mount = 1}
+        {type = "item", name = "nickel-plate", amount = 1}
     },
     results = {
         {type = "item", name = "solid-fat", amount = 20}
