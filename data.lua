@@ -1,18 +1,19 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 
 require("prototypes.item-group")
-require("prototypes.biomass")
-require("prototypes.tiriscefing-willow")
 
-require("prototypes.oil-palm")
-require("prototypes.coconut")
-require("prototypes.cocoa")
-require("prototypes.oil-plants")
+require("prototypes.plants.tiriscefing-willow")
+require("prototypes.plants.oil-palm")
+require("prototypes.plants.coconut")
+require("prototypes.plants.cocoa")
+
+require("prototypes.technologies.oil-plants")
+require("prototypes.technologies.biomass")
 
 if mods["pyhightech"] then
-    require("prototypes.solfaen")
-    require("prototypes.fiicorum")
-    require("prototypes.zirrella")
+    require("prototypes.microorganisms.solfaen")
+    require("prototypes.microorganisms.fiicorum")
+    require("prototypes.microorganisms.zirrella")
 end
 
 require("prototypes.generic-growing-recipes")
