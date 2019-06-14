@@ -1,5 +1,17 @@
 ITEM {
     type = "item",
+    name = "biomass",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/biomass.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-biomass",
+    order = "aaa",
+    stack_size = 200
+}
+
+ITEM {
+    type = "item",
     name = "biomass-burnable",
     enabled = false,
     fuel_value = "5MJ",
@@ -8,7 +20,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
-    order = "aaa",
+    order = "aaaa",
     stack_size = 200
 }
 
@@ -60,3 +72,43 @@ RECIPE {
     subgroup = "py-veganism-oil-plants",
     order = "a"
 }:add_unlock("energy-1")
+
+RECIPE {
+    type = "recipe",
+    name = "dry-biomass",
+    category = "evaporator",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "biomass", amount = 10}
+    },
+    results = {
+        {type = "item", name = "biomass-burnable", amount = 5}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/biomass.png"},
+        {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-biomass",
+    order = "a"
+}:add_unlock("biomass")
+
+TECHNOLOGY {
+    type = "technology",
+    name = "biomass",
+    icon = "__pyveganism__/graphics/technology/biomass.png",
+    icon_size = 128,
+    order = "c-a",
+    upgrade = false,
+    prerequisites = {"oil-plants"},
+    effects = {},
+    unit = {
+        count = 50,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1}
+        },
+        time = 30
+    }
+}
