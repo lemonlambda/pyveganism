@@ -4,34 +4,39 @@ local appendix_carbon_dioxide = "-carbon-dioxide"
 local list_carbon_dioxide = {
     ["grow-coconut-palm"] = {amount = 200, effect = 2},
     ["grow-oil-palm"] = {amount = 200, effect = 2},
-    ["grow-cocoa"] = {amount = 200, effect = 2}
+    ["grow-cocoa"] = {amount = 200, effect = 2},
+    ["grow-canola"] = {amount = 200, effect = 2}
 }
 
 local appendix_ash = "-ash"
 local list_ash = {
     ["grow-coconut-palm"] = {amount = 10, effect = 0.5},
     ["grow-oil-palm"] = {amount = 10, effect = 0.5},
-    ["grow-cocoa"] = {amount = 10, effect = 0.5}
+    ["grow-cocoa"] = {amount = 10, effect = 0.5},
+    ["grow-canola"] = {amount = 200, effect = 0.5}
 }
 
 local appendix_fertilizer = "-fertilizer"
 local list_fertilizer = {
     ["grow-coconut-palm"] = {amount = 1, effect = 0.5},
     ["grow-oil-palm"] = {amount = 1, effect = 0.5},
-    ["grow-cocoa"] = {amount = 1, effect = 0.5}
+    ["grow-cocoa"] = {amount = 1, effect = 0.5},
+    ["grow-canola"] = {amount = 200, effect = 0.5}
 }
 
 local appendix_dirty_water = "-dirty-water"
 local list_dirty_water = {
     ["grow-coconut-palm"] = {amount = 300, effect = 0.5},
     ["grow-oil-palm"] = {amount = 300, effect = 0.5},
-    ["grow-cocoa"] = {amount = 300, effect = 0.5}
+    ["grow-cocoa"] = {amount = 300, effect = 0.5},
+    ["grow-canola"] = {amount = 200, effect = 0.5}
 }
 
 local list_unlocks = {
     ["grow-coconut-palm"] = "oil-plants",
     ["grow-oil-palm"] = "oil-plants",
-    ["grow-cocoa"] = "oil-plants"
+    ["grow-cocoa"] = "oil-plants",
+    ["grow-canola"] = "oil-plants"
 }
 
 function copy_recipe(name, new_name)

@@ -75,5 +75,17 @@ data:extend {
         name = "py-veganism-oil-palm",
         group = "py-veganism",
         order = "bbec"
-    }
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-canola",
+        group = "py-veganism",
+        order = "bbed"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-soja",
+        group = "py-veganism",
+        order = "bbee"
+    } 
 }
