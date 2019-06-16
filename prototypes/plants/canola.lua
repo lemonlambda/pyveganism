@@ -68,7 +68,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "process-cocoa",
+    name = "process-canola",
     category = "solid-separator",
     enabled = false,
     energy_required = 2,
@@ -77,7 +77,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "canola-seed", amount = 10},
-        {type = "fluid", name = "biomass", amount = 10}
+        {type = "item", name = "biomass", amount = 10}
     },
     icon = "__pyveganism__/graphics/icons/canola-seed.png",
     icon_size = 64,

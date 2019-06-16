@@ -13,7 +13,7 @@ local list_ash = {
     ["grow-coconut-palm"] = {amount = 10, effect = 0.5},
     ["grow-oil-palm"] = {amount = 10, effect = 0.5},
     ["grow-cocoa"] = {amount = 10, effect = 0.5},
-    ["grow-canola"] = {amount = 200, effect = 0.5}
+    ["grow-canola"] = {amount = 10, effect = 0.5}
 }
 
 local appendix_fertilizer = "-fertilizer"
@@ -21,7 +21,7 @@ local list_fertilizer = {
     ["grow-coconut-palm"] = {amount = 1, effect = 0.5},
     ["grow-oil-palm"] = {amount = 1, effect = 0.5},
     ["grow-cocoa"] = {amount = 1, effect = 0.5},
-    ["grow-canola"] = {amount = 200, effect = 0.5}
+    ["grow-canola"] = {amount = 1, effect = 0.5}
 }
 
 local appendix_dirty_water = "-dirty-water"
@@ -29,7 +29,7 @@ local list_dirty_water = {
     ["grow-coconut-palm"] = {amount = 300, effect = 0.5},
     ["grow-oil-palm"] = {amount = 300, effect = 0.5},
     ["grow-cocoa"] = {amount = 300, effect = 0.5},
-    ["grow-canola"] = {amount = 200, effect = 0.5}
+    ["grow-canola"] = {amount = 300, effect = 0.5}
 }
 
 local list_unlocks = {
@@ -40,14 +40,16 @@ local list_unlocks = {
 }
 
 function copy_recipe(name, new_name)
-    local copy = table.deepcopy(data.raw.recipe[name])
+    local copy = util.table.deepcopy(data.raw.recipe[name])
     copy.name = new_name
+    data:extend({copy})
     return copy
 end
 
 function create_carbon_dioxide_recipe(recipe, details, unlock)
-    local new_recipe = copy_recipe(recipe, recipe .. appendix_carbon_dioxide)
-    new_recipe = RECIPE(new_recipe)
+    local name = recipe .. appendix_carbon_dioxide
+    copy_recipe(recipe, name)
+    local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"})
     new_recipe:add_ingredient({type = "fluid", name = "carbon-dioxide", amount = details.amount})
@@ -56,41 +58,52 @@ function create_carbon_dioxide_recipe(recipe, details, unlock)
         result.amount = math.floor(result.amount * details.effect)
     end
 
-    new_recipe:add_unlock(unlock)
+    if unlock then
+        new_recipe:add_unlock(unlock)
+    end
     return new_recipe
 end
 
 function create_ash_recipe(recipe, details, unlock)
-    local new_recipe = copy_recipe(recipe, recipe .. appendix_ash)
-    new_recipe = RECIPE(new_recipe)
+    local name = recipe .. appendix_ash
+    copy_recipe(recipe, name)
+    local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-ash.png"})
     new_recipe:add_ingredient({type = "item", name = "ash", amount = details.amount})
     new_recipe.energy_required = new_recipe.energy_required * details.effect
-    new_recipe:add_unlock(unlock)
+    if unlock then
+        new_recipe:add_unlock(unlock)
+    end
     return new_recipe
 end
 
 function create_fertilizer_recipe(recipe, details, unlock)
-    local new_recipe = copy_recipe(recipe, recipe .. appendix_fertilizer)
-    new_recipe = RECIPE(new_recipe)
+    local name = recipe .. appendix_fertilizer
+    copy_recipe(recipe, name)
+    local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-fertilizer.png"})
     new_recipe:add_ingredient({type = "item", name = "py-fertilizer", amount = details.amount})
     new_recipe.energy_required = new_recipe.energy_required * details.effect
-    new_recipe:add_unlock(unlock)
+    if unlock then
+        new_recipe:add_unlock(unlock)
+    end
     return new_recipe
 end
 
 function create_dirty_water_recipe(recipe, details, unlock)
-    local new_recipe = copy_recipe(recipe, recipe .. appendix_dirty_water)
-    new_recipe = RECIPE(new_recipe)
+    local name = recipe .. appendix_dirty_water
+    copy_recipe(recipe, name)
+    local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-dirty-water.png"})
     new_recipe:remove_ingredient("water")
     new_recipe:add_ingredient({type = "fluid", name = "dirty-water", amount = details.amount})
     new_recipe.energy_required = new_recipe.energy_required * details.effect
-    new_recipe:add_unlock(unlock)
+    if unlock then
+        new_recipe:add_unlock(unlock)
+    end
     return new_recipe
 end
 

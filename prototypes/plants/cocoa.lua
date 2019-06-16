@@ -132,7 +132,8 @@ RECIPE {
         {type = "item", name = "cocoa-beans", amount = 10},
     },
     results = {
-        {type = "item", name = "solid-fat", amount = 5},
+        {type = "item", name = "solid-fat", amount = 10},
+        {type = "item", name = "biomass-dry", amount = 1}
     },
     icon = "__pyveganism__/graphics/icons/cocoa-beans.png",
     icon_size = 64,

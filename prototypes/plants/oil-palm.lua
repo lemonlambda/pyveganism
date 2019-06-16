@@ -48,9 +48,9 @@ ITEM {
 
 ITEM {
     type = "item",
-    name = "oil-palm-kernel-opened",
+    name = "oil-palm-kernel-open",
     enabled = false,
-    icon = "__pyveganism__/graphics/icons/oil-palm-kernel-opened.png",
+    icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-plants",
@@ -115,7 +115,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "press-oil-palm-kernel",
-    category = "crafting",
+    category = py_veganism_globals["plant_oil_pressing_category"],
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -150,4 +150,65 @@ RECIPE {
     order = "aac"
 }:add_unlock("oil-plants")
 
+RECIPE {
+    type = "recipe",
+    name = "dry-oil-palm-kernel",
+    category = "evaporator",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "item", name = "oil-palm-kernel", amount = 10}
+    },
+    results = {
+        {type = "item", name = "oil-palm-kernel-dry", amount = 10}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel.png"},
+        {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-oil-palm",
+    order = "aad"
+}:add_unlock("oil-plants")
 
+RECIPE {
+    type = "recipe",
+    name = "dry-oil-palm-kernel",
+    category = "ball-mill",
+    enabled = false,
+    energy_required = 0.5,
+    ingredients = {
+        {type = "item", name = "oil-palm-kernel-dry", amount = 4}
+    },
+    results = {
+        {type = "item", name = "oil-palm-kernel-open", amount = 5}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-oil-palm",
+    order = "aae"
+}:add_unlock("oil-plants")
+
+RECIPE {
+    type = "recipe",
+    name = "press-oil-palm-kernel",
+    category = py_veganism_globals["plant_oil_pressing_category"],
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "oil-palm-kernel-open", amount = 10}
+    },
+    results = {
+        {type = "item", name = "solid-fat", amount = 4},
+        {type = "fluid", name = "plant-oil", amount = 4},
+        {type = "item", name = "biomass-dry", amount = 1} 
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-oil-palm",
+    order = "aaf"
+}:add_unlock("oil-plants")

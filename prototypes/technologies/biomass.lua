@@ -104,7 +104,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-veganism-oil-plants",
     order = "a"
-}:add_unlock("energy-1")
+}:add_unlock("biomass")
 
 RECIPE {
     type = "recipe",
@@ -119,7 +119,7 @@ RECIPE {
         {type = "item", name = "biomass-pellets", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/biomass-dry.png"}
+        {icon = "__pyveganism__/graphics/icons/biomass-pellets.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-biomass",

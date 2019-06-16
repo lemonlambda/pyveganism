@@ -50,8 +50,8 @@ RECIPE {
     results = {
         {type = "item", name = "solid-fat", amount = 20}
     },
-    icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
-    icon_size = 32,
+    icon = "__pyveganism__/graphics/icons/solid-fat.png",
+    icon_size = 64,
     subgroup = "py-veganism-oil-plants",
     order = "aab"
 }:add_unlock("oil-plants")
