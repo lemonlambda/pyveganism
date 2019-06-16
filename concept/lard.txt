@@ -72,12 +72,17 @@ Vorteil: nur solid fat
 Nachteil: niedrige Ausbeute
 
 oil-palm:
-Pressen -> orange-gelbes Palmöl und Faserkuchen - Pulp Mill / assembling machine
-Trennen von Steinen und Fasern - Solid Separator
-Trocknen der Steine - Evaporator
-Öffnen und Entkernen der Steine - Solid Separator
-Trocknen der Kerne - Evaporator
-Pressen der Kerne unter Hitze - Pulp Mill / assembling machine
+Trennen von Kernen und Fruchtfleisch
+
+Fruchtfleisch: 
+Pressen
+Raffination
+
+Kerne: 
+Trocknen
+Öffnen
+Trocknen
+Pressen
 
 Vorteil: hohe Ausbeute
 Nachteil: Lange Verarbeitungskette
@@ -109,5 +114,5 @@ Trocknen
 Schälen
 Pressen
 
-Vorteil: Glycerin als Nebenprodukt
+Vorteil: Glycerin als mögl. Nebenprodukt
 Nachteil: nur plant oil

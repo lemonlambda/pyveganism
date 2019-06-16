@@ -1,3 +1,22 @@
+TECHNOLOGY {
+    type = "technology",
+    name = "biomass",
+    icon = "__pyveganism__/graphics/technology/biomass.png",
+    icon_size = 128,
+    order = "c-a",
+    upgrade = false,
+    prerequisites = {"oil-plants"},
+    effects = {},
+    unit = {
+        count = 50,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1}
+        },
+        time = 30
+    }
+}
+
 ITEM {
     type = "item",
     name = "biomass",
@@ -12,15 +31,29 @@ ITEM {
 
 ITEM {
     type = "item",
-    name = "biomass-burnable",
+    name = "biomass-dry",
     enabled = false,
-    fuel_value = "5MJ",
+    fuel_value = "1.5MJ",
     fuel_category = "chemical",
-    icon = "__pyveganism__/graphics/icons/biomass-burnable.png",
+    icon = "__pyveganism__/graphics/icons/biomass-dry.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
-    order = "aaaa",
+    order = "aab",
+    stack_size = 200
+}
+
+ITEM {
+    type = "item",
+    name = "biomass-pellets",
+    enabled = false,
+    fuel_value = "5MJ",
+    fuel_category = "chemical",
+    icon = "__pyveganism__/graphics/icons/biomass-pellets.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-biomass",
+    order = "aac",
     stack_size = 200
 }
 
@@ -32,7 +65,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
-    order = "aab",
+    order = "aba",
     stack_size = 200
 }
 
@@ -60,7 +93,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "plant-oil", amount = 100},
         {type = "fluid", name = "water", amount = 500},
-        {type = "item", name = "biomass-burnable", amount = 3}
+        {type = "item", name = "biomass-pellets", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
@@ -75,7 +108,27 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "dry-biomass",
+    name = "biomass-pellets",
+    category = "crafting",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "biomass-dry", amount = 10}
+    },
+    results = {
+        {type = "item", name = "biomass-pellets", amount = 5}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/biomass-dry.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-biomass",
+    order = "aaa"
+}:add_unlock("biomass")
+
+RECIPE {
+    type = "recipe",
+    name = "biomass-dry",
     category = "evaporator",
     enabled = false,
     energy_required = 2,
@@ -83,32 +136,13 @@ RECIPE {
         {type = "item", name = "biomass", amount = 10}
     },
     results = {
-        {type = "item", name = "biomass-burnable", amount = 5}
+        {type = "item", name = "biomass-dry", amount = 10}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/biomass.png"},
+        {icon = "__pyveganism__/graphics/icons/biomass-dry.png"},
         {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-biomass",
-    order = "a"
+    order = "aab"
 }:add_unlock("biomass")
-
-TECHNOLOGY {
-    type = "technology",
-    name = "biomass",
-    icon = "__pyveganism__/graphics/technology/biomass.png",
-    icon_size = 128,
-    order = "c-a",
-    upgrade = false,
-    prerequisites = {"oil-plants"},
-    effects = {},
-    unit = {
-        count = 50,
-        ingredients = {
-            {"automation-science-pack", 1},
-            {"logistic-science-pack", 1}
-        },
-        time = 30
-    }
-}

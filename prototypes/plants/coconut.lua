@@ -76,3 +76,22 @@ RECIPE {
     subgroup = "py-veganism-coconut",
     order = "aba"
 }:add_unlock("oil-plants")
+
+RECIPE {
+    type = "recipe",
+    name = "core-coconut",
+    category = "crafting",
+    enabled = false,
+    energy_required = 60,
+    ingredients = {
+        {type = "item", name = "soil", amount = 10},
+        {type = "fluid", name = "water", amount = 500}
+    },
+    results = {
+        {type = "item", name = "coconut", amount = 5}
+    },
+    icons = {{icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"}},
+    icon_size = 64,
+    subgroup = "py-veganism-coconut",
+    order = "aba"
+}:add_unlock("oil-plants")
