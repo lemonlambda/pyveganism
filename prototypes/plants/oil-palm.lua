@@ -5,7 +5,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-oil-palm",
     order = "aba",
     stack_size = 200
 }
@@ -17,7 +17,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/oil-palm-fruit-flesh.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-oil-palm",
     order = "abb",
     stack_size = 200
 }
@@ -29,7 +29,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/oil-palm-kernel.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-oil-palm",
     order = "abc",
     stack_size = 200
 }
@@ -41,7 +41,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/oil-palm-kernel-dry.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-oil-palm",
     order = "abd",
     stack_size = 200
 }
@@ -53,7 +53,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-oil-palm",
     order = "abe",
     stack_size = 200
 }
@@ -70,7 +70,7 @@ FLUID {
     max_temperature = 100,
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
-    subgroup = "py-veganism-plants"
+    subgroup = "py-veganism-oil-palm"
 }
 
 RECIPE {
@@ -84,7 +84,8 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "oil-palm-fruit", amount = 5}
+        {type = "item", name = "oil-palm-fruit", amount = 5},
+        {type = "item", name = "biomass", amount = 2}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/grow-oil-palm.png"}},
     icon_size = 64,
@@ -114,7 +115,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "press-oil-palm-kernel",
+    name = "press-oil-palm-fruit-flesh",
     category = py_veganism_globals["plant_oil_pressing_category"],
     enabled = false,
     energy_required = 1,
@@ -125,7 +126,10 @@ RECIPE {
         {type = "fluid", name = "impure-palm-oil", amount = 100},
         {type = "item", name = "biomass-dry", amount = 1}
     },
-    icons = {{icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"}},
+    icons = {
+        { icon = "__pyveganism__/graphics/icons/oil-palm-fruit-flesh.png" }, 
+        { icon = "__pyveganism__/graphics/icons/pressing.png" }
+    },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",
     order = "aab"
@@ -173,7 +177,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "dry-oil-palm-kernel",
+    name = "open-oil-palm-kernel",
     category = "ball-mill",
     enabled = false,
     energy_required = 0.5,
@@ -206,7 +210,8 @@ RECIPE {
         {type = "item", name = "biomass-dry", amount = 1} 
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"}
+        { icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png" }, 
+        { icon = "__pyveganism__/graphics/icons/pressing.png" }
     },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",

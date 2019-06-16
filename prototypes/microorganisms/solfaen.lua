@@ -15,11 +15,11 @@ FLUID {
 
 ITEM {
     type = "item",
-    name = "solfaen-dried",
+    name = "solfaen-dry",
     enabled = false,
     fuel_value = "250kJ",
     fuel_category = "chemical",
-    icon = "__pyveganism__/graphics/icons/solfaen-dried.png",
+    icon = "__pyveganism__/graphics/icons/solfaen-dry.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-solfaen",
@@ -121,10 +121,10 @@ RECIPE {
         {type = "fluid", name = "solfaen", amount = 100},
     },
     results = {
-        {type = "item", name = "solfaen-dried", amount = 10}
+        {type = "item", name = "solfaen-dry", amount = 10}
     },
-    main_product = "solfaen-dried",
-    icon = "__pyveganism__/graphics/icons/solfaen-dried.png",
+    main_product = "solfaen-dry",
+    icon = "__pyveganism__/graphics/icons/solfaen-dry.png",
     icon_size = 64,
     subgroup = "py-veganism-solfaen",
     order = "ada"
@@ -137,7 +137,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "solfaen-dried", amount = 5},
+        {type = "item", name = "solfaen-dry", amount = 5},
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
@@ -145,7 +145,10 @@ RECIPE {
         {type = "fluid", name = "dirty-water", amount = 100}
     },
     main_product = "solfaen-washed",
-    icon = "__pyveganism__/graphics/icons/solfaen-washed.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/solfaen-washed.png"},
+        {icon = "__pyveganism__/graphics/icons/washing.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-solfaen",
     order = "adb"

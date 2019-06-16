@@ -5,7 +5,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/coconut.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-coconut",
     order = "abc",
     stack_size = 200
 }
@@ -17,7 +17,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/copra.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-coconut",
     order = "abca",
     stack_size = 200
 }
@@ -29,7 +29,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/copra-halved.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-coconut",
     order = "abcb",
     stack_size = 200
 }
@@ -41,7 +41,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/copra-halved-dry.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-coconut",
     order = "abcc",
     stack_size = 200
 }
@@ -53,7 +53,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/coconut-butter.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-plants",
+    subgroup = "py-veganism-coconut",
     order = "abcd",
     stack_size = 200
 }
@@ -146,10 +146,13 @@ RECIPE {
         {type = "item", name = "copra-halved-dry", amount = 10}
     },
     results = {
-        {type = "item", name = "coconut-butter", amount = 10}, 
+        {type = "item", name = "coconut-butter", amount = 10},
         {type = "item", name = "biomass-dry", amount = 4}
     },
-    icons = {{icon = "__pyveganism__/graphics/icons/copra-halved.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/coconut.png"},
+        {icon = "__pyveganism__/graphics/icons/pressing.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-coconut",
     order = "aad"
@@ -162,12 +165,12 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "coconut-butter", amount = 10}, 
-        {type = "fluid", name = "vacuum", amount = 50}, 
+        {type = "item", name = "coconut-butter", amount = 10},
+        {type = "fluid", name = "vacuum", amount = 50},
         {type = "fluid", name = "steam", amount = 200}
     },
     results = {
-        {type = "item", name = "solid-fat", amount = 8}, 
+        {type = "item", name = "solid-fat", amount = 8},
         {type = "fluid", name = "plant-oil", amount = 100}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/copra-halved.png"}},
