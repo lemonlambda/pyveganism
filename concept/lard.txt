@@ -116,7 +116,7 @@ Trocknen
 Schälen
 Pressen
 
-Vorteil: Glycerin als mögl. Nebenprodukt
+Vorteil: Glycerin als mögl. Nebenprodukt, viel Biomasse
 Nachteil: nur plant oil
 
 
@@ -125,7 +125,7 @@ the maths:
 Lard mix: 1,5 solid fat zu 20 plant oil
 1sf : 13,33po
 
-oil palm:
+____oil palm____
 Mix: 1 : 20
 Ausbeute: 150%
 
@@ -150,5 +150,22 @@ Nutzen
 ->200 plant oil
 
 
+____cocoa____
+Mix 1 : 0
+Ausbeute: 80%
 
+Kosten
+8880 kJ
+100 kJ washer
+2400 kJ hpf
+600 kJ solid separator
+300 kJ
+_________
+~12,8 MJ
 
+Nutzen
+2 biomass = 3 MJ
+4 dry biomass = 10 MJ
+100 dirty water
+10,3 MJ worth of lard ingredients
+10 solid fat

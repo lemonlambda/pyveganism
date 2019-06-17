@@ -95,7 +95,7 @@ RECIPE {
     name = "roast-cocoa",
     category = "hpf",
     enabled = false,
-    energy_required = 1,
+    energy_required = 2,
     ingredients = {
         {type = "item", name = "cocoa-fruit-washed", amount = 5}
     },
@@ -116,13 +116,13 @@ RECIPE {
     name = "skin-cocoa",
     category = "solid-separator",
     enabled = false,
-    energy_required = 1,
+    energy_required = 2,
     ingredients = {
         {type = "item", name = "cocoa-fruit-roasted", amount = 5}
     },
     results = {
         {type = "item", name = "cocoa-beans", amount = 10},
-        {type = "item", name = "biomass-dry", amount = 2}
+        {type = "item", name = "biomass-dry", amount = 1}
     },
     icon = "__pyveganism__/graphics/icons/cocoa-beans.png",
     icon_size = 64,
@@ -135,12 +135,12 @@ RECIPE {
     name = "press-cocoa",
     category = py_veganism_globals["plant_oil_pressing_category"],
     enabled = false,
-    energy_required = 1,
+    energy_required = 1.5,
     ingredients = {
         {type = "item", name = "cocoa-beans", amount = 10}
     },
     results = {
-        {type = "item", name = "solid-fat", amount = 10},
+        {type = "item", name = "solid-fat", amount = 5},
         {type = "item", name = "biomass-dry", amount = 1}
     },
     icons = {

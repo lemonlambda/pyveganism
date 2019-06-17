@@ -34,3 +34,4 @@ HPF: 300 kW, 0,5 -> 600 kW per s
 Solid Separator: 150 kW, 0,5 -> 300 kW per s
 Pulp Mill: 150 kW
 Multi Purpose Cracker: 400 kW
+Washer: 100 kW
