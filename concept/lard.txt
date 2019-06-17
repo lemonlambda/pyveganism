@@ -143,12 +143,13 @@ _________
 ~20 MJ
 
 Nutzen
-3 biomass = 4,5 MJ
+9 biomass = 13,5 MJ
 2 dry biomass = 5 MJ
 30 MJ worth of lard ingredients
 ->10 solid fat
 ->200 plant oil
 
+92,5% Rückerstattung Biomasse
 
 ____cocoa____
 Mix 1 : 0
@@ -168,4 +169,52 @@ Nutzen
 4 dry biomass = 10 MJ
 100 dirty water
 10,3 MJ worth of lard ingredients
-10 solid fat
+->10 solid fat
+
+100% Rückerstattung Biomasse
+
+____coconut____
+Mix 1 : 12
+Ausbeute: 120%
+
+Kosten
+8880 kJ Botanical Nursery
+66 kJ automated factory
+111 kJ automated factory
+600 kJ Evaporator
+45 kJ pulp mill
+600 kJ Cracker
+15 Vacuum = 225 kJ
+60 Steam = 1800 kJ
+_________
+~12,1 MJ
+
+Nutzen
+2 biomass = 3 MJ
+3,2 dry biomass = 8 MJ
+14552 kJ worth of lard ingredients
+->7 solid fat
+->84 plant oil
+
+90% Rückerstattung Biomasse
+
+____canola____
+Mix 0 : 1
+Ausbeute: 80%
+
+Kosten
+8880 kJ Botanical Nursery
+600 kJ Solid Separator
+2000 kJ Evaporator
+2400 kJ Solid Separator
+300 kJ Pulp Mill
+_________
+~14,18 MJ
+
+Nutzen
+7 biomass = 10,5 MJ
+3 dry biomass = 7,5 MJ
+11,3 kJ worth of lard ingredients
+-> 113 plant oil
+
+126% Rückerstattung Biomasse

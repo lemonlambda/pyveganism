@@ -105,7 +105,7 @@ RECIPE {
     results = {
         {type = "item", name = "oil-palm-fruit-flesh", amount = 10},
         {type = "item", name = "oil-palm-kernel", amount = 10},
-        {type = "item", name = "biomass", amount = 1}
+        {type = "item", name = "biomass", amount = 7}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"}},
     icon_size = 64,

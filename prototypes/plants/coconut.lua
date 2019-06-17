@@ -85,11 +85,11 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "coconut", amount = 5}
+        {type = "item", name = "coconut", amount = 20}
     },
     results = {
-        {type = "item", name = "copra", amount = 5},
-        {type = "item", name = "biomass", amount = 2}
+        {type = "item", name = "copra", amount = 20},
+        {type = "item", name = "biomass-dry", amount = 4}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/copra.png"}},
     icon_size = 64,
@@ -170,8 +170,8 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 200}
     },
     results = {
-        {type = "item", name = "solid-fat", amount = 8},
-        {type = "fluid", name = "plant-oil", amount = 100}
+        {type = "item", name = "solid-fat", amount = 7},
+        {type = "fluid", name = "plant-oil", amount = 84}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/coconut-butter.png"},
