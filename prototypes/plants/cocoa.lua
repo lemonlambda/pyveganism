@@ -124,7 +124,10 @@ RECIPE {
         {type = "item", name = "cocoa-beans", amount = 10},
         {type = "item", name = "biomass-dry", amount = 1}
     },
-    icon = "__pyveganism__/graphics/icons/cocoa-beans.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/cocoa-beans.png"}, 
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-cocoa",
     order = "aac"

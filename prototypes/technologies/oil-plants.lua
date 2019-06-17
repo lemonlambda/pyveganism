@@ -39,7 +39,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "fat-hardening",
-    category = "chemistry",
+    category = "fluid-separator",
     enabled = false,
     energy_required = 2,
     ingredients = {

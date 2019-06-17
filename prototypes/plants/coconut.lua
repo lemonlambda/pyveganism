@@ -72,6 +72,7 @@ RECIPE {
         {type = "item", name = "coconut", amount = 10},
         {type = "item", name = "biomass", amount = 2}
     },
+    main_product = "coconut",
     icons = {{icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"}},
     icon_size = 64,
     subgroup = "py-veganism-coconut",

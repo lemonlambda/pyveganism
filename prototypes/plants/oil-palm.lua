@@ -87,6 +87,7 @@ RECIPE {
         {type = "item", name = "oil-palm-fruit", amount = 10},
         {type = "item", name = "biomass", amount = 2}
     },
+    main_product = "oil-palm-fruit",
     icons = {{icon = "__pyveganism__/graphics/icons/grow-oil-palm.png"}},
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",
@@ -193,7 +194,8 @@ RECIPE {
         {type = "item", name = "oil-palm-kernel-open", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"}
+        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"},
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",
