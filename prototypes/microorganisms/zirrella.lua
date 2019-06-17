@@ -108,7 +108,10 @@ RECIPE {
     results = {
         {type = "item", name = "urea", amount = 50}
     },
-    icon = "__pyhightech__/graphics/icons/urea.png",
+    icons = {
+        {icon = "__pyhightech__/graphics/icons/urea.png"},
+        {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
+    },
     icon_size = 32,
     subgroup = "py-veganism-zirrella",
     order = "ada"

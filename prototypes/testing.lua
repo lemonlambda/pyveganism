@@ -1,5 +1,5 @@
 local testicons = {
-    "canola"
+    
 }
 
 for i, icon in pairs(testicons) do

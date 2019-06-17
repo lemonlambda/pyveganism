@@ -1,10 +1,10 @@
 {
     "name": "pyveganism",
     "version": "0.0.1",
-    "title": "pY Veganism",
+    "title": "pY Veganism [ALPHA]",
     "author": "koun",
     "contact": "",
-    "homepage": "",
+    "homepage": "https://forums.factorio.com/viewtopic.php?f=219&t=71587",
     "factorio_version": "0.17",
     "dependencies": [
         "base >= 0.17",
@@ -14,5 +14,5 @@
         "?pyrawores",
         "?pypetroleumhandling"
     ],
-    "description": "WIP. Add plants and biotechnical processes to allow you to play pySuite without exploiting virtual animals."
+    "description": "WIP. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals."
 }

@@ -92,7 +92,10 @@ RECIPE {
         {type = "item", name = "copra", amount = 20},
         {type = "item", name = "biomass-dry", amount = 4}
     },
-    icons = {{icon = "__pyveganism__/graphics/icons/copra.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/coconut.png"}, 
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}, 
+    },
     icon_size = 64,
     subgroup = "py-veganism-coconut",
     order = "aaa"
@@ -110,7 +113,10 @@ RECIPE {
     results = {
         {type = "item", name = "copra-halved", amount = 1}
     },
-    icons = {{icon = "__pyveganism__/graphics/icons/copra-halved.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/copra.png"}, 
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}, 
+    },
     icon_size = 64,
     subgroup = "py-veganism-coconut",
     order = "aab"

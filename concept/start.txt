@@ -54,17 +54,17 @@ pyhightech:
         -> Coal Briquiette
 
 Dinge, die alternative Möglichkeiten benötigen: 
-    Bone Meal
-    Lard
-    Biological Sample
-    Fertilizer
-    Nylon
-    Collagen
-    Myoglobin
-    Resilin
-    Urea
-    Serine
-    Vanadium
+    Bone Meal (pycp) - done
+    Lard (pycp) - done
+    Biological Sample (pyht) - done
+    Fertilizer (pyht)
+    Nylon (pyht)
+    Collagen (pyht)
+    Myoglobin (pyht)
+    Resilin (pyht)
+    Urea (pyht) - done
+    Serine (pyfe)
+    Vanadium (pyfe)
 
 
 Möglichkeiten Gebäude: 

@@ -12,9 +12,9 @@ require("prototypes.plants.coconut")
 require("prototypes.plants.cocoa")
 require("prototypes.plants.canola")
 
+require("prototypes.microorganisms.solfaen")
 
 if mods["pyhightech"] then
-    require("prototypes.microorganisms.solfaen")
     require("prototypes.microorganisms.fiicorum")
     require("prototypes.microorganisms.zirrella")
 end

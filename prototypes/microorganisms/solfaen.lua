@@ -55,7 +55,7 @@ ITEM {
 RECIPE {
     type = "recipe",
     name = "grow-solfaen-1",
-    category = "moon",
+    category = py_veganism_globals["algae_growing_category"],
     enabled = false,
     energy_required = 30,
     ingredients = {
@@ -74,7 +74,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "grow-solfaen-2",
-    category = "moon",
+    category = py_veganism_globals["algae_growing_category"],
     enabled = false,
     energy_required = 10,
     ingredients = {

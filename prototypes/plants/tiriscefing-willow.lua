@@ -86,7 +86,10 @@ RECIPE {
         {type = "item", name = "wood", amount = 3}
     },
     main_product = "tiriscefing-willow-bork",
-    icon = "__pyveganism__/graphics/icons/tiriscefing-willow-bork.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/tiriscefing-willow.png"},
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
     order = "aba"
@@ -106,7 +109,10 @@ RECIPE {
         {type = "item", name = "organics", amount = 2}
     },
     main_product = "bonemeal",
-    icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    icons = {
+        {icon = "__pycoalprocessing__/graphics/icons/bonemeal.png"},
+        {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
+    },
     icon_size = 32,
     subgroup = "py-veganism-tiriscefing-willow",
     order = "aca"

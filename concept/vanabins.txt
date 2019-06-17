@@ -1,0 +1,16 @@
+Idee: Fliegenpilz, der Vanadium konzentriert und zu Vanabins verarbeitet wird
+
+Pyanodons Weg:
+
+20 Xy-Blut & 200 Sulfuric acid & 1200 kJ -> 100 Vanabins
+
+200 Sulfuric acid aus acid gas:
+400 Acid Gas und 3360 kJ
+
+20 Xy-Blut ^= 50 Tailings dust, 500 Pressured Water (937,5 kJ), 30 Phytoplankton und 9750 kJ
+
+30 Phytoplankton ^= 45 Iron Ore (oder 3 Grade 1 Tin bei pyro) und 15,750 MJ
+45 Iron Ore ^= 8100 kJ electric mining drill
+3 Grade 1 Tin ^= 7,5 Tin Ore (1350 kJ) + 3600 kJ Jaw Crusher + 675 kJ Automatic Screener = 5625 kJ
+
+50 Tailings dust ^= 83,3 Stone (15 MJ), 600 kJ und viele nervige Nebenprodukte
