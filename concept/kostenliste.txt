@@ -36,3 +36,4 @@ Pulp Mill: 150 kW
 Multi Purpose Cracker: 400 kW
 Washer: 100 kW
 Fluid Separator: 300 kW
+Fawogae Plantation: 200 kW, 0,3 -> 666 kW per s

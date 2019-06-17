@@ -13,6 +13,9 @@ RECIPE("chemical-plant"):set_enabled()
 RECIPE("mixer"):set_enabled()
 --RECIPE("genlab"):set_enabled()
 
+RECIPE("fawogae").hidden = false
+data.raw["assembling-machine"]["fawogae-plantation"].fixed_recipe = nil
+
 data.raw["assembling-machine"]["bio-reactor"]["fluid_boxes"] = {
     --North
     {

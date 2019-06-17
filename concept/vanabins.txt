@@ -1,4 +1,5 @@
 Idee: Fliegenpilz, der Vanadium konzentriert und zu Vanabins verarbeitet wird
+Balancing: 
 
 Pyanodons Weg:
 
@@ -14,3 +15,8 @@ Pyanodons Weg:
 3 Grade 1 Tin ^= 7,5 Tin Ore (1350 kJ) + 3600 kJ Jaw Crusher + 675 kJ Automatic Screener = 5625 kJ
 
 50 Tailings dust ^= 83,3 Stone (15 MJ), 600 kJ und viele nervige Nebenprodukte
+______________
+=54697 kJ oder 52222 kJ (pyro)
+
+~550 kJ / Vanabins
+
