@@ -131,12 +131,12 @@ RECIPE {
     name = "biomass-dry",
     category = "evaporator",
     enabled = false,
-    energy_required = 2,
+    energy_required = 5,
     ingredients = {
-        {type = "item", name = "biomass", amount = 10}
+        {type = "item", name = "biomass", amount = 30}
     },
     results = {
-        {type = "item", name = "biomass-dry", amount = 10}
+        {type = "item", name = "biomass-dry", amount = 20}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/biomass-dry.png"},

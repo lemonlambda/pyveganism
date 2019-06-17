@@ -39,7 +39,7 @@ local list_unlocks = {
     ["grow-canola"] = "oil-plants"
 }
 
-function copy_recipe(name, new_name)
+function create_recipe_clone(name, new_name)
     local copy = util.table.deepcopy(data.raw.recipe[name])
     copy.name = new_name
     data:extend({copy})
@@ -48,7 +48,7 @@ end
 
 function create_carbon_dioxide_recipe(recipe, details, unlock)
     local name = recipe .. appendix_carbon_dioxide
-    copy_recipe(recipe, name)
+    create_recipe_clone(recipe, name)
     local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"})
@@ -66,7 +66,7 @@ end
 
 function create_ash_recipe(recipe, details, unlock)
     local name = recipe .. appendix_ash
-    copy_recipe(recipe, name)
+    create_recipe_clone(recipe, name)
     local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-ash.png"})
@@ -80,7 +80,7 @@ end
 
 function create_fertilizer_recipe(recipe, details, unlock)
     local name = recipe .. appendix_fertilizer
-    copy_recipe(recipe, name)
+    create_recipe_clone(recipe, name)
     local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-fertilizer.png"})
@@ -94,7 +94,7 @@ end
 
 function create_dirty_water_recipe(recipe, details, unlock)
     local name = recipe .. appendix_dirty_water
-    copy_recipe(recipe, name)
+    create_recipe_clone(recipe, name)
     local new_recipe = RECIPE(name)
 
     table.insert(new_recipe.icons, {icon = "__pyveganism__/graphics/icons/with-dirty-water.png"})

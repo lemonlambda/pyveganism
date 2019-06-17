@@ -118,3 +118,37 @@ Pressen
 
 Vorteil: Glycerin als mögl. Nebenprodukt
 Nachteil: nur plant oil
+
+
+
+the maths:
+Lard mix: 1,5 solid fat zu 20 plant oil
+1sf : 13,33po
+
+oil palm:
+Mix: 1 : 20
+Ausbeute: 150%
+
+Kosten
+8880 kJ (growing)
+266 kJ
+150 kJ
+1,6 MJ
+50 Vacuum = 750 kJ
+200 Steam = 6 MJ
+2 MJ
+166 kJ
+187 kJ
+_________
+~20 MJ
+
+Nutzen
+3 biomass = 4,5 MJ
+2 dry biomass = 5 MJ
+30 MJ worth of lard ingredients
+->10 solid fat
+->200 plant oil
+
+
+
+

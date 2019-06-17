@@ -57,7 +57,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "canola", amount = 5}
+        {type = "item", name = "canola", amount = 10}
     },
     main_product = "canola",
     icons = {{icon = "__pyveganism__/graphics/icons/grow-canola.png"}},

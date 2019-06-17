@@ -61,7 +61,7 @@ ITEM {
 FLUID {
     type = "fluid",
     name = "impure-palm-oil",
-    icon = "__pyveganism__/graphics/icons/plant-oil.png",
+    icon = "__pyveganism__/graphics/icons/impure-palm-oil.png",
     icon_size = 64,
     default_temperature = 15,
     heat_capacity = "1KJ",
@@ -84,7 +84,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "oil-palm-fruit", amount = 5},
+        {type = "item", name = "oil-palm-fruit", amount = 10},
         {type = "item", name = "biomass", amount = 2}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/grow-oil-palm.png"}},
@@ -105,7 +105,7 @@ RECIPE {
     results = {
         {type = "item", name = "oil-palm-fruit-flesh", amount = 10},
         {type = "item", name = "oil-palm-kernel", amount = 10},
-        {type = "item", name = "biomass", amount = 2}
+        {type = "item", name = "biomass", amount = 1}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"}},
     icon_size = 64,
@@ -123,12 +123,12 @@ RECIPE {
         {type = "item", name = "oil-palm-fruit-flesh", amount = 10}
     },
     results = {
-        {type = "fluid", name = "impure-palm-oil", amount = 100},
+        {type = "fluid", name = "impure-palm-oil", amount = 170},
         {type = "item", name = "biomass-dry", amount = 1}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/oil-palm-fruit-flesh.png" }, 
-        { icon = "__pyveganism__/graphics/icons/pressing.png" }
+        {icon = "__pyveganism__/graphics/icons/oil-palm-fruit-flesh.png"},
+        {icon = "__pyveganism__/graphics/icons/pressing.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",
@@ -142,13 +142,18 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "impure-palm-oil", amount = 100}
+        {type = "fluid", name = "impure-palm-oil", amount = 170},
+        {type = "fluid", name = "vacuum", amount = 50},
+        {type = "fluid", name = "steam", amount = 200}
     },
     results = {
-        {type = "fluid", name = "plant-oil", amount = 70},
-        {type = "item", name = "solid-fat", amount = 3}
+        {type = "fluid", name = "plant-oil", amount = 120},
+        {type = "item", name = "solid-fat", amount = 5}
     },
-    icons = {{icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/impure-palm-oil.png"},
+        {icon = "__pyveganism__/graphics/icons/steam-refining.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",
     order = "aac"
@@ -206,12 +211,12 @@ RECIPE {
     },
     results = {
         {type = "item", name = "solid-fat", amount = 4},
-        {type = "fluid", name = "plant-oil", amount = 4},
-        {type = "item", name = "biomass-dry", amount = 1} 
+        {type = "fluid", name = "plant-oil", amount = 64},
+        {type = "item", name = "biomass-dry", amount = 1}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png" }, 
-        { icon = "__pyveganism__/graphics/icons/pressing.png" }
+        {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"},
+        {icon = "__pyveganism__/graphics/icons/pressing.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",

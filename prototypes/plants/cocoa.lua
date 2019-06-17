@@ -57,7 +57,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "cocoa-fruit", amount = 5},
+        {type = "item", name = "cocoa-fruit", amount = 10},
         {type = "item", name = "biomass", amount = 2}
     },
     main_product = "cocoa-fruit",

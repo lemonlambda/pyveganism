@@ -69,7 +69,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "coconut", amount = 5},
+        {type = "item", name = "coconut", amount = 10},
         {type = "item", name = "biomass", amount = 2}
     },
     icons = {{icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"}},
@@ -150,7 +150,7 @@ RECIPE {
         {type = "item", name = "biomass-dry", amount = 4}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/coconut.png"},
+        {icon = "__pyveganism__/graphics/icons/copra-halved-dry.png"},
         {icon = "__pyveganism__/graphics/icons/pressing.png"}
     },
     icon_size = 64,
@@ -173,7 +173,10 @@ RECIPE {
         {type = "item", name = "solid-fat", amount = 8},
         {type = "fluid", name = "plant-oil", amount = 100}
     },
-    icons = {{icon = "__pyveganism__/graphics/icons/copra-halved.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/coconut-butter.png"},
+        {icon = "__pyveganism__/graphics/icons/steam-refining.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-coconut",
     order = "aad"

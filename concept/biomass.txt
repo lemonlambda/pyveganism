@@ -1,0 +1,8 @@
+energy gain: 
+1 Biomass ^= 0,333 Pellets ^= 1,6 MJ
+83 kJ Evaporator
+3 kJ Automated Factory
+
+~1,5 MJ
+
+1 dry Biomass ~ 2,5 MJ
