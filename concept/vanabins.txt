@@ -1,5 +1,5 @@
 Idee: Fliegenpilz, der Vanadium konzentriert und zu Vanabins verarbeitet wird
-Balancing: 
+Balancing: Teuer aufzusetzen, danach langsam aber billig, sehr hoher Wasserverbrauch
 
 Pyanodons Weg:
 
@@ -19,4 +19,14 @@ ______________
 =54697 kJ oder 52222 kJ (pyro)
 
 ~550 kJ / Vanabins
+
+Sporen
+Werden aus tonnenweise Erde extrahiert
+
+Myzel
+Wird aus den Sporen und teuren Medien kultiviert, niedrige Chance auf Erfolg
+
+Pilze
+Werden in Fawogae-Plantagen aus Myzel erhalten, niedrige Chance, dass das Myzel verloren geht
+
 

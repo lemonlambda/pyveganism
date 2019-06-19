@@ -1,5 +1,5 @@
 local testicons = {
-    
+    "mycel"
 }
 
 for i, icon in pairs(testicons) do
