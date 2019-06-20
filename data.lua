@@ -14,6 +14,8 @@ require("prototypes.plants.canola")
 
 require("prototypes.microorganisms.solfaen")
 
+require("prototypes.fungi.atztazzae")
+
 if mods["pyhightech"] then
     require("prototypes.microorganisms.fiicorum")
     require("prototypes.microorganisms.zirrella")

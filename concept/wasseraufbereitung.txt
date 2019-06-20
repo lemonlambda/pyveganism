@@ -1,0 +1,15 @@
+Mehrere Stufen
+
+1. Abtöten von Keimen
+
+2. Filtern von Feststoffpartikeln
+
+3. Deionisierung
+
+4. Reinstwasser (Ultra Pure Water)
+
+Das häufigste Verfahren zur Herstellung von Reinstwasser ist die Umkehrosmose, seltener die Destillation. 
+Beide Verfahren werden kombiniert mit weiteren Reinigungsverfahren wie Ionentauscher, Aktivkohlefilter, 
+Ultrafiltration, Photooxidation, Entgasungsverfahren (Vakuumentgasung, Membranentgasung), 
+Entkeimung durch UV-Bestrahlung, Elektrochemische Deionisation.
+(engl. Wikipedia ist ausführlicher)

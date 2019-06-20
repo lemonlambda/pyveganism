@@ -8,7 +8,7 @@ data:extend {
         icon = "__pyveganism__/graphics/icons/item-group.png",
         icon_size = 144
     },
-    --items/fluids
+    --general
     {
         type = "item-subgroup",
         name = "py-veganism-plants",
@@ -26,6 +26,12 @@ data:extend {
         name = "py-veganism-biomass",
         group = "py-veganism",
         order = "aac"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-media",
+        group = "py-veganism",
+        order = "aba"
     },
     --recipes
     {
@@ -87,5 +93,11 @@ data:extend {
         name = "py-veganism-soja",
         group = "py-veganism",
         order = "bbee"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-atztazzae",
+        group = "py-veganism",
+        order = "bbf"
     } 
 }
