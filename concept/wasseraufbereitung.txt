@@ -13,3 +13,19 @@ Beide Verfahren werden kombiniert mit weiteren Reinigungsverfahren wie Ionentaus
 Ultrafiltration, Photooxidation, Entgasungsverfahren (Vakuumentgasung, Membranentgasung), 
 Entkeimung durch UV-Bestrahlung, Elektrochemische Deionisation.
 (engl. Wikipedia ist ausführlicher)
+
+
+___1. Sterilisierung___
+
+Sterilisierung durch Abkochen
+
+Steam: 
+Wasser + 150°C + Übergang Gas ^= 30 kJ
+
+reale Welt: 
+Verdampfungsenthalpie für 1 kg Wasser: 2088 kJ
+Energie für +150°C: 630 kJ
+insgesamt: 2718 kJ
+
+theoretisch entspricht also 1 ingame-Wasser 11 g Wasser
+theoretisch entspricht also das Erwärmen um 75°C von 1 ingame Wasser 3,465 kJ

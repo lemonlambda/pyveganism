@@ -1,11 +1,57 @@
 TECHNOLOGY {
     type = "technology",
     name = "growth-media-1",
-    icon = "__pyveganism__/graphics/technology/growth-media-1.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/technology/growth-media.png"},
+        {icon = "__pyveganism__/graphics/technology/tech-1.png"}
+    },
     icon_size = 128,
     order = "c-a",
     upgrade = false,
-    prerequisites = {"coal-processing-3"},
+    prerequisites = {"coal-processing-1"},
+    effects = {},
+    unit = {
+        count = 100,
+        ingredients = {
+            {"automation-science-pack", 1}
+        },
+        time = 30
+    }
+}
+
+TECHNOLOGY {
+    type = "technology",
+    name = "growth-media-2",    
+    icons = {
+        {icon = "__pyveganism__/graphics/technology/growth-media.png"},
+        {icon = "__pyveganism__/graphics/technology/tech-2.png"}
+    },
+    icon_size = 128,
+    order = "c-a",
+    upgrade = false,
+    prerequisites = {"growth-media-1"},
+    effects = {},
+    unit = {
+        count = 100,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1}
+        },
+        time = 30
+    }
+}
+
+TECHNOLOGY {
+    type = "technology",
+    name = "growth-media-3",
+    icons = {
+        {icon = "__pyveganism__/graphics/technology/growth-media.png"},
+        {icon = "__pyveganism__/graphics/technology/tech-3.png"}
+    },
+    icon_size = 128,
+    order = "c-a",
+    upgrade = false,
+    prerequisites = {"growth-media-2"},
     effects = {},
     unit = {
         count = 100,
@@ -18,10 +64,37 @@ TECHNOLOGY {
     }
 }
 
+TECHNOLOGY {
+    type = "technology",
+    name = "growth-media-4",
+    icons = {
+        {icon = "__pyveganism__/graphics/technology/growth-media.png"},
+        {icon = "__pyveganism__/graphics/technology/tech-4.png"}
+    },
+    icon_size = 128,
+    order = "c-a",
+    upgrade = false,
+    prerequisites = {"growth-media-3"},
+    effects = {},
+    unit = {
+        count = 100,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1}, 
+            {"chemical-science-pack", 1},
+            {"production-science-pack", 1}
+        },
+        time = 30
+    }
+}
+
 FLUID {
     type = "fluid",
     name = "sterile-water",
-    icon = "__pyveganism__/graphics/icons/sterile-water.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/1.png"}
+    },
     icon_size = 64,
     default_temperature = 15,
     heat_capacity = "1KJ",
@@ -36,7 +109,10 @@ FLUID {
 FLUID {
     type = "fluid",
     name = "clean-water",
-    icon = "__pyveganism__/graphics/icons/clean-water.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/2.png"}
+    },
     icon_size = 64,
     default_temperature = 15,
     heat_capacity = "1KJ",
@@ -51,7 +127,10 @@ FLUID {
 FLUID {
     type = "fluid",
     name = "deionized-water",
-    icon = "__pyveganism__/graphics/icons/deionized-water.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/3.png"}
+    },
     icon_size = 64,
     default_temperature = 15,
     heat_capacity = "1KJ",
@@ -66,7 +145,10 @@ FLUID {
 FLUID {
     type = "fluid",
     name = "ultra-pure-water",
-    icon = "__pyveganism__/graphics/icons/ultra-pure-water.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/4.png"}
+    },
     icon_size = 64,
     default_temperature = 15,
     heat_capacity = "1KJ",
@@ -78,46 +160,14 @@ FLUID {
     subgroup = "py-veganism-media"
 }
 
---sterile water recipes
-RECIPE {
-    type = "recipe",
-    name = "sterile-water-boiling",
-    category = "hpf",
+ITEM {
+    type = "item",
+    name = "porous-membrane",
     enabled = false,
-    energy_required = 0.5,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 500},
-    },
-    results = {
-        {type = "fluid", name = "deionized-water", amount = 450}, 
-        {type = "fluid", name = "dirty-water", amount = 50}
-    },
-    icon = "__pyveganism__/graphics/icons/atztazzae-mycel.png",
+    icon = "__pyveganism__/graphics/icons/washing.png",
     icon_size = 64,
+    flags = {},
     subgroup = "py-veganism-media",
-    order = "aab"
-}:add_unlock("vanadium-processing")
-
---clean water recipes
-
-
---deionized water recipes
-RECIPE {
-    type = "recipe",
-    name = "reverse-osmosis",
-    category = "fluid-separator",
-    enabled = false,
-    energy_required = 20,
-    ingredients = {
-        {type = "fluid", name = "clean-water", amount = 500},
-        {type = "item", name = "porous-membrane", amount = 1}
-    },
-    results = {
-        {type = "fluid", name = "deionized-water", amount = 450}, 
-        {type = "fluid", name = "saline-water", amount = 50}
-    },
-    icon = "__pyveganism__/graphics/icons/atztazzae-mycel.png",
-    icon_size = 64,
-    subgroup = "py-veganism-media",
-    order = "aab"
-}:add_unlock("vanadium-processing")
+    order = "aca",
+    stack_size = 200
+}
