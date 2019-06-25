@@ -23,13 +23,13 @@ RECIPE {
 if mods["pyrawores"] then
     RECIPE {
         type = "recipe",
-        name = "sterile-water-chlor",
+        name = "sterile-water-chlorine",
         category = "chemistry",
         enabled = false,
         energy_required = 0.5,
         ingredients = {
             {type = "fluid", name = "water", amount = 600},
-            {type = "fluid", name = "chlor", amount = 10}
+            {type = "fluid", name = "chlorine", amount = 10}
         },
         results = {
             {type = "fluid", name = "sterile-water", amount = 600}
@@ -40,7 +40,7 @@ if mods["pyrawores"] then
         },
         icon_size = 64,
         subgroup = "py-veganism-media",
-        order = "aaa"
+        order = "aac"
     }:add_unlock("growth-media-1")
 end
 
@@ -63,7 +63,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "aaa"
+    order = "aab"
 }:add_unlock("growth-media-1")
 
 --clean water recipes
@@ -95,11 +95,11 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "semipermeable-membrane",
-    category = "crafting-with-fluids",
+    category = "crafting-with-fluid",
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "fluid", name = "syn-gas", amount = 100},
+        {type = "fluid", name = "syngas", amount = 100},
         {type = "item", name = "plastic-bar", amount = 3}
     },
     results = {
@@ -115,7 +115,7 @@ if mods["pyhightech"] then
     RECIPE {
         type = "recipe",
         name = "semipermeable-membrane",
-        category = "crafting-with-fluids",
+        category = "crafting-with-fluid",
         enabled = false,
         energy_required = 1,
         ingredients = {
