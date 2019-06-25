@@ -162,9 +162,9 @@ FLUID {
 
 ITEM {
     type = "item",
-    name = "porous-membrane",
+    name = "semipermeable-membrane",
     enabled = false,
-    icon = "__pyveganism__/graphics/icons/washing.png",
+    icon = "__pyveganism__/graphics/icons/semipermeable-membrane.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-media",

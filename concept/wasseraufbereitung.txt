@@ -29,3 +29,5 @@ insgesamt: 2718 kJ
 
 theoretisch entspricht also 1 ingame-Wasser 11 g Wasser
 theoretisch entspricht also das Erwärmen um 75°C von 1 ingame Wasser 3,465 kJ
+
+1 Steriles Wasser := 20 kJ (ab hpf crafting speed 6 wird es unrealistisch)

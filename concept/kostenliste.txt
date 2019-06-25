@@ -36,6 +36,9 @@ Eigene Sachen:
 1200 kJ pro dried Solfaen
 1240 kJ pro washed Solfaen
 1300 kJ pro agarose gel
+20 kJ pro sterile water (boiling)
+10 kJ pro sterile water (Chlor)
+2 kJ pro sterile water (Chlordioxid)
 
 
 Energiesachen:

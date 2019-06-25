@@ -32,7 +32,10 @@ RECIPE {
     results = {
         {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.025}, 
     },
-    icon = "__pyveganism__/graphics/icons/atztazzae-mycel.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/atztazzae-mushroom.png"}, 
+        {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-atztazzae",
     order = "aab"
@@ -52,7 +55,10 @@ RECIPE {
     results = {
         {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.05}, 
     },
-    icon = "__pyveganism__/graphics/icons/atztazzae-mycel.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/atztazzae-mushroom.png"}, 
+        {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
+    },    
     icon_size = 64,
     subgroup = "py-veganism-atztazzae",
     order = "aab"
@@ -72,7 +78,10 @@ RECIPE {
     results = {
         {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.1}, 
     },
-    icon = "__pyveganism__/graphics/icons/atztazzae-mycel.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/atztazzae-mushroom.png"}, 
+        {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-atztazzae",
     order = "aab"

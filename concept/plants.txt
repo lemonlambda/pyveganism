@@ -15,9 +15,11 @@ Pflanzen mit kurzkettigen Zuckern -> Zuckerhaltige Medien für MO?
     Apfel, Birne
     Litschi, Ananas, Banane, Zitrone, Orange
     Mais
+    Zuckerrohr, Zuckerrüben
 
 Pflanzen mit langkettigen Zuckern -> Zuckerhaltige Medien und Biokunststoffe?
     Kartoffeln
     Süßkartoffeln
     Bohnen
     Getreidearten
+    Reis

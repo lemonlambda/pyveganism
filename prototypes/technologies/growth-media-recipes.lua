@@ -6,10 +6,10 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "water", amount = 500},
+        {type = "fluid", name = "water", amount = 150}
     },
     results = {
-        {type = "fluid", name = "sterile-water", amount = 500}
+        {type = "fluid", name = "sterile-water", amount = 150}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},
@@ -20,8 +20,53 @@ RECIPE {
     order = "aaa"
 }:add_unlock("growth-media-1")
 
---clean water recipes
+if mods["pyrawores"] then
+    RECIPE {
+        type = "recipe",
+        name = "sterile-water-chlor",
+        category = "chemistry",
+        enabled = false,
+        energy_required = 0.5,
+        ingredients = {
+            {type = "fluid", name = "water", amount = 600},
+            {type = "fluid", name = "chlor", amount = 10}
+        },
+        results = {
+            {type = "fluid", name = "sterile-water", amount = 600}
+        },
+        icons = {
+            {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+            {icon = "__pyveganism__/graphics/icons/toxic-stress.png"}
+        },
+        icon_size = 64,
+        subgroup = "py-veganism-media",
+        order = "aaa"
+    }:add_unlock("growth-media-1")
+end
 
+RECIPE {
+    type = "recipe",
+    name = "sterile-water-chlorate",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 0.5,
+    ingredients = {
+        {type = "fluid", name = "water", amount = 1600},
+        {type = "item", name = "sodium-chlorate", amount = 1}
+    },
+    results = {
+        {type = "fluid", name = "sterile-water", amount = 1600}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/toxic-stress.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "aaa"
+}:add_unlock("growth-media-1")
+
+--clean water recipes
 
 --deionized water recipes
 RECIPE {
@@ -32,10 +77,10 @@ RECIPE {
     energy_required = 20,
     ingredients = {
         {type = "fluid", name = "clean-water", amount = 500},
-        {type = "item", name = "porous-membrane", amount = 1}
+        {type = "item", name = "semipermeable-membrane", amount = 1}
     },
     results = {
-        {type = "fluid", name = "deionized-water", amount = 450}, 
+        {type = "fluid", name = "deionized-water", amount = 450},
         {type = "fluid", name = "water-saline", amount = 50}
     },
     icons = {
@@ -47,5 +92,43 @@ RECIPE {
     order = "aca"
 }:add_unlock("growth-media-3")
 
+RECIPE {
+    type = "recipe",
+    name = "semipermeable-membrane",
+    category = "crafting-with-fluids",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "syn-gas", amount = 100},
+        {type = "item", name = "plastic-bar", amount = 3}
+    },
+    results = {
+        {type = "item", name = "semipermeable-membrane", amount = 2}
+    },
+    icon = "__pyveganism__/graphics/icons/semipermeable-membrane.png",
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "acba"
+}:add_unlock("growth-media-3")
+
+if mods["pyhightech"] then
+    RECIPE {
+        type = "recipe",
+        name = "semipermeable-membrane",
+        category = "crafting-with-fluids",
+        enabled = false,
+        energy_required = 1,
+        ingredients = {
+            {type = "item", name = "nylon", amount = 3}
+        },
+        results = {
+            {type = "item", name = "semipermeable-membrane", amount = 20}
+        },
+        icon = "__pyveganism__/graphics/icons/semipermeable-membrane.png",
+        icon_size = 64,
+        subgroup = "py-veganism-media",
+        order = "acbb"
+    }:add_unlock("growth-media-3")
+end
 
 --ultra pure water recipes
