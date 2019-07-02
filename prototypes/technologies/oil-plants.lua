@@ -21,6 +21,9 @@ ITEM {
     type = "item",
     name = "solid-fat",
     enabled = false,
+    fuel_category = "chemical",
+    fuel_value = "2MJ",
+    fuel_emissions_multiplier = 4,
     icon = "__pyveganism__/graphics/icons/solid-fat.png",
     icon_size = 64,
     flags = {},
@@ -32,6 +35,7 @@ ITEM {
 FLUID {
     type = "fluid",
     name = "plant-oil",
+    fuel_value = "1MJ", --makes it possible to burn it in pyph oil boiler
     icon = "__pyveganism__/graphics/icons/plant-oil.png",
     icon_size = 64,
     default_temperature = 15,

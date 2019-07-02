@@ -29,7 +29,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "canola-seed", amount = 20},
-        {type = "item", name = "biomass", amount = 5}
+        {type = "item", name = "plant-residues", amount = 5}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/canola.png"},
@@ -72,7 +72,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "canola-seed-peeled", amount = 20},
-        {type = "item", name = "biomass-dry", amount = 1}
+        {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/canola-seed.png"},
@@ -94,7 +94,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "plant-oil", amount = 113},
-        {type = "item", name = "biomass-dry", amount = 1}
+        {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/canola.png"},

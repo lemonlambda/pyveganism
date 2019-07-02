@@ -36,7 +36,6 @@ if mods["pyhightech"] then
     for _, concept in pairs(pyht_concepts) do
         table.insert(enabled_concepts, concept)
     end
-    table.each(pyht_concepts, function(v) table.insert(enabled_concepts, v) end)
 end
 
 for _, concept in pairs(enabled_concepts) do

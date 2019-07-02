@@ -13,7 +13,8 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},
-        {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
+        {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"},
+        {icon = "__pyveganism__/graphics/icons/1.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
@@ -36,7 +37,8 @@ if mods["pyrawores"] then
         },
         icons = {
             {icon = "__pyveganism__/graphics/icons/water-drop.png"},
-            {icon = "__pyveganism__/graphics/icons/toxic-stress.png"}
+            {icon = "__pyveganism__/graphics/icons/toxic-stress.png"},
+            {icon = "__pyveganism__/graphics/icons/1.png"}
         },
         icon_size = 64,
         subgroup = "py-veganism-media",
@@ -59,7 +61,8 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},
-        {icon = "__pyveganism__/graphics/icons/toxic-stress.png"}
+        {icon = "__pyveganism__/graphics/icons/toxic-stress.png"},
+        {icon = "__pyveganism__/graphics/icons/1.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
@@ -67,6 +70,28 @@ RECIPE {
 }:add_unlock("growth-media-1")
 
 --clean water recipes
+RECIPE {
+    type = "recipe",
+    name = "clean-water-purification",
+    category = "fluid-separator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "sterile-water", amount = 500},
+        {type = "item", name = "rake", amount = 1}
+    },
+    results = {
+        {type = "fluid", name = "clean-water", amount = 500}, 
+        {type = "item", name = "clogged-rake", amount = 1}, 
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/2.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "aba"
+}:add_unlock("growth-media-2")
 
 --deionized water recipes
 RECIPE {
@@ -74,7 +99,7 @@ RECIPE {
     name = "reverse-osmosis",
     category = "fluid-separator",
     enabled = false,
-    energy_required = 20,
+    energy_required = 5,
     ingredients = {
         {type = "fluid", name = "clean-water", amount = 500},
         {type = "item", name = "semipermeable-membrane", amount = 1}
@@ -114,7 +139,7 @@ RECIPE {
 if mods["pyhightech"] then
     RECIPE {
         type = "recipe",
-        name = "semipermeable-membrane",
+        name = "semipermeable-membrane-nylon",
         category = "crafting-with-fluid",
         enabled = false,
         energy_required = 1,

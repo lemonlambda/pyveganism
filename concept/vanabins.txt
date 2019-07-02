@@ -41,3 +41,25 @@ solid fat
 purified water 1
 atztazzae spore
 
+Clean Water Recipe: 
+40 Versuche für ein Myzel
+
+Sporen
+400 Organic matter ^= 20640 kJ
+40 lens ^= 720800 kJ
+40 agarose gel ^= 52000 kJ
+
+4000 clean water ^= kA
+800 Soil ^= 91200 kJ
+400 dry biomass ^= 1000000 kJ fuel value
+200 solid fat ^= 200000 kJ
+
+2084640 kJ pro Myzel
+
+1 Myzel erzeugt nach Erwartungswert 40000 atztazzae-mushrooms (1000 grow-cycles)
+Fawogae-plant: 13320000 kJ
+Pressured water: 3750000 kJ
+
+19154640 kJ für 40000 shrooms
+~480 kJ pro shroom
+-> 2 Vanabins pro shroom

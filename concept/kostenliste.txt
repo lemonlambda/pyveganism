@@ -3,6 +3,11 @@
 1873 kJ pro Ralesia
 1215 kJ pro Ralesia Seed
 2000 kJ pro Limestone (im Soil Extractor, billiger im Solid Separator)
+2525 kJ pro Lime
+850 kJ pro Calcium Carbide
+54,5 kJ pro Acetylene (1/2 Acetylene, Slacked Lime)
+218 kJ pro Slacked Lime
+
 2580 kJ pro Log (Wasserrezept)
 756 kJ pro Wood
 51,6 kJ pro Organic Matter (aus Logs)
@@ -11,6 +16,10 @@
 180 kJ pro Coal aus Ore
 420 kJ pro Coke aus Ore aus HPF
 450 kJ pro Coke aus Ore aus DDC (minus Coal Gas, Tar und Iron Oxide)
+150 kJ pro Coke aus DDC (1/3 Coke, Coal Gas, Tar)
+3 kJ pro Tar aus DDC
+7,5 kJ pro Creosote
+3,75 kJ pro Coal Gas aus DDC
 5094 kJ pro Bone Meal aus Ulrics
 166 kJ pro Urea aus Fawogae
 15 kJ pro Vacuum
@@ -29,6 +38,19 @@
 673 kJ pro Chlor aus Tholin
 400 kJ pro Salt
 3300 kJ pro Sodium Chlorate
+491 kJ pro Fawogae Substrate
+8250 kJ pro Stone Wool (recipe stone, steam)
+5700 kJ pro Stone Wool (recipe gravel, creosote)
+42 kJ pro Saline Water (stone washing)
+44,2 kJ pro Saline Water (Salz)
+4,8 kJ pro Saline Water (Quenching, plus mega viele Nebenprodukte)
+41532 kJ pro Zipir Carcass
+819 kJ pro Treated Wood
+1133 kJ pro Clay
+2680 kJ pro Raw Fiber (Soil recipe)
+
+312 kJ pro tailings dust (wahrscheinlich wesentlich billiger, weil es normalerweise nervige Nebenprodukte verwendet)
+
 
 
 Eigene Sachen: 
@@ -39,6 +61,12 @@ Eigene Sachen:
 20 kJ pro sterile water (boiling)
 10 kJ pro sterile water (Chlor)
 2 kJ pro sterile water (Chlordioxid)
+
+
+Fuel Values: 
+2500 kJ dry biomass
+1500 kJ biomass
+5000 kJ biomass pellets
 
 
 Energiesachen:
@@ -58,3 +86,4 @@ Bio Reactor: 400 kW
 Filter: 100 kW, 0,75 -> 133 kW per s
 Electrolyzer: 800 kW, 0,5 -> 1600 kW per s
 Destructive Distillation Column: 300 kW
+Quenching Tower: 300 kW

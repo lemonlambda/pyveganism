@@ -1,2 +1,28 @@
 Industrially, L-serine is produced from glycine and methanol catalyzed by hydroxymethyltransferase.
 
+py: 
+1 Kmaut ration -> 10 serine
+
+pyht und pyro
+3 Kmaut ration <- 5 Lard + 5 Blood meal + 50 Skin + 2 Tin
+
+1 Blood meal <- 2 Fiberboard + 15 Blood
+
+1 Zipir Carcass -> 5 Bones + 15 Skin + 7 Meat + 60 Blood
+
+1 Zipir Carcass <- 10 Fawogae Substrate + 3 Stone Wool + 200 Saline Water + 300 Pressured Water
+
+
+
+nur pycp und pyfe
+3 Kmaut ration <- 5 Lard + 15 Ralesia + 50 Organic matter + 2 Iron plate
+
+
+Idee: 
+Stufe 1: Extraktion aus Proteinreichen Pflanzen wie Soja, Sesam, etc. 
+
+Stufe 2: Fermentation von proteinreichem Medium mit einem MO
+
+Stufe 3: Fermentation von proteinreichem Medium mit einem GMO
+
+evtl. Stufe 4: Fermentation von Glycin mit einem GMO

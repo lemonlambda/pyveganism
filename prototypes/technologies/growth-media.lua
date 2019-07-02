@@ -162,6 +162,30 @@ FLUID {
 
 ITEM {
     type = "item",
+    name = "rake",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/vegan.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-media",
+    order = "aca",
+    stack_size = 200
+}
+
+ITEM {
+    type = "item",
+    name = "clogged-rake",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/vegan.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-media",
+    order = "aca",
+    stack_size = 200
+}
+
+ITEM {
+    type = "item",
     name = "semipermeable-membrane",
     enabled = false,
     icon = "__pyveganism__/graphics/icons/semipermeable-membrane.png",

@@ -7,7 +7,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "plant-oil", amount = 100},
         {type = "fluid", name = "water", amount = 500},
-        {type = "item", name = "biomass-pellets", amount = 3}
+        {type = "item", name = "plant-residues-pellets", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
@@ -22,18 +22,18 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "biomass-pellets",
+    name = "plant-residues-pellets",
     category = "crafting",
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "biomass-dry", amount = 10}
+        {type = "item", name = "plant-residues-dry", amount = 10}
     },
     results = {
-        {type = "item", name = "biomass-pellets", amount = 5}
+        {type = "item", name = "plant-residues-pellets", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/biomass-pellets.png"}
+        {icon = "__pyveganism__/graphics/icons/plant-residues-pellets.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-biomass",
@@ -42,21 +42,60 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "biomass-dry",
+    name = "plant-residues-dry",
     category = "evaporator",
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "biomass", amount = 30}
+        {type = "item", name = "plant-residues", amount = 30}
     },
     results = {
-        {type = "item", name = "biomass-dry", amount = 20}
+        {type = "item", name = "plant-residues-dry", amount = 20}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/biomass-dry.png"},
+        {icon = "__pyveganism__/graphics/icons/plant-residues-dry.png"},
         {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-biomass",
     order = "aab"
+}:add_unlock("biomass")
+
+RECIPE {
+    type = "recipe",
+    name = "plant-residues-to-organics",
+    category = "crafting",
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "item", name = "plant-residues-dry", amount = 2}
+    },
+    results = {
+        {type = "item", name = "organics", amount = 50}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/plant-residues-dry.png"},
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-biomass",
+    order = "aac"
+}:add_unlock("biomass")
+
+RECIPE {
+    type = "recipe",
+    name = "plant-residues-to-carbon-dioxide",
+    category = "hpf",
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+        {type = "item", name = "plant-residues-pellets", amount = 5}
+    },
+    results = {
+        {type = "fluid", name = "carbon-dioxide", amount = 1000}
+    },
+    icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
+    icon_size = 32,
+    subgroup = "py-veganism-biomass",
+    order = "aad"
 }:add_unlock("biomass")

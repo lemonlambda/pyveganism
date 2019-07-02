@@ -10,7 +10,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "oil-palm-fruit", amount = 10},
-        {type = "item", name = "biomass", amount = 2}
+        {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "oil-palm-fruit",
     icons = {{icon = "__pyveganism__/graphics/icons/grow-oil-palm.png"}},
@@ -31,7 +31,7 @@ RECIPE {
     results = {
         {type = "item", name = "oil-palm-fruit-flesh", amount = 10},
         {type = "item", name = "oil-palm-kernel", amount = 10},
-        {type = "item", name = "biomass", amount = 7}
+        {type = "item", name = "plant-residues", amount = 7}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"}, 
@@ -53,7 +53,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "impure-palm-oil", amount = 170},
-        {type = "item", name = "biomass-dry", amount = 1}
+        {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/oil-palm-fruit-flesh.png"},
@@ -142,7 +142,7 @@ RECIPE {
     results = {
         {type = "item", name = "solid-fat", amount = 4},
         {type = "fluid", name = "plant-oil", amount = 64},
-        {type = "item", name = "biomass-dry", amount = 1}
+        {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/oil-palm-kernel-open.png"},

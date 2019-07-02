@@ -10,7 +10,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "coconut", amount = 10},
-        {type = "item", name = "biomass", amount = 2}
+        {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "coconut",
     icons = {{icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"}},
@@ -30,7 +30,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "copra", amount = 20},
-        {type = "item", name = "biomass-dry", amount = 4}
+        {type = "item", name = "plant-residues-dry", amount = 4}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/coconut.png"}, 
@@ -94,7 +94,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "coconut-butter", amount = 10},
-        {type = "item", name = "biomass-dry", amount = 4}
+        {type = "item", name = "plant-residues-dry", amount = 4}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/copra-halved-dry.png"},

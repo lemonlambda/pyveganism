@@ -31,3 +31,20 @@ theoretisch entspricht also 1 ingame-Wasser 11 g Wasser
 theoretisch entspricht also das Erwärmen um 75°C von 1 ingame Wasser 3,465 kJ
 
 1 Steriles Wasser := 20 kJ (ab hpf crafting speed 6 wird es unrealistisch)
+
+
+Chlorung mit Chlor oder Chlordioxid
+-> 10 kJ / 2 kJ pro sterilem Wasser, wesentlich schneller/kompakter
+
+
+__2. Klären__
+
+Orientierung an den Schritten der Abwasserbehandlung
+
+In einem Prozess, weil die 4 Reinheitsstufen schon komplex genug sind :)
+
+Dinge, um den Spieler zu nerven: 
+    Rechen, die gesäubert werden müssen
+    Nervige Nebenprodukte aus den mechanischen Stufen: Soil, Sand, Stone, Wood, plant residues, ... mit Wahrscheinlichkeiten
+    Klärschlamm als flüssiges Abprodukt
+    Mikroorganismen für die biologische Stufe

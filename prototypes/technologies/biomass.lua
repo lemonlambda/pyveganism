@@ -19,9 +19,9 @@ TECHNOLOGY {
 
 ITEM {
     type = "item",
-    name = "biomass",
+    name = "plant-residues",
     enabled = false,
-    icon = "__pyveganism__/graphics/icons/biomass.png",
+    icon = "__pyveganism__/graphics/icons/plant-residues.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
@@ -31,11 +31,11 @@ ITEM {
 
 ITEM {
     type = "item",
-    name = "biomass-dry",
+    name = "plant-residues-dry",
     enabled = false,
     fuel_value = "1.5MJ",
     fuel_category = "chemical",
-    icon = "__pyveganism__/graphics/icons/biomass-dry.png",
+    icon = "__pyveganism__/graphics/icons/plant-residues-dry.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
@@ -45,11 +45,11 @@ ITEM {
 
 ITEM {
     type = "item",
-    name = "biomass-pellets",
+    name = "plant-residues-pellets",
     enabled = false,
     fuel_value = "5MJ",
     fuel_category = "chemical",
-    icon = "__pyveganism__/graphics/icons/biomass-pellets.png",
+    icon = "__pyveganism__/graphics/icons/plant-residues-pellets.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",

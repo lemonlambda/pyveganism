@@ -10,7 +10,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "cocoa-fruit", amount = 10},
-        {type = "item", name = "biomass", amount = 2}
+        {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "cocoa-fruit",
     icons = {{icon = "__pyveganism__/graphics/icons/grow-cocoa.png"}},
@@ -74,7 +74,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "cocoa-beans", amount = 10},
-        {type = "item", name = "biomass-dry", amount = 1}
+        {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/cocoa-beans.png"}, 
@@ -96,7 +96,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "solid-fat", amount = 5},
-        {type = "item", name = "biomass-dry", amount = 1}
+        {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/cocoa-beans.png"},
