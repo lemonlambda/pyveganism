@@ -21,9 +21,13 @@ local enabled_concepts = {
     --
     --microorganisms
     "microorganisms.solfaen",
+    "microorganisms.sludge",
     --
     --fungi
-    "fungi.atztazzae"
+    "fungi.atztazzae",
+    --
+    --miscellaneous
+    "misc.handcrafting"
 }
 
 if mods["pyhightech"] then

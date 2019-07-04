@@ -26,7 +26,7 @@ ITEM {
     type = "item",
     name = "atztazzae-mushroom",
     enabled = false,
-    icon = "__pyveganism__/graphics/icons/atztazzae-mycel.png",
+    icon = "__pyveganism__/graphics/icons/atztazzae-mushroom.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-atztazzae",

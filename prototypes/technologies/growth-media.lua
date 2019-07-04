@@ -126,6 +126,40 @@ FLUID {
 
 FLUID {
     type = "fluid",
+    name = "activated-sludge",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/vegan.png"}
+    },
+    icon_size = 64,
+    default_temperature = 15,
+    heat_capacity = "1KJ",
+    base_color = {r = 0.5, g = 0.05, b = 0.1},
+    flow_color = {r = 0.5, g = 0.05, b = 0.1},
+    max_temperature = 100,
+    pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.59,
+    subgroup = "py-veganism-media"
+}
+
+FLUID {
+    type = "fluid",
+    name = "sewage-sludge",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/vegan.png"}
+    },
+    icon_size = 64,
+    default_temperature = 15,
+    heat_capacity = "1KJ",
+    base_color = {r = 0.5, g = 0.05, b = 0.1},
+    flow_color = {r = 0.5, g = 0.05, b = 0.1},
+    max_temperature = 100,
+    pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.59,
+    subgroup = "py-veganism-media"
+}
+
+FLUID {
+    type = "fluid",
     name = "deionized-water",
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},

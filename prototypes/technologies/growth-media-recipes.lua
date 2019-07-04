@@ -78,11 +78,14 @@ RECIPE {
     energy_required = 1,
     ingredients = {
         {type = "fluid", name = "sterile-water", amount = 500},
-        {type = "item", name = "rake", amount = 1}
+        {type = "fluid", name = "activated-sludge", amount = 20},
+        {type = "item", name = "rake", amount = 1}, 
     },
     results = {
         {type = "fluid", name = "clean-water", amount = 500}, 
+        {type = "fluid", name = "sewage-sludge", amount = 20},
         {type = "item", name = "clogged-rake", amount = 1}, 
+        {type = "item", name = "sand", amount = 5}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},
@@ -90,7 +93,55 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "aba"
+    order = "abaa"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "clean-rake",
+    category = "washer",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "clean-water", amount = 100},
+        {type = "item", name = "clogged-rake", amount = 1}
+    },
+    results = {
+        {type = "fluid", name = "dirty-water", amount = 100}, 
+        {type = "item", name = "rake", amount = 1}, 
+        {type = "item", name = "stone", amount = 5, probability = 0.05}, 
+        {type = "item", name = "log", amount = 1, probability = 0.02}, 
+        {type = "item", name = "plant-residues", amount = 10, probability = 0.1}, 
+        {type = "item", name = "plastic-bar", amount = 1, probability = 0.05}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/clogged-rake.png"},
+        {icon = "__pyveganism__/graphics/icons/washing.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abaa"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "rake",
+    category = "crafting",
+    enabled = false,
+    energy_required = 0.5,
+    ingredients = {
+        {type = "fluid", name = "iron-stick", amount = 200},
+        {type = "item", name = "steel", amount = 5}
+    },
+    results = {
+        {type = "item", name = "rake", amount = 1},
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/rake.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abb"
 }:add_unlock("growth-media-2")
 
 --deionized water recipes

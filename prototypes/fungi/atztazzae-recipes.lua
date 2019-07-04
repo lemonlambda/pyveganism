@@ -111,7 +111,8 @@ RECIPE {
     },
     results = {
         {type = "item", name = "atztazzae-mushroom", amount = 40}, 
-        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.999}
+        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.999}, 
+        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.001}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/atztazzae-mushroom.png"},
@@ -143,5 +144,5 @@ RECIPE {
     },
     icon_size = 32,
     subgroup = "py-veganism-atztazzae",
-    order = "aac"
+    order = "aad"
 }:add_unlock("vanadium-processing")
