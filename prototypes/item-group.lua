@@ -33,6 +33,12 @@ data:extend {
         group = "py-veganism",
         order = "aba"
     },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-samples",
+        group = "py-veganism",
+        order = "aca"
+    },
     --recipes
     {
         type = "item-subgroup",

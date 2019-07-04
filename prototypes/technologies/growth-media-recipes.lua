@@ -130,8 +130,8 @@ RECIPE {
     enabled = false,
     energy_required = 0.5,
     ingredients = {
-        {type = "fluid", name = "iron-stick", amount = 200},
-        {type = "item", name = "steel", amount = 5}
+        {type = "item", name = "iron-stick", amount = 200},
+        {type = "item", name = "steel-plate", amount = 5}
     },
     results = {
         {type = "item", name = "rake", amount = 1},

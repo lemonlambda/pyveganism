@@ -27,7 +27,7 @@ local enabled_concepts = {
     "fungi.atztazzae",
     --
     --miscellaneous
-    "misc.handcrafting"
+    "misc.samples"
 }
 
 if mods["pyhightech"] then

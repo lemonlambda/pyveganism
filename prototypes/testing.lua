@@ -1,5 +1,5 @@
 local testicons = {
-    "rake", "clogged-rake", "stool-sample", "sewage-sludge-dry"
+    "rake", "clogged-rake", "stool-sample", "sewage-sludge-dry", "activated-sludge"
 }
 
 for i, icon in pairs(testicons) do
