@@ -64,7 +64,7 @@ Dinge, die alternative Möglichkeiten benötigen:
     Resilin (pyht)
     Urea (pyht) - done
     Serine (pyfe)
-    Vanadium (pyfe)
+    Vanadium (pyfe) - done
 
 
 Möglichkeiten Gebäude: 
