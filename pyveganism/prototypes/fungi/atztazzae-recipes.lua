@@ -104,16 +104,16 @@ RECIPE {
     name = "grow-atztazzae",
     category = "fawogae",
     enabled = false,
-    energy_required = 20,
+    energy_required = 50,
     ingredients = {
         {type = "item", name = "atztazzae-mycel", amount = 1},
-        {type = "fluid", name = "pressured-water", amount = 2000}
+        {type = "fluid", name = "pressured-water", amount = 20000}
     },
     results = {
-        {type = "item", name = "atztazzae-mushroom", amount = 40}, 
-        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.999}, 
-        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.001}
+        {type = "item", name = "atztazzae-mushroom", amount = 100}, 
+        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.99},
     },
+    main_product = "atztazzae-mushroom",
     icons = {
         {icon = "__pyveganism__/graphics/icons/atztazzae-mushroom.png"},
         {icon = "__pyveganism__/graphics/icons/grow.png"}
@@ -130,7 +130,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "atztazzae-mushroom", amount = 50},
+        {type = "item", name = "atztazzae-mushroom", amount = 10},
         {type = "fluid", name = "water", amount = 200}, 
         {type = "item", name = "sand", amount = 2}
     },

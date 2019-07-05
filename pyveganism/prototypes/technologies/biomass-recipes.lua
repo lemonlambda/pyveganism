@@ -73,6 +73,7 @@ RECIPE {
     results = {
         {type = "item", name = "organics", amount = 50}
     },
+    main_product = "organics",
     icons = {
         {icon = "__pyveganism__/graphics/icons/plant-residues-dry.png"},
         {icon = "__pyveganism__/graphics/icons/crack-open.png"}

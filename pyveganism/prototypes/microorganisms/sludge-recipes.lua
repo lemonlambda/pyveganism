@@ -43,3 +43,45 @@ RECIPE {
     subgroup = "py-veganism-media",
     order = "abcb"
 }:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "dry-sewage-sludge",
+    category = "evaporator",
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "fluid", name = "sewage-sludge", amount = 10},
+    },
+    results = {
+        {type = "item", name = "sewage-sludge-dry", amount = 7}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/sewage-sludge.png"},
+        {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abcc"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "marsh-gas",
+    category = "bio-reactor",
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "fluid", name = "sewage-sludge", amount = 10},
+    },
+    results = {
+        {type = "fluid", name = "marsh-gas", amount = 50}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/marsh-gas.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abcd"
+}:add_unlock("growth-media-2")
+

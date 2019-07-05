@@ -13,7 +13,8 @@ local list_ash = {
     ["grow-coconut-palm"] = {amount = 10, effect = 0.7},
     ["grow-oil-palm"] = {amount = 10, effect = 0.7},
     ["grow-cocoa"] = {amount = 10, effect = 0.7},
-    ["grow-canola"] = {amount = 10, effect = 0.7}
+    ["grow-canola"] = {amount = 10, effect = 0.7},
+    ["grow-atztazzae"] = {amount = 20, effect = 0.5}
 }
 
 local appendix_fertilizer = "-fertilizer"
@@ -21,7 +22,8 @@ local list_fertilizer = {
     ["grow-coconut-palm"] = {amount = 1, effect = 0.7},
     ["grow-oil-palm"] = {amount = 1, effect = 0.7},
     ["grow-cocoa"] = {amount = 1, effect = 0.7},
-    ["grow-canola"] = {amount = 1, effect = 0.7}
+    ["grow-canola"] = {amount = 1, effect = 0.7},
+    ["grow-atztazzae"] = {amount = 1, effect = 0.5}
 }
 
 local appendix_dirty_water = "-dirty-water"
@@ -36,7 +38,8 @@ local list_unlocks = {
     ["grow-coconut-palm"] = "oil-plants",
     ["grow-oil-palm"] = "oil-plants",
     ["grow-cocoa"] = "oil-plants",
-    ["grow-canola"] = "oil-plants"
+    ["grow-canola"] = "oil-plants",
+    ["grow-atztazzae"] = "vanadium-processing"
 }
 
 function create_recipe_clone(name, new_name)
