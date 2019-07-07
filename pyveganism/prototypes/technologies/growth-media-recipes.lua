@@ -236,7 +236,7 @@ if mods["pyhightech"] then
 end
 
 --ultra pure water recipes
-local category_edi = "chemical"
+local category_edi = "chemistry"
 if mods["pyrawores"] then
     category_edi = "electrolyzer"
 end

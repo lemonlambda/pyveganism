@@ -6,6 +6,9 @@ local DEBUG = true
 require("prototypes.updates.globals")
 require("prototypes.item-group")
 
+--add required features if some of the pymods are missing
+require("prototypes.updates.missing-pymods")
+
 local enabled_concepts = {
     --technologies
     "technologies.biomass",
