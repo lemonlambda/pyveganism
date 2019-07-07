@@ -32,7 +32,7 @@ FLUID {
 FLUID {
     type = "fluid",
     name = "marsh-gas",
-    fuel_value = "1MJ",
+    fuel_value = "2MJ",
     icon = "__pyveganism__/graphics/icons/marsh-gas.png",
     icon_size = 64,
     default_temperature = 15,
@@ -49,6 +49,8 @@ ITEM {
     type = "item",
     name = "sewage-sludge-dry",
     enabled = false,
+    fuel_value = "500kJ",
+    fuel_category = "chemical",
     icon = "__pyveganism__/graphics/icons/sewage-sludge-dry.png",
     icon_size = 64,
     flags = {},

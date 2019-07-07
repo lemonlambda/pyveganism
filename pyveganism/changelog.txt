@@ -11,3 +11,16 @@ Date: 2019.06.17
 
   Factory-breaking Changes:
     - Added more pipe-connections to the bio reactor
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 2019.07.08
+  Features:
+    - More uses for plant-re
+    - Added atztazzae chain
+    - Added water purification
+    - Added sewage-sludge
+    - Added optional hardcore vegan/vegetarian mode
+    - Added plant oil saponification
+
+  Changes:
+    - Renamed biomass to plant residues

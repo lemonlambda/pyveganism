@@ -130,7 +130,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "atztazzae-mushroom", amount = 10},
+        {type = "item", name = "atztazzae-mushroom", amount = 15},
         {type = "fluid", name = "water", amount = 200}, 
         {type = "item", name = "sand", amount = 2}
     },

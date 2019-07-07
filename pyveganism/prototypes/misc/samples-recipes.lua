@@ -1,14 +1,17 @@
 RECIPE {
     type = "recipe",
-    name = "stool-sample",
+    name = "generate-stool-sample",
     category = "handcrafting",
     enabled = false,
-    energy_required = 600,
+    energy_required = 300,
     ingredients = {},
     results = {
         {type = "item", name = "stool-sample", amount = 1}
     },
-    icon = "__pyveganism__/graphics/icons/stool-sample.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/stool-sample.png"},
+        {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-samples",
     order = "bae"

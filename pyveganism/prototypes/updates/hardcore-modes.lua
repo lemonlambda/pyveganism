@@ -44,6 +44,4 @@ if vegan_mode then
     table.each(nonvegan_recipes, disable_recipe)
 end
 
-if vegetarian_mode or vegan_mode then
-    table.each(nonvegetarian_recipes, disable_recipe)
-end
+table.each(nonvegetarian_recipes, disable_recipe)

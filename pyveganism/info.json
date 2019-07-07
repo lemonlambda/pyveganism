@@ -1,6 +1,6 @@
 {
     "name": "pyveganism",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "pY Veganism [ALPHA]",
     "author": "koun",
     "contact": "",
@@ -14,5 +14,5 @@
         "?pyrawores",
         "?pypetroleumhandling"
     ],
-    "description": "WIP. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals."
+    "description": "WIP. Inofficial. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals."
 }

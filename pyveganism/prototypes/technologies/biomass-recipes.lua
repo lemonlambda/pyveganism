@@ -16,8 +16,8 @@ RECIPE {
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     main_product = "combustion-mixture1",
-    subgroup = "py-veganism-oil-plants",
-    order = "a"
+    subgroup = "py-veganism-combustion",
+    order = "aaa"
 }:add_unlock("biomass")
 
 RECIPE {

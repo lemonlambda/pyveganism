@@ -1,6 +1,6 @@
 Mögliche Zutaten: 
 Stickstofflieferanten wie Harnstoff, Ammoniak, Ammoniumnitrat
-Minerallieferanten wie Algenkalk, Asche
-Kompostierte Pflanzenteile
+Minerallieferanten wie Algenkalk, Asche, Klärschlamm
+Kompostierte Pflanzenteile -> Humus
 
 Bodenbakterien mit Urease, wenn Harnstoff verwendet wird. (Harnstoff ist in pymods billiger als Ammoniak)

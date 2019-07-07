@@ -98,6 +98,32 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
+    name = "clean-water-purification-from-water",
+    category = "fluid-separator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "water", amount = 500},
+        {type = "fluid", name = "activated-sludge", amount = 40},
+        {type = "item", name = "rake", amount = 1}, 
+    },
+    results = {
+        {type = "fluid", name = "clean-water", amount = 480}, 
+        {type = "fluid", name = "sewage-sludge", amount = 60},
+        {type = "item", name = "clogged-rake", amount = 1}, 
+        {type = "item", name = "sand", amount = 5}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/2.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abab"
+}:add_unlock("growth-media-4") --sic!
+
+RECIPE {
+    type = "recipe",
     name = "clean-rake",
     category = "washer",
     enabled = false,
@@ -120,7 +146,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "abaa"
+    order = "abba"
 }:add_unlock("growth-media-2")
 
 RECIPE {
@@ -183,6 +209,7 @@ RECIPE {
     },
     icon = "__pyveganism__/graphics/icons/semipermeable-membrane.png",
     icon_size = 64,
+    main_product = "semipermeable-membrane",
     subgroup = "py-veganism-media",
     order = "acba"
 }:add_unlock("growth-media-3")
@@ -202,9 +229,36 @@ if mods["pyhightech"] then
         },
         icon = "__pyveganism__/graphics/icons/semipermeable-membrane.png",
         icon_size = 64,
+        main_product = "semipermeable-membrane",
         subgroup = "py-veganism-media",
         order = "acbb"
     }:add_unlock("growth-media-3")
 end
 
 --ultra pure water recipes
+local category_edi = "chemical"
+if mods["pyrawores"] then
+    category_edi = "electrolyzer"
+end
+
+RECIPE {
+    type = "recipe",
+    name = "electrodeionisation",
+    category = category_edi,
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "fluid", name = "deionized-water", amount = 500}
+    },
+    results = {
+        {type = "fluid", name = "ultra-pure-water", amount = 480},
+        {type = "fluid", name = "water-saline", amount = 20}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/blitz.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "ada"
+}:add_unlock("growth-media-4")

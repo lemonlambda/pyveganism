@@ -105,5 +105,11 @@ data:extend {
         name = "py-veganism-atztazzae",
         group = "py-veganism",
         order = "bbf"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-combustion",
+        group = "py-veganism",
+        order = "zaa"
     } 
 }
