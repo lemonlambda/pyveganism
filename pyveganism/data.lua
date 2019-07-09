@@ -14,6 +14,8 @@ local enabled_concepts = {
     "technologies.biomass",
     "technologies.oil-plants",
     "technologies.growth-media",
+    "technologies.plant-breeding",
+    "technologies.cultivation-expertise",
     --
     --plants
     "plants.tiriscefing-willow",
