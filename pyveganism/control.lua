@@ -25,10 +25,10 @@ local technologies = {
     ["cultivation-expertise"] = {
         name = "cultivation-expertise",
         machines = {
-            ["fawogae-plantation"] = true, 
-            ["fawogae-plantation-mk2"] = true, 
-            ["fawogae-plantation-mk3"] = true, 
-            ["fawogae-plantation-mk4"] = true, 
+            ["fawogae-plantation"] = true,
+            ["fawogae-plantation-mk2"] = true,
+            ["fawogae-plantation-mk3"] = true,
+            ["fawogae-plantation-mk4"] = true,
             ["ralesia-plantation"] = true,
             ["botanical-nursery"] = true,
             ["botanical-nursery-mk2"] = true,
@@ -41,15 +41,15 @@ local technologies = {
         module = "pyveganism-module-cultivation-expertise",
         beacon = "pyveganism-beacon-cultivation-expertise",
         max_finite_level = 6,
-        get_level = get_tech_level
+        get_module_count = get_tech_level
     }, 
     ["plant-breeding"] = {
         name = "plant-breeding",
         machines = {
-            --[[["fawogae-plantation"] = true, 
-            ["fawogae-plantation-mk2"] = true, 
-            ["fawogae-plantation-mk3"] = true, 
-            ["fawogae-plantation-mk4"] = true, --]]
+            ["fawogae-plantation"] = true,
+            ["fawogae-plantation-mk2"] = true,
+            ["fawogae-plantation-mk3"] = true,
+            ["fawogae-plantation-mk4"] = true,
             ["ralesia-plantation"] = true,
             ["botanical-nursery"] = true,
             ["botanical-nursery-mk2"] = true,
@@ -59,10 +59,15 @@ local technologies = {
             ["kicalk-plantation"] = true,
             ["guar-gum-plantation"] = true
         }, 
+        recipe_blacklist = {
+            ["grow-atztazzae"] = true,
+            ["grow-atztazzae-ash"] = true,
+            ["grow-atztazzae-fertilizer"] = true
+        },
         module = "pyveganism-module-plant-breeding",
         beacon = "pyveganism-beacon-plant-breeding",
         max_finite_level = 4,
-        get_level = get_tech_level
+        get_module_count = get_tech_level
     }
 }
 
@@ -73,7 +78,7 @@ end
 
 -- The current number of researched technologies
 function current_module_count(force, technology)
-    return technology:get_level(force)
+    return technology:get_module_count(force)
 end
 
 function create_beacon_for(entity, technology, module_count)
@@ -82,10 +87,6 @@ function create_beacon_for(entity, technology, module_count)
         position = entity.position,
         force = entity.force,
     }
-
-    if technology.name == "plant-breeding" then
-        game.print("plant breeding beacon created")
-    end
 
     if module_count == 0 then
         return
@@ -180,3 +181,6 @@ script.on_event(defines.events.on_entity_died, on_entity_removed)
 
 -- research finishes
 script.on_event(defines.events.on_research_finished, on_research_finished)
+
+-- maintenance routine
+script.on_nth_tick()
