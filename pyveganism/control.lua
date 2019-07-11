@@ -4,26 +4,24 @@ local table = require("__stdlib__/stdlib/utils/table")
 --[[
     data structures for my pseudo object oriented approach
 
-    global.registered_machines
+    global.registered_machines: table
         [lua_entity]: registered_entity
 
-    global.registered_machines_count is int
+    global.tick_last_finished_research: uint
 
-    global.tick_last_finished_research
-
-    registered_entity
+    registered_entity: table
         ["entity"]: lua_entity (of the machine)
         ["beacons"]: beacons_table
         ["recipe"]: recipe_name
         ["last_refresh"]: tick of the last refresh
 
-    beacons_table
+    beacons_table: table
         [tech_name]: lua_entity (of the beacon)
 
-    relevant_machines
+    relevant_machines: table
         [machine_name]: machine_details
 
-    machine_details
+    machine_details: table
         ["is_recipe_dependant"]: bool -- if the modules of this machine depend on the active recipe
         ["affecting_technologies"]: table -- with tech names as strings
 
@@ -193,7 +191,6 @@ function remove_all_beacons_for(registered_entity)
 end
 
 function refresh(registered_entity)
-    game.print("a refresh was called")
     for tech_name, beacon in pairs(registered_entity.beacons) do
         local technology = technologies[tech_name]
         local module_count = current_module_count(registered_entity.entity, technology)
@@ -227,14 +224,12 @@ function register_machine(entity)
         recipe = recipe,
         tick_last_refresh = game.tick
     }
-    global.registered_machines_count = global.registered_machines_count + 1
 end
 
 -- Removes the machine from the register and removes all it's beacons
 function unregister_machine(registered_entity)
     remove_all_beacons_for(registered_entity)
     global.registered_machines[registered_entity.entity] = nil
-    global.registered_machines_count = global.registered_machines_count - 1
 end
 
 -- Eventhandler machine built
@@ -285,7 +280,6 @@ function check_registered_entity(registered_entity)
     local current_recipe = get_active_recipe(entity)
     local last_recipe = registered_entity.recipe
     if not (current_recipe == last_recipe) then
-        game.print("recipe change detected from " .. last_recipe .. " to " .. current_recipe)
         registered_entity.recipe = current_recipe
         on_recipe_change(registered_entity)
     end
@@ -295,9 +289,9 @@ function check_registered_entity(registered_entity)
     end
 end
 
-local max_checks = settings.global["pyveganism-checks-per-tick"].value
+local max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
 -- Checks some entries for validity and custom events
-function tick(event)
+function tick()
     local next = next
     local count = 0
     local register = global.registered_machines
@@ -319,9 +313,22 @@ function tick(event)
     global.last_index = index
 end
 
+function on_suspected_recipe_change(event)
+    local entity = event.entity
+    if not entity then
+        return
+    end
+
+    local registered_entity = global.registered_machines[entity]
+    if not global.registered_machines[entity] then
+        return
+    end
+
+    check_registered_entity(registered_entity)
+end
+
 function init()
     global.registered_machines = {}
-    global.registered_machines_count = 0
     global.tick_last_finished_research = 0
 
     for _, surface in pairs(game.surfaces) do
@@ -332,7 +339,7 @@ function init()
 end
 
 function settings_update(event)
-    max_checks = settings.global["pyveganism-checks-per-tick"].value
+    max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
 end
 
 -- Set Eventhandlers
@@ -352,5 +359,9 @@ script.on_event(defines.events.on_entity_died, on_entity_removed)
 script.on_event(defines.events.on_research_finished, on_research_finished)
 
 -- maintenance routines
-script.on_event(defines.events.on_tick, tick)
+script.on_nth_tick(10, tick)
 script.on_event(defines.events.on_runtime_mod_setting_changed, settings_update)
+
+-- events that could mean a recipe change
+script.on_event(defines.events.on_gui_closed, on_suspected_recipe_change)
+script.on_event(defines.events.on_entity_settings_pasted, on_suspected_recipe_change)
