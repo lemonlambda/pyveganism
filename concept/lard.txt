@@ -97,11 +97,9 @@ Raffination/Desodorierung - Multi Purpose Cracker / Chem plant
 Vorteil: Fast perfekter Mix solid fat/plant oil
 Nachteil: Lange Verarbeitungskette / Energieaufwendig
 
-TODO: Balancing
-
 soja:
 Schroten der Bohnen
-Einstellen Wassergehalt (?)
+Einstellen Wassergehalt
 Pressen in Flocken
 
 eventuell Extraktion mit Hexan

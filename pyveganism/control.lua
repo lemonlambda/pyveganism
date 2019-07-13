@@ -2,6 +2,10 @@ local string = require("__stdlib__/stdlib/utils/string")
 local table = require("__stdlib__/stdlib/utils/table")
 
 --[[
+-- Beacon placement
+]]--
+
+--[[
     data structures for my pseudo object oriented approach
 
     global.registered_machines: table
@@ -13,7 +17,7 @@ local table = require("__stdlib__/stdlib/utils/table")
         ["entity"]: lua_entity (of the machine)
         ["beacons"]: beacons_table
         ["recipe"]: recipe_name
-        ["last_refresh"]: tick of the last refresh
+        ["tick_last_refresh"]: tick of the last refresh
 
     beacons_table: table
         [tech_name]: lua_entity (of the beacon)
@@ -39,7 +43,7 @@ function get_tech_level(technology, force)
     end
 
     --for some reason the level of the infinite technology always returns level + 1
-    --and .researched returns always false
+    --and .researched always returns false
     if level == technology.max_finite_level then
         level = force.technologies[lvl_name(technology, (level + 1))].level - 1
     end
@@ -296,17 +300,17 @@ function tick()
     local count = 0
     local register = global.registered_machines
     local index = global.last_index
-    local current_registry
+    local current_entity
 
     if index and register[index] then
-        current_registry = register[index]
+        current_entity = register[index]
     else
-        index, current_registry = next(register, index)
+        index, current_entity = next(register, index)
     end
 
     while index and count < max_checks do
-        check_registered_entity(current_registry)
-        index, current_registry = next(register, index)
+        check_registered_entity(current_entity)
+        index, current_entity = next(register, index)
         count = count + 1
     end
 
@@ -320,11 +324,9 @@ function on_suspected_recipe_change(event)
     end
 
     local registered_entity = global.registered_machines[entity]
-    if not global.registered_machines[entity] then
-        return
+    if global.registered_machines[entity] then
+        check_registered_entity(registered_entity)
     end
-
-    check_registered_entity(registered_entity)
 end
 
 function init()
@@ -365,3 +367,64 @@ script.on_event(defines.events.on_runtime_mod_setting_changed, settings_update)
 -- events that could mean a recipe change
 script.on_event(defines.events.on_gui_closed, on_suspected_recipe_change)
 script.on_event(defines.events.on_entity_settings_pasted, on_suspected_recipe_change)
+
+--[[
+-- Sample crafting effects
+]]--
+
+--[[
+    global.blood_donations: table
+        [player_name]: table (ticks as uint when the last donations occured)
+]]--
+function log_blood_donation(player_name)
+    if not global.blood_donations then
+        global.blood_donations = {}
+    end
+    if not global.blood_donations[player_name] then
+        global.blood_donations[player_name] = {}
+    end
+
+    table.insert(global.blood_donations[player_name], game.tick)
+end
+
+function get_count_of_recent_blood_donations(player_name)
+    local count = 0
+    local current_tick = game.tick
+    for index, tick in pairs(global.blood_donations[player_name]) do
+        local time_past = current_tick - tick
+        if time_past < 216000 then --216000 is 60 minutes (3600 seconds) at 60 ticks per second
+            count = count + 1
+        else
+            global.blood_donations[player_name] = nil
+        end
+    end
+
+    return count
+end
+
+function execute_blood_donation_effects(player, donation_count)
+    local player_entity = player.character
+    if not player_entity or not player_entity.health then 
+        return 
+    end
+
+    local damage = donation_count * 0.19 * player_entity.prototype.max_health
+    player_entity.damage(damage, player_entity.force)
+end
+
+function on_blood_donation(player_index)
+    local player = game.get_player(player_index)
+    log_blood_donation(player.name)
+    local count = get_count_of_recent_blood_donations(player.name)
+    execute_blood_donation_effects(player, count)
+end
+
+function on_crafted_item(event)
+    local recipe = event.recipe.name
+
+    if recipe == "generate-engineer-blood" then
+        on_blood_donation(event.player_index)
+    end
+end
+
+script.on_event(defines.events.on_player_crafted_item, on_crafted_item)
