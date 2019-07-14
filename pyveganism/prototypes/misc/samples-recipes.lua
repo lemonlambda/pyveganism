@@ -33,5 +33,5 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-samples",
-    order = "bae"
+    order = "aaa"
 }:add_unlock("rocket-fuel")

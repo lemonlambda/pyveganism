@@ -402,6 +402,15 @@ function get_count_of_recent_blood_donations(player_name)
     return count
 end
 
+function give_sticker_to(player, sticker_name)
+    player.surface.create_entity{
+        name = sticker_name, 
+        position = player.position, 
+        force = player.force, 
+        target = player.character
+    }
+end
+
 function execute_blood_donation_effects(player, donation_count)
     local player_entity = player.character
     if not player_entity or not player_entity.health then 
@@ -410,6 +419,10 @@ function execute_blood_donation_effects(player, donation_count)
 
     local damage = donation_count * 0.19 * player_entity.prototype.max_health
     player_entity.damage(damage, player_entity.force)
+
+    for i = 1, math.min(donation_count, 5) do
+        give_sticker_to(player, "blood-donation-" .. i)
+    end
 end
 
 function on_blood_donation(player_index)
