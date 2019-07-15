@@ -96,7 +96,7 @@ data:extend {
     }, 
     {
         type = "item-subgroup",
-        name = "py-veganism-soja",
+        name = "py-veganism-soy",
         group = "py-veganism",
         order = "bbee"
     }, 

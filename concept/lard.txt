@@ -216,3 +216,24 @@ Nutzen
 -> 113 plant oil
 
 126% Rückerstattung Biomasse
+
+____soy____
+Mix 1 : 35
+Ausbeute: 80%
+
+Waschen
+Von der Hülle trennen
+Reifen
+
+Mehrere Optionen
+ - Sojamilch
+ - Tofu
+ - Sojaflocken
+ - Tempeh
+
+
+eventuell Extraktion mit Hexan
+Hydrierung
+
+Vorteil: Auch Proteine, kurze Verarbeitung
+Nachteil: niedrige Rückerstattung durch Biomasse
