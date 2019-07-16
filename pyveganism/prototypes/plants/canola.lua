@@ -45,3 +45,15 @@ ITEM {
     order = "abdc",
     stack_size = 200
 }
+
+ITEM {
+    type = "item",
+    name = "canola-meal",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/canola-meal.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-canola",
+    order = "abdd",
+    stack_size = 200
+}

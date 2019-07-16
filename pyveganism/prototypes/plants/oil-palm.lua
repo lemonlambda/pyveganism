@@ -68,7 +68,5 @@ FLUID {
     base_color = {r = 0.694, g = 0.475, b = 0.184},
     flow_color = {r = 0.694, g = 0.475, b = 0.184},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-oil-palm"
 }

@@ -8,8 +8,6 @@ FLUID {
     base_color = {r = 0.513, g = 0.228, b = 0.130},
     flow_color = {r = 0.513, g = 0.228, b = 0.130},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-mo"
 }
 
@@ -23,7 +21,5 @@ FLUID {
     base_color = {r = 0, g = 0.635, b = 0.863},
     flow_color = {r = 0, g = 0.635, b = 0.863},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-mo"
 }

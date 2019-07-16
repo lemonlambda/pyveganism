@@ -101,8 +101,6 @@ FLUID {
     base_color = {r = 0.151, g = 0.483, b = 0.933},
     flow_color = {r = 0.151, g = 0.483, b = 0.933},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-media"
 }
 
@@ -119,8 +117,6 @@ FLUID {
     base_color = {r = 0.151, g = 0.483, b = 0.933},
     flow_color = {r = 0.151, g = 0.483, b = 0.933},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-media"
 }
 
@@ -137,8 +133,6 @@ FLUID {
     base_color = {r = 0.151, g = 0.483, b = 0.933},
     flow_color = {r = 0.151, g = 0.483, b = 0.933},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-media"
 }
 
@@ -155,8 +149,6 @@ FLUID {
     base_color = {r = 0.151, g = 0.483, b = 0.933},
     flow_color = {r = 0.151, g = 0.483, b = 0.933},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-veganism-media"
 }
 

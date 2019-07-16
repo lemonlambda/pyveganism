@@ -16,7 +16,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aba"
-}:add_unlock("oil-plants")
+}:add_unlock("oil-seeds")
 
 RECIPE {
     type = "recipe",
@@ -38,7 +38,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aab"
-}:add_unlock("oil-plants")
+}:add_unlock("oil-seeds")
 
 RECIPE {
     type = "recipe",
@@ -59,7 +59,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aac"
-}:add_unlock("oil-plants")
+}:add_unlock("oil-seeds")
 
 RECIPE {
     type = "recipe",
@@ -81,7 +81,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aad"
-}:add_unlock("oil-plants")
+}:add_unlock("oil-seeds")
 
 RECIPE {
     type = "recipe",
@@ -94,7 +94,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "plant-oil", amount = 113},
-        {type = "item", name = "plant-residues-dry", amount = 1}
+        {type = "item", name = "canola-meal", amount = 10}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/canola.png"},
@@ -103,4 +103,25 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aae"
-}:add_unlock("oil-plants")
+}:add_unlock("oil-seeds")
+
+RECIPE {
+    type = "recipe",
+    name = "declassify-canola-meal",
+    category = "crafting",
+    enabled = false,
+    energy_required = 0.05,
+    ingredients = {
+        {type = "item", name = "canola-meal", amount = 10}
+    },
+    results = {
+        {type = "item", name = "plant-residues-dry", amount = 1}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/canola-meal.png"}, 
+        {icon = "__pyveganism__/graphics/icons/arrow-down.png"}, 
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-canola",
+    order = "aaf"
+}:add_unlock("oil-seeds")

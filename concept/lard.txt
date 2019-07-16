@@ -221,6 +221,21 @@ ____soy____
 Mix 1 : 35
 Ausbeute: 80%
 
+Kosten
+8880 kJ Botanical Nursery
+100 kJ Washer
+130 kJ Automated Factory
+260 kJ Automated Factory
+900 kJ Pulp Mill
+_________
+~10200 MJ
+
+Nutzen
+5 pr = 7,5 MJ
+3 dpr = 7,5 MJ
+8,2 MJ worth of lard ingredients
+
+
 Waschen
 Von der Hülle trennen
 Reifen

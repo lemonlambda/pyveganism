@@ -16,6 +16,7 @@ local enabled_concepts = {
     "technologies.growth-media",
     "technologies.plant-breeding",
     "technologies.cultivation-expertise",
+    "technologies.protein-plants",
     --
     --plants
     "plants.tiriscefing-willow",
@@ -23,6 +24,7 @@ local enabled_concepts = {
     "plants.coconut",
     "plants.cocoa",
     "plants.canola",
+    "plants.soy",
     --
     --microorganisms
     "microorganisms.solfaen",
