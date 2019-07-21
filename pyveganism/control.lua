@@ -238,7 +238,16 @@ end
 
 -- Eventhandler machine built
 function on_entity_built(event)
-    local entity = event.created_entity
+    --https://forums.factorio.com/viewtopic.php?f=34&t=73331#p442695
+    if event.created_entity then
+        entity = event.created_entity
+    elseif event.entity then
+        entity = event.entity
+    elseif event.destination then
+        entity = event.destination
+    else 
+        return
+    end
 
     if relevant_machines[entity.name] then
         register_machine(event.created_entity)
@@ -351,6 +360,9 @@ script.on_init(init)
 -- placement
 script.on_event(defines.events.on_built_entity, on_entity_built)
 script.on_event(defines.events.on_robot_built_entity, on_entity_built)
+script.on_event(defines.events.on_entity_cloned, on_entity_built)
+script.on_event(defines.events.script_raised_built, on_entity_built)
+script.on_event(defines.events.script_raised_revive, on_entity_built)
 
 -- removing
 script.on_event(defines.events.on_player_mined_entity, on_entity_removed)
