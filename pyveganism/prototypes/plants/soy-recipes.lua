@@ -16,7 +16,7 @@ RECIPE {
     icons = {{icon = "__pyveganism__/graphics/icons/grow-soy.png"}},
     icon_size = 64,
     subgroup = "py-veganism-soy",
-    order = "aba"
+    order = "aca"
 }:add_unlock("oil-plants"):add_unlock("protein-plants")
 
 RECIPE {
@@ -104,7 +104,7 @@ RECIPE {
         {icon = "__pyveganism__/graphics/icons/pressing.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-canola",
+    subgroup = "py-veganism-soy",
     order = "aad"
 }:add_unlock("oil-plants")
 
@@ -121,10 +121,75 @@ RECIPE {
         {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/canola-meal.png"}, 
+        {icon = "__pyveganism__/graphics/icons/soy-meal.png"}, 
         {icon = "__pyveganism__/graphics/icons/arrow-down.png"}, 
     },
     icon_size = 64,
-    subgroup = "py-veganism-canola",
+    subgroup = "py-veganism-soy",
     order = "aae"
 }:add_unlock("oil-plants")
+
+RECIPE {
+    type = "recipe",
+    name = "soy-milk",
+    category = "hpf",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "item", name = "soy-beans", amount = 5}, 
+        {type = "fluid", name = "clean-water", amount = 100}
+    },
+    results = {
+        {type = "fluid", name = "soy-milk", amount = 100}, 
+        {type = "item", name = "soy-meal", amount = 1}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/soy-milk.png"}, 
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-soy",
+    order = "aaf"
+}:add_unlock("protein-plants")
+
+RECIPE {
+    type = "recipe",
+    name = "tofu",
+    category = "hpf",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "fluid", name = "soy-milk", amount = 80}, 
+        {type = "fluid", name = "citric-acid", amount = 15}
+    },
+    results = {
+        {type = "item", name = "tofu-block", amount = 5}, 
+        {type = "item", name = "yuba", amount = 5}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/tofu-block.png"}, 
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-soy",
+    order = "aag"
+}:add_unlock("protein-plants")
+
+RECIPE {
+    type = "recipe",
+    name = "tempeh",
+    category = "bio-reactor",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "item", name = "soy-beans", amount = 20}, 
+        --{type = "fluid", name = "proxae", amount = 20}
+    },
+    results = {
+        {type = "item", name = "tempeh", amount = 5}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/tempeh.png"}, 
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-soy",
+    order = "aah"
+}:add_unlock("protein-plants")

@@ -25,7 +25,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
-    order = "aaa",
+    order = "baa",
     stack_size = 200
 }
 
@@ -39,7 +39,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
-    order = "aab",
+    order = "bab",
     stack_size = 200
 }
 
@@ -53,6 +53,6 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-biomass",
-    order = "aac",
+    order = "bac",
     stack_size = 200
 }

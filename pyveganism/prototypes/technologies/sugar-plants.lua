@@ -1,14 +1,14 @@
 TECHNOLOGY {
     type = "technology",
-    name = "protein-plants",
-    icon = "__pyveganism__/graphics/technology/protein-plants.png",
+    name = "sugar-plants",
+    icon = "__pyveganism__/graphics/technology/sugar-plants.png",
     icon_size = 128,
     order = "c-a",
     upgrade = false,
     prerequisites = {"coal-processing-2"},
     effects = {},
     unit = {
-        count = 50,
+        count = 77,
         ingredients = {
             {"automation-science-pack", 1},
             {"logistic-science-pack", 1}
@@ -19,12 +19,12 @@ TECHNOLOGY {
 
 ITEM {
     type = "item",
-    name = "glycine",
+    name = "sugar",
     enabled = false,
-    icon = "__pyveganism__/graphics/icons/glycine.png",
+    icon = "__pyveganism__/graphics/icons/sugar.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-proteins",
+    subgroup = "py-veganism-carbohydrates",
     order = "aaa",
     stack_size = 200
 }

@@ -2,7 +2,7 @@ local string = require("__stdlib__/stdlib/utils/string")
 local table = require("__stdlib__/stdlib/utils/table")
 
 --[[
--- Beacon placement
+-- Registered Entities
 ]]--
 
 --[[
@@ -14,6 +14,7 @@ local table = require("__stdlib__/stdlib/utils/table")
     global.tick_last_finished_research: uint
 
     registered_entity: table
+        ["type"]: int/enum
         ["entity"]: lua_entity (of the machine)
         ["beacons"]: beacons_table
         ["recipe"]: recipe_name
@@ -30,7 +31,12 @@ local table = require("__stdlib__/stdlib/utils/table")
         ["affecting_technologies"]: table -- with tech names as strings
 
 ]]--
+local TYPE_BEACONED_MACHINE = 1
+local TYPE_COMPOSTING_SILO = 2
 
+--[[
+-- Beaconed machine variables
+]]--
 function lvl_name(technology, level)
     return technology.name .. "-" .. level
 end
@@ -218,11 +224,12 @@ function refresh_all_entries()
 end
 
 -- Adds the machine to the register and creates all the needed beacons
-function register_machine(entity)
+function register_beaconed_machine(entity)
     local beacons = create_all_beacons_for(entity)
     local recipe = get_active_recipe(entity)
 
     global.registered_machines[entity] = {
+        type = TYPE_BEACONED_MACHINE,
         entity = entity,
         beacons = beacons,
         recipe = recipe,
@@ -230,9 +237,19 @@ function register_machine(entity)
     }
 end
 
+function register_composting_silo(entity)
+    global.registered_machines[entity] = {
+        type = TYPE_COMPOSTING_SILO,
+        entity = entity,
+        tick_last_refresh = game.tick
+    }
+end
+
 -- Removes the machine from the register and removes all it's beacons
 function unregister_machine(registered_entity)
-    remove_all_beacons_for(registered_entity)
+    if registered_entity.type == TYPE_BEACONED_MACHINE then
+        remove_all_beacons_for(registered_entity)
+    end
     global.registered_machines[registered_entity.entity] = nil
 end
 
@@ -250,7 +267,10 @@ function on_entity_built(event)
     end
 
     if relevant_machines[entity.name] then
-        register_machine(event.created_entity)
+        register_beaconed_machine(entity)
+    end
+    if entity.name == "composting-silo" then
+        register_composting_silo(entity)
     end
 end
 
@@ -282,16 +302,11 @@ function on_recipe_change(registered_entity)
     end
 end
 
-function check_registered_entity(registered_entity)
+function check_registered_beaconed_entity(registered_entity)
     local entity = registered_entity.entity
-
-    if not entity.valid then
-        unregister_machine(registered_entity)
-        return
-    end
-
     local current_recipe = get_active_recipe(entity)
     local last_recipe = registered_entity.recipe
+
     if not (current_recipe == last_recipe) then
         registered_entity.recipe = current_recipe
         on_recipe_change(registered_entity)
@@ -302,7 +317,27 @@ function check_registered_entity(registered_entity)
     end
 end
 
-local max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
+function check_registered_composting_silo(registered_entity)
+
+end
+
+function check_registered_entity(registered_entity)
+    local entity = registered_entity.entity
+
+    if not entity.valid then
+        unregister_machine(registered_entity)
+        return
+    end
+
+    if registered_entity.type == TYPE_BEACONED_MACHINE then
+        check_registered_beaconed_entity(registered_entity)
+    end
+    if registered_entity.type == TYPE_COMPOSTING_SILO then
+        check_registered_composting_silo(registered_entity)
+    end
+end
+
+global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
 -- Checks some entries for validity and custom events
 function tick()
     local next = next
@@ -317,7 +352,7 @@ function tick()
         index, current_entity = next(register, index)
     end
 
-    while index and count < max_checks do
+    while index and count < global.max_checks do
         check_registered_entity(current_entity)
         index, current_entity = next(register, index)
         count = count + 1
@@ -344,13 +379,13 @@ function init()
 
     for _, surface in pairs(game.surfaces) do
         for _, entity in pairs(surface.find_entities_filtered{name = table.keys(relevant_machines)}) do
-            register_machine(entity)
+            register_beaconed_machine(entity)
         end
     end
 end
 
 function settings_update(event)
-    max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
+    global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
 end
 
 -- Set Eventhandlers

@@ -98,6 +98,58 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
+    name = "waste-water-purification",
+    category = "fluid-separator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "waste-water", amount = 500},
+        {type = "fluid", name = "activated-sludge", amount = 20},
+        {type = "item", name = "rake", amount = 1}, 
+    },
+    results = {
+        {type = "fluid", name = "clean-water", amount = 450}, 
+        {type = "fluid", name = "sewage-sludge", amount = 70},
+        {type = "item", name = "clogged-rake", amount = 1}, 
+        {type = "item", name = "sand", amount = 2}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/2.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abaa"
+}:add_unlock("growth-media-3")
+
+RECIPE {
+    type = "recipe",
+    name = "dirty-water-purification",
+    category = "fluid-separator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "dirty-water", amount = 500},
+        {type = "fluid", name = "activated-sludge", amount = 20},
+        {type = "item", name = "rake", amount = 1}, 
+    },
+    results = {
+        {type = "fluid", name = "clean-water", amount = 500}, 
+        {type = "fluid", name = "sewage-sludge", amount = 20},
+        {type = "item", name = "clogged-rake", amount = 1}, 
+        {type = "item", name = "sand", amount = 25}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/2.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "abaa"
+}:add_unlock("growth-media-3")
+
+RECIPE {
+    type = "recipe",
     name = "clean-water-purification-from-water",
     category = "fluid-separator",
     enabled = false,
@@ -120,7 +172,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-media",
     order = "abab"
-}:add_unlock("growth-media-4") --sic!
+}:add_unlock("growth-media-4")
 
 RECIPE {
     type = "recipe",

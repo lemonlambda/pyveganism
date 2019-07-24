@@ -5,14 +5,15 @@ py:
 
 pyht und pyro
 3 Kmaut ration <- 5 Lard + 5 Blood meal + 50 Skin + 2 Tin
+50 Skin ^= 3,33 Zipir Carcass (138,3 MJ)
 
-1 Blood meal <- 2 Fiberboard + 15 Blood
+5 Blood meal <- 10 Fiberboard + 75 Blood
 
 1 Zipir Carcass -> 5 Bones + 15 Skin + 7 Meat + 60 Blood
 
 1 Zipir Carcass <- 10 Fawogae Substrate + 3 Stone Wool + 200 Saline Water + 300 Pressured Water
 
-
+~8530 kJ pro Serine
 
 nur pycp und pyfe
 3 Kmaut ration <- 5 Lard + 15 Ralesia + 50 Organic matter + 2 Iron plate

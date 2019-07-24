@@ -7,6 +7,7 @@
 850 kJ pro Calcium Carbide
 54,5 kJ pro Acetylene (1/2 Acetylene, Slacked Lime)
 218 kJ pro Slacked Lime
+616 kJ pro Sodium Hydroxid (aus Slacked Lime und Salz, wenn Acetylene verwendet wird)
 
 2580 kJ pro Log (Wasserrezept)
 756 kJ pro Wood
@@ -48,6 +49,8 @@
 819 kJ pro Treated Wood
 1133 kJ pro Clay
 2680 kJ pro Raw Fiber (Soil recipe)
+8176 kJ pro Fiberboard (ohne Sodium Sulfate)
+8530 kJ pro Serine
 
 312 kJ pro tailings dust (wahrscheinlich wesentlich billiger, weil es normalerweise nervige Nebenprodukte verwendet)
 

@@ -3,7 +3,7 @@ table = require("__stdlib__/stdlib/utils/table")
 
 local DEBUG = true
 
-require("prototypes.updates.globals")
+require("prototypes.datastage-globals")
 require("prototypes.item-group")
 
 --add required features if some of the pymods are missing
@@ -17,6 +17,9 @@ local enabled_concepts = {
     "technologies.plant-breeding",
     "technologies.cultivation-expertise",
     "technologies.protein-plants",
+    --
+    --buildings
+    "buildings.composting-silo",
     --
     --plants
     "plants.tiriscefing-willow",
@@ -34,7 +37,8 @@ local enabled_concepts = {
     "fungi.atztazzae",
     --
     --miscellaneous
-    "misc.samples"
+    "misc.samples",
+    "misc.citric-acid"
 }
 
 if mods["pyhightech"] then

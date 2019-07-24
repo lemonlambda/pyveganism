@@ -82,6 +82,18 @@ ITEM {
     stack_size = 200
 }
 
+ITEM {
+    type = "item",
+    name = "yuba",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/yuba.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-soy",
+    order = "aah",
+    stack_size = 200
+}
+
 FLUID {
     type = "fluid",
     name = "soy-milk",

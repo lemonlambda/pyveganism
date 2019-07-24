@@ -35,6 +35,18 @@ data:extend {
     },
     {
         type = "item-subgroup",
+        name = "py-veganism-proteins",
+        group = "py-veganism",
+        order = "abb"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-carbohydrates",
+        group = "py-veganism",
+        order = "abc"
+    },
+    {
+        type = "item-subgroup",
         name = "py-veganism-samples",
         group = "py-veganism",
         order = "aca"
@@ -66,45 +78,51 @@ data:extend {
     }, 
     {
         type = "item-subgroup",
-        name = "py-veganism-oil-plants",
+        name = "py-veganism-proxae",
         group = "py-veganism",
         order = "bbe"
     }, 
     {
         type = "item-subgroup",
+        name = "py-veganism-oil-plants",
+        group = "py-veganism",
+        order = "bce"
+    }, 
+    {
+        type = "item-subgroup",
         name = "py-veganism-cocoa",
         group = "py-veganism",
-        order = "bbea"
+        order = "bcea"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-coconut",
         group = "py-veganism",
-        order = "bbeb"
+        order = "bceb"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-oil-palm",
         group = "py-veganism",
-        order = "bbec"
+        order = "bcec"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-canola",
         group = "py-veganism",
-        order = "bbed"
+        order = "bced"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-soy",
         group = "py-veganism",
-        order = "bbee"
+        order = "bcee"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-atztazzae",
         group = "py-veganism",
-        order = "bbf"
+        order = "bda"
     }, 
     {
         type = "item-subgroup",
