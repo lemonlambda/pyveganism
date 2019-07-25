@@ -55,5 +55,6 @@ ITEM {
     flags = {},
     subgroup = "py-veganism-coconut",
     order = "abcd",
-    stack_size = 200
+    stack_size = 200,
+    localised_description = {"item-description.coconut-butter"}
 }

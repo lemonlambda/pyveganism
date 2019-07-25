@@ -9,7 +9,8 @@ ITEM {
     flags = {},
     subgroup = "py-veganism-plants",
     order = "aaa",
-    stack_size = 100
+    stack_size = 100,
+    localised_description = {"item-description.tiriscefing-willow"}
 }
 
 ITEM {

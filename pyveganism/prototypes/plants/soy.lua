@@ -79,7 +79,8 @@ ITEM {
     flags = {},
     subgroup = "py-veganism-soy",
     order = "aag",
-    stack_size = 200
+    stack_size = 200,
+    localised_description = {"item-description.tempeh"}
 }
 
 ITEM {

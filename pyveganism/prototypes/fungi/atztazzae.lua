@@ -31,5 +31,6 @@ ITEM {
     flags = {},
     subgroup = "py-veganism-atztazzae",
     order = "aac",
-    stack_size = 200
+    stack_size = 200,
+    localised_description = {"item-description.atztazzae-mushroom"}
 }

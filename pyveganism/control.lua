@@ -2,7 +2,7 @@ local string = require("__stdlib__/stdlib/utils/string")
 local table = require("__stdlib__/stdlib/utils/table")
 
 --[[
--- Registered Entities
+--> Registered Entities
 ]]--
 
 --[[
@@ -19,6 +19,8 @@ local table = require("__stdlib__/stdlib/utils/table")
         ["beacons"]: beacons_table
         ["recipe"]: recipe_name
         ["tick_last_refresh"]: tick of the last refresh
+        ["pending_humus"]: float
+        ["composting_progress"]
 
     beacons_table: table
         [tech_name]: lua_entity (of the beacon)
@@ -35,7 +37,7 @@ local TYPE_BEACONED_MACHINE = 1
 local TYPE_COMPOSTING_SILO = 2
 
 --[[
--- Beaconed machine variables
+--> Beaconed machine variables (must be final)
 ]]--
 function lvl_name(technology, level)
     return technology.name .. "-" .. level
@@ -151,6 +153,10 @@ for _, tech in pairs(technologies) do
     end
 end
 
+--[[
+--> Implementation Beaconed Entities
+]]--
+
 -- The current number of modules for this entity for this technology
 function current_module_count(entity, technology)
     if not (allowes_recipe(technology, get_active_recipe(entity))) then
@@ -200,7 +206,7 @@ function remove_all_beacons_for(registered_entity)
     registered_entity.beacons = {}
 end
 
-function refresh(registered_entity)
+function refresh_beaconed_entity(registered_entity)
     for tech_name, beacon in pairs(registered_entity.beacons) do
         local technology = technologies[tech_name]
         local module_count = current_module_count(registered_entity.entity, technology)
@@ -213,10 +219,98 @@ function refresh(registered_entity)
             }
         end
     end
+end
+
+--[[
+--> Implementation Composting Silo
+]]--
+local compostable_items = require("prototypes.composting-values")
+
+function analyze_silo_inventory(registered_silo)
+    local contents = registered_silo.entity.get_inventory(defines.inventory.chest).get_contents()
+
+    local count = 0
+    local type_count = 0
+    for item_name, item_count in pairs(contents) do
+        if compostable_items[item_name] then
+            count = count + item_count
+            type_count = type_count + 1
+        end
+    end
+
+    return {count = count, type_count = type_count}
+end
+
+local composting_coefficient = 1. / 600. / 200. -- 1 Humus every 10 Seconds (600 ticks) when 200 Items are in the silo
+function get_composting_progress(item_count, item_types_count, time)
+    return item_count * item_types_count * time * composting_coefficient * math.max(1., math.min(5., item_count / 2000.))
+end
+
+function remove_compostable_items(registered_silo, type_count)
+    if registered_silo.composting_progress < 1 then
+        return
+    end
+    local inventory = registered_silo.entity.get_inventory(defines.inventory.chest)
+    
+    local index_to_remove = math.random(type_count)
+    local count = 1
+
+    for item_name, _ in pairs(inventory.get_contents()) do
+        if compostable_items[item_name] then
+            if count == index_to_remove then
+                local removed_count = inventory.remove{name = item_name, count = math.floor(registered_silo.composting_progress)}
+                registered_silo.composting_progress = registered_silo.composting_progress - removed_count
+                registered_silo.pending_humus = registered_silo.pending_humus + removed_count * compostable_items[item_name]
+                break
+            else 
+                count = count + 1
+            end
+        end
+    end
+end
+
+function process_compostable_items(registered_silo)
+    local delta_time = game.tick - registered_silo.tick_last_refresh
+    local details = analyze_silo_inventory(registered_silo)
+    registered_silo.composting_progress = registered_silo.composting_progress + get_composting_progress(details.count, details.type_count, delta_time)
+    remove_compostable_items(registered_silo, details.type_count)
+end
+
+function distribute_humus(registered_silo)
+    local count = math.floor(registered_silo.pending_humus)
+    if count < 1 then 
+        return 
+    end
+
+    local inventory = registered_silo.entity.get_inventory(defines.inventory.chest)
+    local item_stack = {name = "humus", count = count}
+
+    if inventory.can_insert(item_stack) then
+        local inserted_count = inventory.insert(item_stack)
+        registered_silo.pending_humus = registered_silo.pending_humus - inserted_count
+    end
+end
+
+function refresh_composting_silo(registered_silo)
+    if registered_silo.pending_humus < 1000 then -- stop consuming material if a lot of humus is generated, but cannot be inserted
+        process_compostable_items(registered_silo)
+    end
+    distribute_humus(registered_silo)
+end
+
+--[[
+--> Implementation Register
+]]--
+function refresh(registered_entity)
+    if registered_entity.type == TYPE_BEACONED_MACHINE then
+        refresh_beaconed_entity(registered_entity)
+    elseif registered_entity.type == TYPE_COMPOSTING_SILO then
+        refresh_composting_silo(registered_entity)
+    end
     registered_entity.tick_last_refresh = game.tick
 end
 
--- Refreshes all beacons, calling it will likely cause a lag spike
+-- Refreshes all registered entities, calling it will likely cause a lag spike
 function refresh_all_entries()
     for _, registered_entity in pairs(global.registered_machines) do
         refresh(registered_entity)
@@ -237,11 +331,14 @@ function register_beaconed_machine(entity)
     }
 end
 
+-- Adds the composting silo to the register
 function register_composting_silo(entity)
     global.registered_machines[entity] = {
         type = TYPE_COMPOSTING_SILO,
         entity = entity,
-        tick_last_refresh = game.tick
+        tick_last_refresh = game.tick, 
+        pending_humus = 0.,
+        composting_progress = 0.
     }
 end
 
@@ -317,10 +414,6 @@ function check_registered_beaconed_entity(registered_entity)
     end
 end
 
-function check_registered_composting_silo(registered_entity)
-
-end
-
 function check_registered_entity(registered_entity)
     local entity = registered_entity.entity
 
@@ -333,7 +426,7 @@ function check_registered_entity(registered_entity)
         check_registered_beaconed_entity(registered_entity)
     end
     if registered_entity.type == TYPE_COMPOSTING_SILO then
-        check_registered_composting_silo(registered_entity)
+        refresh(registered_entity)
     end
 end
 
@@ -388,7 +481,9 @@ function settings_update(event)
     global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
 end
 
--- Set Eventhandlers
+--[[
+--> Eventhandlers   
+]]--
 -- initialisation
 script.on_init(init)
 
@@ -416,7 +511,7 @@ script.on_event(defines.events.on_gui_closed, on_suspected_recipe_change)
 script.on_event(defines.events.on_entity_settings_pasted, on_suspected_recipe_change)
 
 --[[
--- Sample crafting effects
+--> Sample crafting effects
 ]]--
 
 --[[

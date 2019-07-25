@@ -13,7 +13,7 @@ ITEM {
 ENTITY {
     type = "container",
     name = "composting-silo",
-    icon = "__pyveganism__/graphics/icons/composting-silo.png",--TODO
+    icon = "__pyveganism__/graphics/icons/composting-silo.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "composting-silo"},
@@ -52,5 +52,5 @@ ITEM {
     flags = {},
     subgroup = "py-veganism-biomass",
     order = "caa",
-    stack_size = 500
+    stack_size = 1000
 }
