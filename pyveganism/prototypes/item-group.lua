@@ -84,6 +84,12 @@ data:extend {
     }, 
     {
         type = "item-subgroup",
+        name = "py-veganism-pseudodaemonas",
+        group = "py-veganism",
+        order = "bbf"
+    },
+    {
+        type = "item-subgroup",
         name = "py-veganism-oil-plants",
         group = "py-veganism",
         order = "bce"
@@ -116,13 +122,25 @@ data:extend {
         type = "item-subgroup",
         name = "py-veganism-soy",
         group = "py-veganism",
-        order = "bcee"
+        order = "bda"
     }, 
+    {
+        type = "item-subgroup", 
+        name = "py-veganism-sugar-cane",
+        group = "py-veganism",
+        order = "bea"
+    },
+    {
+        type = "item-subgroup", 
+        name = "py-veganism-sugar-beet",
+        group = "py-veganism",
+        order = "beb"
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-atztazzae",
         group = "py-veganism",
-        order = "bda"
+        order = "bfa"
     }, 
     {
         type = "item-subgroup",

@@ -181,7 +181,7 @@ RECIPE {
     energy_required = 4,
     ingredients = {
         {type = "item", name = "soy-beans", amount = 20}, 
-        --{type = "fluid", name = "proxae", amount = 20}
+        {type = "fluid", name = "proxae", amount = 50}
     },
     results = {
         {type = "item", name = "tempeh", amount = 5}

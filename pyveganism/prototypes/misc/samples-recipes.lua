@@ -25,10 +25,10 @@ RECIPE {
     energy_required = 1,
     ingredients = {},
     results = {
-        {type = "item", name = "engineer-blood", amount = 1}
+        {type = "item", name = "blood-bag", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/engineer-blood.png"},
+        {icon = "__pyveganism__/graphics/icons/blood-bag.png"},
         {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
     },
     icon_size = 64,

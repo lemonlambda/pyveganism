@@ -1,44 +1,65 @@
 --TODO: refactor this mess
 
-local appendix_carbon_dioxide = "-carbon-dioxide"
-local list_carbon_dioxide = {
-    ["grow-coconut-palm"] = {amount = 200, effect = 1.5},
-    ["grow-oil-palm"] = {amount = 200, effect = 1.5},
-    ["grow-cocoa"] = {amount = 200, effect = 1.5},
-    ["grow-canola"] = {amount = 200, effect = 1.5},
-    ["grow-soy"] = {amount = 200, effect = 1.5}
+--[[
+    Lamp, CO2, Fertilizer, Humus
+    2^4 Rezepte -> 16
+]]--
+local carbon_dioxide_appendix = "-carbon-dioxide"
+local carbon_dioxide_icon = {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"}
+local carbon_dioxide_ingredient_function = function(recipe, details)
+    new_recipe:add_ingredient({type = "fluid", name = "carbon-dioxide", amount = details.amount})
+end
+local carbon_dioxide_recipes = {
+    ["grow-coconut-palm"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-oil-palm"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-cocoa"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-canola"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-soy"] = {amount = 200, productivity_effect = 1.5}
 }
 
-local appendix_ash = "-ash"
-local list_ash = {
-    ["grow-coconut-palm"] = {amount = 10, effect = 0.7},
-    ["grow-oil-palm"] = {amount = 10, effect = 0.7},
-    ["grow-cocoa"] = {amount = 10, effect = 0.7},
-    ["grow-canola"] = {amount = 10, effect = 0.7},
-    ["grow-soy"] = {amount = 10, effect = 0.7},
-    ["grow-atztazzae"] = {amount = 20, effect = 0.5}
+local lamp_appendix = "-lamp"
+local lamp_icon = {icon = "__pyveganism__/graphics/icons/with-lamp.png"}
+local lamp_ingredient_function = function(recipe, details)
+    new_recipe:add_ingredient({type = "lamp", name = "small-lamp", amount = details.amount})
+end
+local lamp_recipes = {
+    ["grow-coconut-palm"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-oil-palm"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-cocoa"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-canola"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-soy"] = {amount = 200, productivity_effect = 1.5}
 }
 
-local appendix_fertilizer = "-fertilizer"
-local list_fertilizer = {
-    ["grow-coconut-palm"] = {amount = 1, effect = 0.7},
-    ["grow-oil-palm"] = {amount = 1, effect = 0.7},
-    ["grow-cocoa"] = {amount = 1, effect = 0.7},
-    ["grow-canola"] = {amount = 1, effect = 0.7},
-    ["grow-soy"] = {amount = 1, effect = 0.7},
-    ["grow-atztazzae"] = {amount = 1, effect = 0.5}
+local fertilizer_appendix = "-fertilizer"
+local fertilizer_icon = {icon = "__pyveganism__/graphics/icons/with-fertilizer.png"}
+local fertilizer_ingredient_function = function(recipe, details)
+    new_recipe:add_ingredient({type = "fluid", name = "py-fertilizer", amount = details.amount})
+end
+local fertilizer_recipes = {
+    ["grow-coconut-palm"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-oil-palm"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-cocoa"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-canola"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-soy"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-atztazzae"] = {amount = 1, energy_required_effect = 0.5}
 }
 
-local appendix_dirty_water = "-dirty-water"
-local list_dirty_water = {
-    ["grow-coconut-palm"] = {amount = 300, effect = 0.7},
-    ["grow-oil-palm"] = {amount = 300, effect = 0.7},
-    ["grow-cocoa"] = {amount = 300, effect = 0.7},
-    ["grow-canola"] = {amount = 300, effect = 0.7},
-    ["grow-soy"] = {amount = 300, effect = 0.7}
+local humus_appendix = "-humus"
+local humus_icon = {icon = "__pyveganism__/graphics/icons/with-humus.png"}
+local humus_ingredient_function = function(recipe, details)
+    recipe:remove_ingredient("soil")
+    recipe:add_ingredient({type = "item", name = "humus", amount = details.amount})
+end
+local humus_recipes = {
+    ["grow-coconut-palm"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-oil-palm"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-cocoa"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-canola"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-soy"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-atztazzae"] = {amount = 1, energy_required_effect = 0.5}
 }
 
-local list_unlocks = {
+local unlocks = {
     ["grow-coconut-palm"] = {"oil-plants"},
     ["grow-oil-palm"] = {"oil-plants"},
     ["grow-cocoa"] = {"oil-plants"},
@@ -48,20 +69,40 @@ local list_unlocks = {
 }
 
 function add_unlocks(recipe, unlocks)
-    if not unlocks then return end
-
+    if not unlocks then 
+        return 
+    end
     for _, tech in pairs(unlocks) do
         recipe:add_unlock(tech)
     end
 end
 
-function create_recipe_clone(name, new_name, unlocks)
+function create_recipe_clone(name, new_name)
     local copy = util.table.deepcopy(data.raw.recipe[name])
     copy.name = new_name
-    local recipe = RECIPE(copy)
-    add_unlocks(recipe, unlocks)
-    return recipe
+    return RECIPE(copy)
 end
+
+function apply_effects(recipe, details)
+    if details.energy_required_effect then
+        recipe.energy_required = recipe.energy_required * details.energy_required_effect
+    end
+
+    if details.productivity_effect then
+        for _, result in pairs(recipe.results) do
+            result.amount = math.floor(result.amount * details.productivity_effect)
+        end
+    end
+end
+
+function create_recipe(name, appendix, details, unlocks, icon, ingredient_function)
+    local new_recipe = create_recipe_clone(name, name .. appendix)
+    table.insert(new_recipe.icons, icon)
+    apply_effects(new_recipe, details)
+    ingredient_function(new_recipe, details)
+    return new_recipe
+end
+
 
 function create_carbon_dioxide_recipe(recipe, details, unlocks)
     local name = recipe .. appendix_carbon_dioxide

@@ -12,8 +12,8 @@ RECIPE {
         {type = "fluid", name = "zirrella", amount = 50}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/zirrella.png" },
-        { icon = "__pyveganism__/graphics/icons/enrichment-culture.png" }
+        {icon = "__pyveganism__/graphics/icons/zirrella.png"},
+        {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-zirrella",
@@ -35,8 +35,8 @@ RECIPE {
         {type = "fluid", name = "zirrella", amount = 300}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/zirrella.png" },
-        { icon = "__pyveganism__/graphics/icons/pure-culture.png" }
+        {icon = "__pyveganism__/graphics/icons/zirrella.png"},
+        {icon = "__pyveganism__/graphics/icons/pure-culture.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-zirrella",
@@ -51,15 +51,15 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "nitrous-medium", amount = 150},
-        {type = "fluid", name = "zirrella", amount = 150}, 
+        {type = "fluid", name = "zirrella", amount = 150},
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
     results = {
         {type = "fluid", name = "urea-medium", amount = 300}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/zirrella.png" },
-        { icon = "__pyveganism__/graphics/icons/toxic-stress.png" }
+        {icon = "__pyveganism__/graphics/icons/zirrella.png"},
+        {icon = "__pyveganism__/graphics/icons/toxic-stress.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-zirrella",
@@ -73,7 +73,7 @@ RECIPE {
     enabled = true,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "urea-medium", amount = 150},
+        {type = "fluid", name = "urea-medium", amount = 150}
     },
     results = {
         {type = "item", name = "urea", amount = 50}

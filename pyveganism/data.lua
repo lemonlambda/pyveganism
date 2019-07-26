@@ -32,6 +32,8 @@ local enabled_concepts = {
     --microorganisms
     "microorganisms.solfaen",
     "microorganisms.sludge",
+    "microorganisms.proxae",
+    "microorganisms.pseudodaemonas",
     --
     --fungi
     "fungi.atztazzae",

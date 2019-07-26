@@ -13,8 +13,8 @@ RECIPE {
         {type = "fluid", name = "fiicorum", amount = 50}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/fiicorum.png" },
-        { icon = "__pyveganism__/graphics/icons/enrichment-culture.png" }
+        {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
+        {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-fiicorum",
@@ -36,8 +36,8 @@ RECIPE {
         {type = "fluid", name = "fiicorum", amount = 300}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/fiicorum.png" },
-        { icon = "__pyveganism__/graphics/icons/pure-culture.png" }
+        {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
+        {icon = "__pyveganism__/graphics/icons/pure-culture.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-fiicorum",
@@ -51,22 +51,22 @@ RECIPE {
     enabled = true,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "steam", amount = 150}, 
+        {type = "fluid", name = "steam", amount = 150},
         {type = "fluid", name = "fiicorum", amount = 300}
     },
     results = {
         {type = "fluid", name = "nitrous-medium", amount = 300}
     },
     icons = {
-        { icon = "__pyveganism__/graphics/icons/fiicorum.png" },
-        { icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png" }
+        {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
+        {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-fiicorum",
     order = "aca"
 }
 
-if mods["pypetroleumhandling"] then 
+if mods["pypetroleumhandling"] then
     RECIPE {
         type = "recipe",
         name = "fiicorum-enrichment-culture-2",
@@ -82,14 +82,14 @@ if mods["pypetroleumhandling"] then
             {type = "fluid", name = "fiicorum", amount = 50}
         },
         icons = {
-            { icon = "__pyveganism__/graphics/icons/fiicorum.png" },
-            { icon = "__pyveganism__/graphics/icons/enrichment-culture.png" }
+            {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
+            {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
         },
         icon_size = 64,
         subgroup = "py-veganism-fiicorum",
         order = "aab"
     }
-    
+
     RECIPE {
         type = "recipe",
         name = "fiicorum-pure-culture-2",
@@ -105,14 +105,14 @@ if mods["pypetroleumhandling"] then
             {type = "fluid", name = "fiicorum", amount = 300}
         },
         icons = {
-            { icon = "__pyveganism__/graphics/icons/fiicorum.png" },
-            { icon = "__pyveganism__/graphics/icons/pure-culture.png" }
+            {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
+            {icon = "__pyveganism__/graphics/icons/pure-culture.png"}
         },
         icon_size = 64,
         subgroup = "py-veganism-fiicorum",
         order = "abb"
     }
-    
+
     RECIPE {
         type = "recipe",
         name = "fiicorum-hyperthermic-stress-2",
@@ -120,15 +120,15 @@ if mods["pypetroleumhandling"] then
         enabled = true,
         energy_required = 5,
         ingredients = {
-            {type = "fluid", name = "hot-air", amount = 150}, 
+            {type = "fluid", name = "hot-air", amount = 150},
             {type = "fluid", name = "fiicorum", amount = 300}
         },
         results = {
             {type = "fluid", name = "nitrous-medium", amount = 300}
         },
         icons = {
-            { icon = "__pyveganism__/graphics/icons/fiicorum.png" },
-            { icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png" }
+            {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
+            {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
         },
         icon_size = 64,
         subgroup = "py-veganism-fiicorum",

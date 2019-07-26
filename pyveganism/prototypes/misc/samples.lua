@@ -12,9 +12,9 @@ ITEM {
 
 ITEM {
     type = "item",
-    name = "engineer-blood",
+    name = "blood-bag",
     enabled = false,
-    icon = "__pyveganism__/graphics/icons/engineer-blood.png",
+    icon = "__pyveganism__/graphics/icons/blood-bag.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-samples",
