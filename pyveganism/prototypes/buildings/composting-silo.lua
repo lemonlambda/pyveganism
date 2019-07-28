@@ -41,7 +41,8 @@ ENTITY {
     },
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
-    circuit_wire_max_distance = 9
+    circuit_wire_max_distance = 9,
+    enable_inventory_bar = false
 }
 
 ITEM {

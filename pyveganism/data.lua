@@ -13,10 +13,12 @@ local enabled_concepts = {
     --technologies
     "technologies.biomass",
     "technologies.oil-plants",
+    "technologies.protein-plants",
+    "technologies.oil-seeds",
+    "technologies.sugar-plants",
     "technologies.growth-media",
     "technologies.plant-breeding",
     "technologies.cultivation-expertise",
-    "technologies.protein-plants",
     --
     --buildings
     "buildings.composting-silo",
@@ -40,7 +42,8 @@ local enabled_concepts = {
     --
     --miscellaneous
     "misc.samples",
-    "misc.citric-acid"
+    "misc.citric-acid",
+    "misc.fertilizer"
 }
 
 if mods["pyhightech"] then
@@ -55,12 +58,21 @@ if mods["pyhightech"] then
     end
 end
 
-for _, concept in pairs(enabled_concepts) do
-    require("prototypes." .. concept)
+function prequire(file)
+    local ok, err = pcall(require, file)
+    if ok then
+        return err
+    elseif not err:find('^module .* not found') then
+        error(err)
+    end
 end
 
 for _, concept in pairs(enabled_concepts) do
-    require("prototypes." .. concept .. "-recipes")
+    prequire("prototypes." .. concept)
+end
+
+for _, concept in pairs(enabled_concepts) do
+    prequire("prototypes." .. concept .. "-recipes")
 end
 
 require("prototypes.generic-growing-recipes")

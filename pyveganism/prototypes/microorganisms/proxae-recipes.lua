@@ -5,8 +5,9 @@ RECIPE {
     enabled = true,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "deionized-water", amount = 50},
-        {type = "item", name = "toe-nail-sample", amount = 1}
+        {type = "fluid", name = "clean-water", amount = 50},
+        {type = "item", name = "toe-nail-sample", amount = 1},
+        {type = "item", name = "sugar", amount = 10}
     },
     results = {
         {type = "fluid", name = "proxae", amount = 50}
@@ -28,7 +29,8 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "clean-water", amount = 50},
-        {type = "fluid", name = "proxae", amount = 250}
+        {type = "fluid", name = "proxae", amount = 250}, 
+        {type = "item", name = "sugar", amount = 10}
     },
     results = {
         {type = "fluid", name = "proxae", amount = 300}
@@ -44,12 +46,12 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "hypertonic-stress-proxae",
+    name = "osmosis-stress-proxae",
     category = "bio-reactor",
     enabled = true,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "sugar", amount = 20},
+        {type = "item", name = "sugar", amount = 30},
         {type = "fluid", name = "proxae", amount = 300}
     },
     results = {
@@ -62,4 +64,4 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-proxae",
     order = "aca"
-}
+}:add_unlock("sugar-plants")

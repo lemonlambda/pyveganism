@@ -22,6 +22,18 @@ ITEM {
     stack_size = 200
 }
 
+ITEM {
+    type = "item",
+    name = "toe-nail-sample",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/toe-nail-sample.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-samples",
+    order = "aab",
+    stack_size = 200
+}
+
 --[[
     Blood Donation Penalty Sticker
 ]]--

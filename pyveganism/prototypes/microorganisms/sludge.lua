@@ -9,7 +9,7 @@ FLUID {
     base_color = {r = 0.5, g = 0.05, b = 0.1},
     flow_color = {r = 0.5, g = 0.05, b = 0.1},
     max_temperature = 100,
-    subgroup = "py-veganism-media"
+    subgroup = "py-veganism-mo"
 }
 
 FLUID {
