@@ -1,22 +1,13 @@
---TODO: refactor this mess
-
---[[
-    Lamp, CO2, Fertilizer, Humus, Pflanzenschutzmittel
-    2^5 Rezepte -> 32
-
-    [/, CO2, CO2 + Lamp],[/, Humus, Humus + Dünger, Humus + Dünger + PZM]
-    -> 3*4 = 12
-
-]]--
 local CARBON_DIOXIDE = 1
 local LAMP = 2
 local FERTILIZER = 3
 local HUMUS = 4
+local ASH = 5
 
 local carbon_dioxide_appendix = "-carbon-dioxide"
 local carbon_dioxide_icon = {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"}
 local carbon_dioxide_ingredient_function = function(recipe, details)
-    new_recipe:add_ingredient({type = "fluid", name = "carbon-dioxide", amount = details.amount})
+    recipe:add_ingredient{type = "fluid", name = "carbon-dioxide", amount = details.amount}
 end
 local carbon_dioxide_recipes = {
     ["grow-coconut-palm"] = {amount = 200, productivity_effect = 1.5},
@@ -29,28 +20,20 @@ local carbon_dioxide_recipes = {
 local lamp_appendix = "-lamp"
 local lamp_icon = {icon = "__pyveganism__/graphics/icons/with-lamp.png"}
 local lamp_ingredient_function = function(recipe, details)
-    for _, result in pairs(recipe.results) do
-        result.amount = result.amount * details.cycle_multiplier
-    end
-    for _, ingredient in pairs(recipe.ingredients) do
-        ingredient.amount = ingredient.amount * details.cycle_multiplier
-    end
-    recipe.energy_required = recipe.energy_required * details.cycle_multiplier
-
-    new_recipe:add_ingredient({type = "lamp", name = "small-lamp", amount = details.amount})
+    recipe:add_ingredient{type = "item", name = "small-lamp", amount = details.amount}
 end
 local lamp_recipes = {
-    ["grow-coconut-palm"] = {amount = 1, productivity_effect = 2, cycle_multiplier = 4},
-    ["grow-oil-palm"] = {amount = 1, productivity_effect = 2, cycle_multiplier = 4},
-    ["grow-cocoa"] = {amount = 1, productivity_effect = 2, cycle_multiplier = 4},
-    ["grow-canola"] = {amount = 1, productivity_effect = 2, cycle_multiplier = 4},
-    ["grow-soy"] = {amount = 1, productivity_effect = 2, cycle_multiplier = 4}
+    ["grow-coconut-palm"] = {amount = 1, productivity_effect = 2},
+    ["grow-oil-palm"] = {amount = 1, productivity_effect = 2},
+    ["grow-cocoa"] = {amount = 1, productivity_effect = 2},
+    ["grow-canola"] = {amount = 1, productivity_effect = 2},
+    ["grow-soy"] = {amount = 1, productivity_effect = 2}
 }
 
 local fertilizer_appendix = "-fertilizer"
 local fertilizer_icon = {icon = "__pyveganism__/graphics/icons/with-fertilizer.png"}
 local fertilizer_ingredient_function = function(recipe, details)
-    new_recipe:add_ingredient({type = "fluid", name = "py-fertilizer", amount = details.amount})
+    recipe:add_ingredient{type = "item", name = "py-fertilizer", amount = details.amount}
 end
 local fertilizer_recipes = {
     ["grow-coconut-palm"] = {amount = 1, energy_required_effect = 0.7},
@@ -58,22 +41,35 @@ local fertilizer_recipes = {
     ["grow-cocoa"] = {amount = 1, energy_required_effect = 0.7},
     ["grow-canola"] = {amount = 1, energy_required_effect = 0.7},
     ["grow-soy"] = {amount = 1, energy_required_effect = 0.7},
-    ["grow-atztazzae"] = {amount = 1, energy_required_effect = 0.5}
+    ["grow-atztazzae"] = {amount = 1, energy_required_effect = 0.5},
+    ["grow-tiriscefing-willow-1"] = {amount = 2, energy_required_effect = 0.5},
+    ["grow-tiriscefing-willow-2"] = {amount = 2, energy_required_effect = 0.5}
 }
 
 local humus_appendix = "-humus"
 local humus_icon = {icon = "__pyveganism__/graphics/icons/with-humus.png"}
 local humus_ingredient_function = function(recipe, details)
     recipe:remove_ingredient("soil")
-    recipe:add_ingredient({type = "item", name = "humus", amount = details.amount})
+    recipe:add_ingredient{type = "item", name = "humus", amount = details.amount}
 end
 local humus_recipes = {
-    ["grow-coconut-palm"] = {amount = 1, energy_required_effect = 0.7},
-    ["grow-oil-palm"] = {amount = 1, energy_required_effect = 0.7},
-    ["grow-cocoa"] = {amount = 1, energy_required_effect = 0.7},
-    ["grow-canola"] = {amount = 1, energy_required_effect = 0.7},
-    ["grow-soy"] = {amount = 1, energy_required_effect = 0.7},
-    ["grow-atztazzae"] = {amount = 1, energy_required_effect = 0.5}
+    ["grow-coconut-palm"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-oil-palm"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-cocoa"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-canola"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-soy"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-atztazzae"] = {amount = 30, energy_required_effect = 0.5},
+    ["grow-tiriscefing-willow-1"] = {amount = 30, energy_required_effect = 0.667},
+    ["grow-tiriscefing-willow-2"] = {amount = 30, energy_required_effect = 0.667}
+}
+
+local ash_appendix = "-ash"
+local ash_icon = {icon = "__pyveganism__/graphics/icons/with-ash.png"}
+local ash_ingredient_function = function(recipe, details)
+    recipe:add_ingredient{type = "item", name = "ash", amount = details.amount}
+end
+local ash_recipes = {
+    ["grow-atztazzae"] = {amount = 20, energy_required_effect = 0.5}
 }
 
 local unlocks = {
@@ -85,7 +81,7 @@ local unlocks = {
     ["grow-atztazzae"] = {"vanadium-processing"}
 }
 
-local progression_recipes = {
+local combination_details = {
     ["grow-coconut-palm"] = {
         groups = {
             {CARBON_DIOXIDE, LAMP}, 
@@ -121,26 +117,28 @@ local progression_recipes = {
             {FERTILIZER}, {ASH}, {HUMUS}
         }, 
         max_combinations = 1
-    }
+    },
+    ["grow-tiriscefing-willow-1"] = {
+        groups = {{HUMUS, FERTILIZER}}
+    },
+    ["grow-tiriscefing-willow-2"] = {
+        groups = {{HUMUS, FERTILIZER}}
+    },
 }
-
-local combination_details = {
-    ["grow-atztazzae"] = {max_combinations = 1, ingredients = {ASH, FERTILIZER, HUMUS}}
-}
-
-local function add_unlocks(recipe, unlocks)
-    if not unlocks then 
-        return 
-    end
-    for _, tech in pairs(unlocks) do
-        recipe:add_unlock(tech)
-    end
-end
 
 local function create_recipe_clone(name, new_name)
     local copy = util.table.deepcopy(data.raw.recipe[name])
     copy.name = new_name
     return RECIPE(copy)
+end
+
+local function add_unlocks(recipe, unlock_techs)
+    if not unlock_techs then 
+        return 
+    end
+    for _, tech in pairs(unlock_techs) do
+        recipe:add_unlock(tech)
+    end
 end
 
 local function apply_effects(recipe, details)
@@ -155,118 +153,103 @@ local function apply_effects(recipe, details)
     end
 end
 
-local function create_recipe(name, appendix, details, unlocks, icon, ingredient_function)
+local function create_recipe(name, appendix, details, unlock_techs, icon, ingredient_function)
     local new_recipe = create_recipe_clone(name, name .. appendix)
     table.insert(new_recipe.icons, icon)
-    add_unlocks(new_recipe, unlocks)
+    add_unlocks(new_recipe, unlock_techs)
     apply_effects(new_recipe, details)
     ingredient_function(new_recipe, details)
     return new_recipe
 end
 
 local creation_lookup = {
-    [CARBON_DIOXIDE] = function(recipe_name) 
+    [CARBON_DIOXIDE] = function(recipe_name, bottom_recipe_name) 
         return create_recipe(
             recipe_name, 
             carbon_dioxide_appendix, 
-            carbon_dioxide_recipes[recipe_name],
-            unlocks[recipe_name], 
+            carbon_dioxide_recipes[bottom_recipe_name],
+            unlocks[bottom_recipe_name], 
             carbon_dioxide_icon, 
             carbon_dioxide_ingredient_function
         )
     end,
-    [LAMP] = function(recipe_name)
+    [LAMP] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
             recipe_name, 
             lamp_appendix, 
-            lamp_recipes[recipe_name],
-            unlocks[recipe_name], 
+            lamp_recipes[bottom_recipe_name],
+            unlocks[bottom_recipe_name], 
             lamp_icon, 
             lamp_ingredient_function
         )
     end,
-    [FERTILIZER] = function(recipe_name)
+    [FERTILIZER] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
             recipe_name, 
             fertilizer_appendix, 
-            fertilizer_recipes[recipe_name],
-            unlocks[recipe_name], 
+            fertilizer_recipes[bottom_recipe_name],
+            unlocks[bottom_recipe_name], 
             fertilizer_icon, 
             fertilizer_ingredient_function
         )
     end,
-    [HUMUS] = function(recipe_name)
+    [HUMUS] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
             recipe_name, 
             humus_appendix, 
-            humus_recipes[recipe_name],
-            unlocks[recipe_name], 
+            humus_recipes[bottom_recipe_name],
+            unlocks[bottom_recipe_name], 
             humus_icon, 
             humus_ingredient_function
+        )
+    end, 
+    [ASH] = function(recipe_name, bottom_recipe_name)
+        return create_recipe(
+            recipe_name, 
+            ash_appendix,
+            ash_recipes[bottom_recipe_name], 
+            unlocks[bottom_recipe_name],
+            ash_icon,
+            ash_ingredient_function
         )
     end
 }
 
+local function create_ingredient_group_recipes(recipes, bottom_recipe_name, group,  max_combinations)
+    local created_recipes = {}
+    local recipes_todo = recipes
+
+    for _, ingredient in pairs(group) do
+        local next_todo = {}
+        
+        for _, recipe in pairs(recipes_todo) do
+            if recipe.combination_count < max_combinations then
+                local created_recipe = creation_lookup[ingredient](recipe.name, bottom_recipe_name)
+                local cr = {name = created_recipe.name, combination_count = recipe.combination_count + 1}
+                table.insert(next_todo, cr)
+                table.insert(created_recipes, cr)
+            end
+        end
+
+        recipes_todo = next_todo
+    end
+
+    return created_recipes
+end
+
 local function create_combinations_for(recipe_name)
     local details = combination_details[recipe_name]
-    local created_recipes = {
+    local existing_recipes = {
         {name = recipe_name, combination_count = 0}
     }
     local max_combinations = details.max_combinations and details.max_combinations or 1000
 
     for _, group in pairs(combination_details[recipe_name].groups) do
-        
-        for _, ingredient in pairs(group) do
-
-        end
-        
+        local created_recipes = create_ingredient_group_recipes(existing_recipes, recipe_name, group, max_combinations)
+        table.merge(existing_recipes, created_recipes, true)
     end
 end
 
---[[for recipe, details in pairs(list_carbon_dioxide) do
-    local co2_recipe = create_carbon_dioxide_recipe(recipe, details, list_unlocks[recipe])
-
-    if list_ash[recipe] then
-        local co2_ash_recipe = create_ash_recipe(co2_recipe.name, list_ash[recipe], list_unlocks[recipe])
-
-        if (list_dirty_water[recipe]) then
-            create_dirty_water_recipe(co2_ash_recipe.name, list_dirty_water[recipe], list_unlocks[recipe])
-        end
-    end
-
-    if mods["pyhightech"] and list_fertilizer[recipe] then
-        local co2_fertilizer_recipe =
-            create_fertilizer_recipe(co2_recipe.name, list_fertilizer[recipe], list_unlocks[recipe])
-
-        if list_dirty_water[recipe] then
-            create_dirty_water_recipe(co2_fertilizer_recipe.name, list_dirty_water[recipe], list_unlocks[recipe])
-        end
-    end
-
-    if list_dirty_water[recipe] then
-        create_dirty_water_recipe(co2_recipe.name, list_dirty_water[recipe], list_unlocks[recipe])
-    end
+for recipe, _ in pairs(combination_details) do
+    create_combinations_for(recipe)
 end
-
-for recipe, details in pairs(list_ash) do
-    local ash_recipe = create_ash_recipe(recipe, details, list_unlocks[recipe])
-
-    if list_dirty_water[recipe] then
-        create_dirty_water_recipe(ash_recipe.name, list_dirty_water[recipe], list_unlocks[recipe])
-    end
-end
-
-if mods["pyhightech"] then
-    for recipe, details in pairs(list_fertilizer) do
-        local fertilizer_recipe = create_fertilizer_recipe(recipe, details, list_unlocks[recipe])
-
-        if list_dirty_water[recipe] then
-            create_dirty_water_recipe(fertilizer_recipe.name, list_dirty_water[recipe], list_unlocks[recipe])
-        end
-    end
-end
-
-for recipe, details in pairs(list_dirty_water) do
-    create_dirty_water_recipe(recipe, details, list_unlocks[recipe])
-end
-]]

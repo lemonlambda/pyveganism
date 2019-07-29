@@ -8,6 +8,7 @@ recipe_bio_reactor:set_enabled()
 recipe_bio_reactor:replace_ingredient("advanced-circuit", "electronic-circuit")
 recipe_bio_reactor:replace_ingredient("gasturbinemk02", "gasturbinemk01")
 recipe_bio_reactor:remove_ingredient("super-alloy")
+recipe_bio_reactor:remove_ingredient("mixer")
 
 RECIPE("chemical-plant"):set_enabled()
 RECIPE("mixer"):set_enabled()
@@ -16,6 +17,7 @@ RECIPE("mixer"):set_enabled()
 RECIPE("fawogae").hidden = false
 data.raw["assembling-machine"]["fawogae-plantation"].fixed_recipe = nil
 
+-- Add more pipe connections to the bio reactor, so that it can have recipe with up to 4 fluid in-/outputs
 data.raw["assembling-machine"]["bio-reactor"]["fluid_boxes"] = {
     --North
     {

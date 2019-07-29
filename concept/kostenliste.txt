@@ -1,70 +1,86 @@
-32 kJ pro Hydrogen
-114 kJ pro Soil
-1873 kJ pro Ralesia
-1215 kJ pro Ralesia Seed
-2000 kJ pro Limestone (im Soil Extractor, billiger im Solid Separator)
-2525 kJ pro Lime
-850 kJ pro Calcium Carbide
-54,5 kJ pro Acetylene (1/2 Acetylene, Slacked Lime)
-218 kJ pro Slacked Lime
-616 kJ pro Sodium Hydroxid (aus Slacked Lime und Salz, wenn Acetylene verwendet wird)
+Hydrogen: 32 kJ pro 
+Soil: 114 kJ pro Soil
+Ralesia: 1873 kJ pro Ralesia
+Ralesia Seed: 1215 kJ pro
+Limestone: 2000 kJ pro (im Soil Extractor, billiger im Solid Separator)
+Lime: 2525 kJ pro
+Calcium Carbide: 850 kJ pro
+Acetylene: 54,5 kJ pro (1/2 Acetylene, Slacked Lime)
+Slacked Lime: 218 kJ pro
+Sodium Hydroxid: 616 kJ pro (aus Slacked Lime und Salz, wenn Acetylene verwendet wird)
 
-2580 kJ pro Log (Wasserrezept)
-756 kJ pro Wood
-51,6 kJ pro Organic Matter (aus Logs)
-416 kJ pro Fawogae
-670 kJ pro Coal aus Fawogae
-180 kJ pro Coal aus Ore
-420 kJ pro Coke aus Ore aus HPF
-450 kJ pro Coke aus Ore aus DDC (minus Coal Gas, Tar und Iron Oxide)
-150 kJ pro Coke aus DDC (1/3 Coke, Coal Gas, Tar)
-3 kJ pro Tar aus DDC
-7,5 kJ pro Creosote
-3,75 kJ pro Coal Gas aus DDC
-5094 kJ pro Bone Meal aus Ulrics
-166 kJ pro Urea aus Fawogae
-15 kJ pro Vacuum
-7,5 kJ pro Pressurized Air
-1,875 kJ pro Pressurized Water
-30 kJ pro Steam
-5,325 kJ pro Hot Air
-5,72 kJ pro Carbon Dioxide (aus OM aus Logs)
-4 kJ pro Carbon Diodide (wenn OM kostenlos ist)
-70 kJ pro Raw Borax (plus SynGas, ist schwer zu berechnen)
-140 kJ pro Borax
-137 kJ pro Diborane
-33,8 kJ pro Boric acid
-9010 kJ pro Boron trioxide
-320 kJ pro Tholin
-673 kJ pro Chlor aus Tholin
-400 kJ pro Salt
-3300 kJ pro Sodium Chlorate
-491 kJ pro Fawogae Substrate
-8250 kJ pro Stone Wool (recipe stone, steam)
-5700 kJ pro Stone Wool (recipe gravel, creosote)
-42 kJ pro Saline Water (stone washing)
-44,2 kJ pro Saline Water (Salz)
-4,8 kJ pro Saline Water (Quenching, plus mega viele Nebenprodukte)
-41532 kJ pro Zipir Carcass
-819 kJ pro Treated Wood
-1133 kJ pro Clay
-2680 kJ pro Raw Fiber (Soil recipe)
-8176 kJ pro Fiberboard (ohne Sodium Sulfate)
-8530 kJ pro Serine
+Log: 2580 kJ pro (Wasserrezept)
+Wood: 756 kJ pro
+Organic Matter: 51,6 kJ pro (aus Logs)
+Fawogae: 416 kJ pro
+Coal aus Fawogae: 670 kJ pro
+Coal aus Ore: 180 kJ pro
+Coke aus Ore aus HPF: 420 kJ pro
+Coke aus Ore aus DDC: 450 kJ pro (minus Coal Gas, Tar und Iron Oxide)
+Coke aus DDC: 150 kJ pro (1/3 Coke, Coal Gas, Tar)
+Tar aus DDC: 3 kJ pro
+Creosote: 7,5 kJ pro
+Coal Gas aus DDC: 3,75 kJ pro
+Bone Meal: 5094 kJ pro (aus Ulrics)
+Urea: 166 kJ pro (aus Auogs)
+Vacuum: 15 kJ pro
+Pressurized Air: 7,5 kJ pro
+Pressurized Water: 1,875 kJ pro
+Steam: 30 kJ pro
+Hot Air: 5,325 kJ pro
+Carbon Dioxide: 5,72 kJ pro  (aus OM aus Logs)
+Carbon Diodide: 4 kJ pro (wenn OM kostenlos ist)
+Raw Borax: 70 kJ pro (plus SynGas, ist schwer zu berechnen)
+Borax: 140 kJ pro
+Diborane: 137 kJ pro
+Boric acid: 33,8 kJ pro
+Boron trioxide: 9010 kJ pro
+Tholin: 320 kJ pro
+Chlor: 673 kJ pro (aus Tholin)
+Salt: 400 kJ pro
+Sodium Chlorate: 3300 kJ pro
+Fawogae Substrate: 491 kJ pro
+Stone Wool: 8250 kJ pro (recipe stone, steam)
+Stone Wool: 5700 kJ pro (recipe gravel, creosote)
+Saline Water: 42 kJ pro (stone washing)
+Saline Water: 44,2 kJ pro (Salz)
+Saline Water: 4,8 kJ pro (Quenching, plus mega viele Nebenprodukte)
+Treated Wood: 819 kJ pro 
+Clay: 1133 kJ pro
+Raw Fiber: 2680 kJ pro (Soil recipe)
+Fiberboard: 8176 kJ pro (ohne Sodium Sulfate)
+Serine: 8530 kJ pro
 
-312 kJ pro tailings dust (wahrscheinlich wesentlich billiger, weil es normalerweise nervige Nebenprodukte verwendet)
+Tailings Dust: 312 kJ pro (wahrscheinlich wesentlich billiger, weil es normalerweise nervige Nebenprodukte verwendet)
 
+Zipir Carcass: 41532 kJ pro
+Bei gleichmäßiger Aufteilung der Kosten auf alle Zipir Produkte: 
+Bone: 2076,6 kJ pro
+Skin: 692,2 kJ pro
+Meat: 3461 kJ pro
+Blood: 173,05 kJ pro
 
+Bei Annahme, dass Asche ein kostenloses Nebenprodukt ist:
+Fertilizer: 1951,31 kJ pro (pyht recipe)
 
 Eigene Sachen: 
-100 kJ pro Solfaen
-1200 kJ pro dried Solfaen
-1240 kJ pro washed Solfaen
-1300 kJ pro agarose gel
-20 kJ pro sterile water (boiling)
-10 kJ pro sterile water (Chlor)
-2 kJ pro sterile water (Chlordioxid)
+Solfaen: 100 kJ pro 
+Dried Solfaen: 1200 kJ pro 
+Washed Solfaen: 1240 kJ pro 
+Agarose gel: 1300 kJ pro 
+Sterile water: 20 kJ pro (boiling)
+Sterile water: 10 kJ pro (Chlor)
+Sterile water: 2 kJ pro (Chlordioxid)
 
+Solid Fat: 1000 kJ pro
+Plant Oil: 100 kJ pro
+
+Oil Palm Fruit: 880 kJ pro
+Oil Palm Fruit Flesh: 
+Oil Palm Kernel: 
+Oil Palm Kernel Dry: 
+Oil Palm Kernel Open: 
+Impure Palm Oil: 
 
 Fuel Values: 
 2500 kJ dry biomass

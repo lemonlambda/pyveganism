@@ -66,6 +66,7 @@ RECIPE {
     order = "aca"
 }
 
+local size = py_veganism_globals["urea_icon"].size
 RECIPE {
     type = "recipe",
     name = "evaporate-urea-medium",
@@ -79,10 +80,10 @@ RECIPE {
         {type = "item", name = "urea", amount = 50}
     },
     icons = {
-        {icon = "__pyhightech__/graphics/icons/urea.png"},
-        {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
+        {icon = py_veganism_globals["urea_icon"].icon},
+        {icon = py_veganism_globals:get_vegan_icon(size)}
     },
-    icon_size = 32,
+    icon_size = size,
     subgroup = "py-veganism-zirrella",
     order = "ada"
 }

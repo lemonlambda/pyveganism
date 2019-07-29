@@ -32,6 +32,8 @@ local enabled_concepts = {
     "plants.soy",
     --
     --microorganisms
+    "microorganisms.fiicorum",
+    "microorganisms.zirrella",
     "microorganisms.solfaen",
     "microorganisms.sludge",
     "microorganisms.proxae",
@@ -43,36 +45,30 @@ local enabled_concepts = {
     --miscellaneous
     "misc.samples",
     "misc.citric-acid",
-    "misc.fertilizer"
+    "misc.grow-equipment"
 }
 
-if mods["pyhightech"] then
+--[[if mods["pyhightech"] then
     local pyht_concepts = {
         --microorganisms
-        "microorganisms.fiicorum",
-        "microorganisms.zirrella"
     }
 
-    for _, concept in pairs(pyht_concepts) do
-        table.insert(enabled_concepts, concept)
-    end
-end
+    table.merge(enabled_concepts, pyht_concepts, true)
+end]]
 
-function prequire(file)
+function try_load(file)
     local ok, err = pcall(require, file)
-    if ok then
-        return err
-    elseif not err:find('^module .* not found') then
+    if not ok and not err:find('^module .* not found') then
         error(err)
     end
 end
 
 for _, concept in pairs(enabled_concepts) do
-    prequire("prototypes." .. concept)
+    try_load("prototypes." .. concept)
 end
 
 for _, concept in pairs(enabled_concepts) do
-    prequire("prototypes." .. concept .. "-recipes")
+    try_load("prototypes." .. concept .. "-recipes")
 end
 
 require("prototypes.generic-growing-recipes")

@@ -20,7 +20,7 @@ local table = require("__stdlib__/stdlib/utils/table")
         ["recipe"]: recipe_name
         ["tick_last_refresh"]: tick of the last refresh
         ["pending_humus"]: float
-        ["composting_progress"]
+        ["composting_progress"]: float
 
     beacons_table: table
         [tech_name]: lua_entity (of the beacon)
@@ -302,6 +302,11 @@ end
 --> Implementation Register
 ]]--
 function refresh(registered_entity)
+    if not registered_entity.entity.valid then
+        unregister(registered_entity)
+        return
+    end
+
     if registered_entity.type == TYPE_BEACONED_MACHINE then
         refresh_beaconed_entity(registered_entity)
     elseif registered_entity.type == TYPE_COMPOSTING_SILO then
@@ -343,7 +348,7 @@ function register_composting_silo(entity)
 end
 
 -- Removes the machine from the register and removes all it's beacons
-function unregister_machine(registered_entity)
+function unregister(registered_entity)
     if registered_entity.type == TYPE_BEACONED_MACHINE then
         remove_all_beacons_for(registered_entity)
     end
@@ -374,7 +379,7 @@ end
 -- Eventhandler machine removed
 function on_entity_removed(event)
     if global.registered_machines[event.entity] then
-        unregister_machine(global.registered_machines[event.entity])
+        unregister(global.registered_machines[event.entity])
     end
 end
 
@@ -418,7 +423,7 @@ function check_registered_entity(registered_entity)
     local entity = registered_entity.entity
 
     if not entity.valid then
-        unregister_machine(registered_entity)
+        unregister(registered_entity)
         return
     end
 
@@ -470,6 +475,8 @@ function init()
     global.registered_machines = {}
     global.tick_last_finished_research = 0
 
+    global.PYV_VERSION = game.active_mods["pyveganism"]
+
     for _, surface in pairs(game.surfaces) do
         for _, entity in pairs(surface.find_entities_filtered{name = table.keys(relevant_machines)}) do
             register_beaconed_machine(entity)
@@ -479,6 +486,19 @@ end
 
 function settings_update(event)
     global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
+
+    -- Check if the stored version number equals the version of the loaded mod
+    if game.active_mods["pyveganism"] ~= global.PYV_VERSION then
+        -- I published a new version. Reset recipes, techs and tech effects in case I changed something. 
+        -- I do that a lot and don't want to forget a migration file. 
+        global.PYV_VERSION = PYV_VERSION
+
+        for _, force in pairs(game.forces) do
+            force.reset_recipes()
+            force.reset_technologies()
+            force.reset_technology_effects()
+        end
+    end
 end
 
 --[[

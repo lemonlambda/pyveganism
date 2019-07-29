@@ -46,10 +46,16 @@ data:extend {
         order = "abc"
     },
     {
+        type = "item-subgroup", 
+        name = "py-veganism-grow-equipment",
+        group = "py-veganism", 
+        order = "aca"
+    },
+    {
         type = "item-subgroup",
         name = "py-veganism-samples",
         group = "py-veganism",
-        order = "aca"
+        order = "ada"
     },
     --recipes
     {
@@ -77,16 +83,22 @@ data:extend {
         order = "bbd"
     }, 
     {
+        type = "item-subgroup", 
+        name = "py-veganism-morgenroete",
+        group = "py-veganism", 
+        order = "bbe"
+    },
+    {
         type = "item-subgroup",
         name = "py-veganism-proxae",
         group = "py-veganism",
-        order = "bbe"
+        order = "bbf"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-pseudodaemonas",
         group = "py-veganism",
-        order = "bbf"
+        order = "bbg"
     },
     {
         type = "item-subgroup",
@@ -141,7 +153,7 @@ data:extend {
         name = "py-veganism-atztazzae",
         group = "py-veganism",
         order = "bfa"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-combustion",
