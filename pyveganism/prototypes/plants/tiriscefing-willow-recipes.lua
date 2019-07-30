@@ -13,7 +13,9 @@ RECIPE {
         {type = "item", name = "tiriscefing-willow", amount = 3}
     },
     main_product = "tiriscefing-willow",
-    icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
     order = "aaa"

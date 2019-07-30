@@ -14,7 +14,9 @@ local carbon_dioxide_recipes = {
     ["grow-oil-palm"] = {amount = 200, productivity_effect = 1.5},
     ["grow-cocoa"] = {amount = 200, productivity_effect = 1.5},
     ["grow-canola"] = {amount = 200, productivity_effect = 1.5},
-    ["grow-soy"] = {amount = 200, productivity_effect = 1.5}
+    ["grow-soy"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-sugar-beet"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-sugar-cane"] = {amount = 200, productivity_effect = 1.5}
 }
 
 local lamp_appendix = "-lamp"
@@ -27,7 +29,9 @@ local lamp_recipes = {
     ["grow-oil-palm"] = {amount = 1, productivity_effect = 2},
     ["grow-cocoa"] = {amount = 1, productivity_effect = 2},
     ["grow-canola"] = {amount = 1, productivity_effect = 2},
-    ["grow-soy"] = {amount = 1, productivity_effect = 2}
+    ["grow-soy"] = {amount = 1, productivity_effect = 2},
+    ["grow-sugar-beet"] = {amount = 1, productivity_effect = 2},
+    ["grow-sugar-cane"] = {amount = 1, productivity_effect = 2}
 }
 
 local fertilizer_appendix = "-fertilizer"
@@ -41,6 +45,8 @@ local fertilizer_recipes = {
     ["grow-cocoa"] = {amount = 1, energy_required_effect = 0.7},
     ["grow-canola"] = {amount = 1, energy_required_effect = 0.7},
     ["grow-soy"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-sugar-beet"] = {amount = 1, energy_required_effect = 0.7},
+    ["grow-sugar-cane"] = {amount = 1, energy_required_effect = 0.7},
     ["grow-atztazzae"] = {amount = 1, energy_required_effect = 0.5},
     ["grow-tiriscefing-willow-1"] = {amount = 2, energy_required_effect = 0.5},
     ["grow-tiriscefing-willow-2"] = {amount = 2, energy_required_effect = 0.5}
@@ -58,6 +64,8 @@ local humus_recipes = {
     ["grow-cocoa"] = {amount = 10, energy_required_effect = 0.7},
     ["grow-canola"] = {amount = 10, energy_required_effect = 0.7},
     ["grow-soy"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-sugar-beet"] = {amount = 10, energy_required_effect = 0.7},
+    ["grow-sugar-cane"] = {amount = 10, energy_required_effect = 0.7},
     ["grow-atztazzae"] = {amount = 30, energy_required_effect = 0.5},
     ["grow-tiriscefing-willow-1"] = {amount = 30, energy_required_effect = 0.667},
     ["grow-tiriscefing-willow-2"] = {amount = 30, energy_required_effect = 0.667}
@@ -78,6 +86,10 @@ local unlocks = {
     ["grow-cocoa"] = {"oil-plants"},
     ["grow-canola"] = {"oil-seeds"},
     ["grow-soy"] = {"oil-plants", "protein-plants"},
+    ["grow-sugar-beet"] = {"sugar-plants"},
+    ["grow-sugar-cane"] = {"sugar-plants"},
+    ["grow-tiriscefing-willow-1"] = {"coal-processing-1"}, 
+    ["grow-tiriscefing-willow-2"] = {"coal-processing-1"},
     ["grow-atztazzae"] = {"vanadium-processing"}
 }
 
@@ -107,6 +119,18 @@ local combination_details = {
         }
     },
     ["grow-soy"] = {
+        groups = {
+            {CARBON_DIOXIDE, LAMP}, 
+            {HUMUS, FERTILIZER}
+        }
+    },
+    ["grow-sugar-beet"] = {
+        groups = {
+            {CARBON_DIOXIDE, LAMP}, 
+            {HUMUS, FERTILIZER}
+        }
+    },
+    ["grow-sugar-cane"] = {
         groups = {
             {CARBON_DIOXIDE, LAMP}, 
             {HUMUS, FERTILIZER}
@@ -251,5 +275,8 @@ local function create_combinations_for(recipe_name)
 end
 
 for recipe, _ in pairs(combination_details) do
-    create_combinations_for(recipe)
+    local ok, err = pcall(create_combinations_for, recipe)
+    if not ok then
+        error("Error while creating growing recipes for: " .. recipe .. "\n" .. err)
+    end
 end

@@ -314,3 +314,73 @@ RECIPE {
     subgroup = "py-veganism-media",
     order = "ada"
 }:add_unlock("growth-media-4")
+
+--[[
+--> Growth Media
+]]--
+RECIPE {
+    type = "recipe",
+    name = "sugar-growth-medium-from-sugar",
+    category = "hpf",
+    enabled = true,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "clean-water", amount = 50},
+        {type = "item", name = "sugar", amount = 10}
+    },
+    results = {
+        {type = "fluid", name = "sugar-growth-medium", amount = 50}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/sugar.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "caa"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "sugar-growth-medium-from-molasses",
+    category = "hpf",
+    enabled = true,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "clean-water", amount = 50},
+        {type = "item", name = "molasses", amount = 20}
+    },
+    results = {
+        {type = "fluid", name = "sugar-growth-medium", amount = 50}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/water-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/molasses.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "cab"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "pseudodaemonas-growth-medium",
+    category = "mixer",
+    enabled = true,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "deionized-water", amount = 100},
+        {type = "item", name = "sugar", amount = 5}, 
+        {type = "item", name = "proteins", amount = 5}, 
+        {type = "item", name = "iron-ore", amount = 2}
+    },
+    results = {
+        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 50}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/growth-medium-drop.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-media",
+    order = "cab"
+}:add_unlock("growth-media-3"):add_unlock("rocket-fuel")

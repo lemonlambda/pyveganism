@@ -5,7 +5,7 @@ RECIPE {
     enabled = true,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "urea-medium", amount = 50},
+        {type = "fluid", name = "urea-medium", amount = 60},
         {type = "item", name = "soil", amount = 5}
     },
     results = {
@@ -27,7 +27,7 @@ RECIPE {
     enabled = true,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "urea-medium", amount = 50},
+        {type = "fluid", name = "urea-medium", amount = 150},
         {type = "fluid", name = "morgenroete", amount = 50}
     },
     results = {
@@ -47,7 +47,7 @@ RECIPE {
     name = "hunger-stress-morgenroete",
     category = "bio-reactor",
     enabled = true,
-    energy_required = 10,
+    energy_required = 7,
     ingredients = {
         {type = "fluid", name = "morgenroete", amount = 200}
     },

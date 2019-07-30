@@ -30,6 +30,8 @@ local enabled_concepts = {
     "plants.cocoa",
     "plants.canola",
     "plants.soy",
+    "plants.sugar-beet",
+    "plants.sugar-cane",
     --
     --microorganisms
     "microorganisms.fiicorum",
@@ -38,6 +40,7 @@ local enabled_concepts = {
     "microorganisms.sludge",
     "microorganisms.proxae",
     "microorganisms.pseudodaemonas",
+    "microorganisms.morgenroete",
     --
     --fungi
     "fungi.atztazzae",

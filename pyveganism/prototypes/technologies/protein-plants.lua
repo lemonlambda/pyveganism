@@ -19,12 +19,24 @@ TECHNOLOGY {
 
 ITEM {
     type = "item",
+    name = "protein",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/protein.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-proteins",
+    order = "aaa",
+    stack_size = 200
+}
+
+ITEM {
+    type = "item",
     name = "glycine",
     enabled = false,
     icon = "__pyveganism__/graphics/icons/glycine.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-veganism-proteins",
-    order = "aaa",
+    order = "aab",
     stack_size = 200
 }

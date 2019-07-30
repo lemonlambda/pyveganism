@@ -16,7 +16,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "aaa"
+    order = "daa"
 }:add_unlock("sugar-plants")
 
 RECIPE {
@@ -36,5 +36,5 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "aab"
+    order = "dab"
 }:add_unlock("sugar-plants")

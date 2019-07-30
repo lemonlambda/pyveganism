@@ -64,6 +64,11 @@ Bei Annahme, dass Asche ein kostenloses Nebenprodukt ist:
 Fertilizer: 1951,31 kJ pro (pyht recipe)
 
 Eigene Sachen: 
+Zirrella: 25 kJ pro
+Fiicorum: 9 oder 14 kJ pro
+Urea Medium: 36 oder 30,5 kJ pro
+Nitrous Medium: 30 oder 19 kJ pro
+
 Solfaen: 100 kJ pro 
 Dried Solfaen: 1200 kJ pro 
 Washed Solfaen: 1240 kJ pro 

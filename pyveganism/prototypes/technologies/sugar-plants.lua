@@ -28,3 +28,15 @@ ITEM {
     order = "aaa",
     stack_size = 200
 }
+
+ITEM {
+    type = "item",
+    name = "molasses",
+    enabled = false,
+    icon = "__pyveganism__/graphics/icons/molasses.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-veganism-carbohydrates",
+    order = "aab",
+    stack_size = 200
+}

@@ -187,3 +187,37 @@ ITEM {
     order = "aca",
     stack_size = 200
 }
+
+--[[
+--> Growth Media
+]]--
+FLUID {
+    type = "fluid",
+    name = "sugar-growth-medium",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/growth-medium-drop.png"},
+        {icon = "__pyveganism__/graphics/icons/sugar-in-solution.png"}
+    },
+    icon_size = 64,
+    default_temperature = 15,
+    heat_capacity = "1KJ",
+    base_color = {r = 0.151, g = 0.483, b = 0.933},
+    flow_color = {r = 0.151, g = 0.483, b = 0.933},
+    max_temperature = 100,
+    subgroup = "py-veganism-media"
+}
+
+FLUID {
+    type = "fluid",
+    name = "pseudodaemonas-medium",
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/growth-medium-drop.png"}
+    },
+    icon_size = 64,
+    default_temperature = 36.8,
+    heat_capacity = "1KJ",
+    base_color = {r = 0.600, g = 0.150, b = 0.150},
+    flow_color = {r = 0.600, g = 0.150, b = 0.150},
+    max_temperature = 100,
+    subgroup = "py-veganism-mo"
+}
