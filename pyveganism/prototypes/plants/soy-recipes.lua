@@ -205,19 +205,20 @@ RECIPE {
 ]]--
 RECIPE {
     type = "recipe",
-    name = "extract-glycine-soy-meal-sulfuric-acid",
+    name = "extract-protein-soy-meal",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 1,
     ingredients = {
         {type = "item", name = "soy-meal", amount = 10}, 
-        {type = "fluid", name = "sulfuric-acid", amount = 40}
+        {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "glycine", amount = 3}
+        {type = "item", name = "protein", amount = 4}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/glycine.png"}, 
+        {icon = "__pyveganism__/graphics/icons/soy-meal.png"},
+        {icon = "__pyveganism__/graphics/icons/refine.png"} 
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -226,19 +227,20 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "extract-glycine-soy-meal-citric-acid",
+    name = "extract-protein-tofu-block",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 1,
     ingredients = {
-        {type = "item", name = "soy-meal", amount = 10}, 
-        {type = "fluid", name = "citric-acid", amount = 30}
+        {type = "item", name = "tofu-block", amount = 10}, 
+        {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "glycine", amount = 4}
+        {type = "item", name = "protein", amount = 4}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/glycine.png"}, 
+        {icon = "__pyveganism__/graphics/icons/tofu-block.png"},
+        {icon = "__pyveganism__/graphics/icons/refine.png"} 
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -247,19 +249,20 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "extract-glycine-tofu-block",
+    name = "extract-protein-yuba",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 1,
     ingredients = {
-        {type = "item", name = "tofu-block", amount = 10}, 
-        {type = "fluid", name = "citric-acid", amount = 30}
+        {type = "item", name = "yuba", amount = 10}, 
+        {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "glycine", amount = 4}
+        {type = "item", name = "protein", amount = 4}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/glycine.png"}, 
+        {icon = "__pyveganism__/graphics/icons/yuba.png"},
+        {icon = "__pyveganism__/graphics/icons/refine.png"} 
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -268,42 +271,22 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "extract-glycine-yuba",
+    name = "extract-protein-tempeh",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 1,
     ingredients = {
-        {type = "item", name = "yuba", amount = 10}, 
-        {type = "fluid", name = "citric-acid", amount = 30}
+        {type = "item", name = "tempeh", amount = 10}, 
+        {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "glycine", amount = 4}
+        {type = "item", name = "protein", amount = 4}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/glycine.png"}, 
+        {icon = "__pyveganism__/graphics/icons/tempeh.png"},
+        {icon = "__pyveganism__/graphics/icons/refine.png"} 
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
     order = "abd"
-}:add_unlock("protein-plants")
-
-RECIPE {
-    type = "recipe",
-    name = "extract-glycine-tempeh",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "tempeh", amount = 10}, 
-        {type = "fluid", name = "citric-acid", amount = 30}
-    },
-    results = {
-        {type = "item", name = "glycine", amount = 4}
-    },
-    icons = {
-        {icon = "__pyveganism__/graphics/icons/glycine.png"}, 
-    },
-    icon_size = 64,
-    subgroup = "py-veganism-soy",
-    order = "abe"
 }:add_unlock("protein-plants")

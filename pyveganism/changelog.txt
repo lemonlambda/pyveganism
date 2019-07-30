@@ -1,27 +1,16 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.4
-Date: 2019.07.30
+Version: 0.0.1
+Date: 2019.06.17
   Features:
-    - Added blood donations and pseudodaemonas
-    - Added proxae and citric acid
-    - Added sugar plants tech, sugar cane, sugar beet and sugar purification
-    - Added protein plants tech, soy and glycine extraction
-    - Added composting silo and humus
-    - Added morgenröte bacteria and more fertilizer recipes
-
-  Changes:
-    - Rewrite of the growing recipe generator. Now with Humus and Lamps. 
+    - Added tiriscefing willows and bone meal chain
+    - Added solfaen and agarose-gel chain
+    - Added fiicorum, zirella and urea chain
+    - Added canola, cocoa, coconut and oil palms
+    - Added oil plants to lard chain
+    - Added biomass
 
   Factory-breaking Changes:
-    - Tailings and Ash are no longer used in generated growing recipes, but as ingredients for fertilizer.
-    - Canola pressing now returns canola meal instead of plant residues
-
----------------------------------------------------------------------------------------------------
-Version: 0.0.3
-Date: 2019.07.10
-  Features:
-    - Added Plant Breeding research
-    - Added Cultivation Expertise research
+    - Added more pipe-connections to the bio reactor
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
@@ -38,15 +27,28 @@ Date: 2019.07.08
     - Renamed biomass to plant residues
 
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.1
-Date: 2019.06.17
+Version: 0.0.3
+Date: 2019.07.10
   Features:
-    - Added tiriscefing willows and bone meal chain
-    - Added solfaen and agarose-gel chain
-    - Added fiicorum, zirella and urea chain
-    - Added canola, cocoa, coconut and oil palms
-    - Added oil plants to lard chain
-    - Added biomass
+    - Added Plant Breeding research
+    - Added Cultivation Expertise research
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 2019.07.30
+  Features:
+    - Added blood donations and pseudodaemonas
+    - Added proxae and citric acid
+    - Added sugar plants tech, sugar cane, sugar beet and sugar purification
+    - Added protein plants tech, soy, glycine and serine extraction
+    - Added composting silo and humus
+    - Added morgenröte bacteria and more fertilizer recipes
+    - Added pemtenn and ethanol fermentation
+    - Added e-coli and serine fermentation
+
+  Changes:
+    - Rewrite of the growing recipe generator. Now with Humus and Lamps. 
 
   Factory-breaking Changes:
-    - Added more pipe-connections to the bio reactor
+    - Tailings and Ash are no longer used in generated growing recipes, but as ingredients for fertilizer.
+    - Canola pressing now returns canola meal instead of plant residues

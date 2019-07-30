@@ -1,6 +1,6 @@
 RECIPE {
     type = "recipe",
-    name = "enrichment-culture-proxae",
+    name = "enrichment-culture-pemtenn",
     category = "bio-reactor",
     enabled = true,
     energy_required = 2,
@@ -9,58 +9,59 @@ RECIPE {
         {type = "item", name = "toe-nail-sample", amount = 1}
     },
     results = {
-        {type = "fluid", name = "proxae", amount = 50}
+        {type = "fluid", name = "pemtenn", amount = 50}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/proxae.png"},
+        {icon = "__pyveganism__/graphics/icons/pemtenn.png"},
         {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-proxae",
+    subgroup = "py-veganism-pemtenn",
     order = "aaa"
 }:add_unlock("sugar-plants")
 
 RECIPE {
     type = "recipe",
-    name = "pure-culture-proxae",
+    name = "pure-culture-pemtenn",
     category = "bio-reactor",
     enabled = true,
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "sugar-growth-medium", amount = 50},
-        {type = "fluid", name = "proxae", amount = 250}
+        {type = "fluid", name = "pemtenn", amount = 250}
     },
     results = {
-        {type = "fluid", name = "proxae", amount = 300}
+        {type = "fluid", name = "pemtenn", amount = 300}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/proxae.png"},
+        {icon = "__pyveganism__/graphics/icons/pemtenn.png"},
         {icon = "__pyveganism__/graphics/icons/pure-culture.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-proxae",
+    subgroup = "py-veganism-pemtenn",
     order = "aba"
 }:add_unlock("sugar-plants")
 
 RECIPE {
     type = "recipe",
-    name = "osmotic-stress-proxae",
+    name = "osmotic-stress-pemtenn",
     category = "bio-reactor",
     enabled = true,
     energy_required = 5,
     ingredients = {
         {type = "item", name = "sugar", amount = 30},
-        {type = "fluid", name = "proxae", amount = 300}
+        {type = "fluid", name = "pemtenn", amount = 20}, 
+        {type = "fluid", name = "sterile-water", amount = 280}
     },
     results = {
-        {type = "fluid", name = "citric-acid", amount = 200},
+        {type = "fluid", name = "ethanol-solution", amount = 200},
         {type = "fluid", name = "waste-water", amount = 100}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/proxae.png"}, 
+        {icon = "__pyveganism__/graphics/icons/pemtenn.png"}, 
         {icon = "__pyveganism__/graphics/icons/toxic-stress.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-proxae",
+    subgroup = "py-veganism-pemtenn",
     order = "aca"
 }:add_unlock("sugar-plants")

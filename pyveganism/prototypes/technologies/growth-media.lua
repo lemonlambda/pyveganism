@@ -209,7 +209,7 @@ FLUID {
 
 FLUID {
     type = "fluid",
-    name = "pseudodaemonas-medium",
+    name = "pseudodaemonas-growth-medium",
     icons = {
         {icon = "__pyveganism__/graphics/icons/growth-medium-drop.png"}
     },

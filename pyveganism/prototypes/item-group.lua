@@ -96,9 +96,21 @@ data:extend {
     }, 
     {
         type = "item-subgroup",
-        name = "py-veganism-pseudodaemonas",
+        name = "py-veganism-pemtenn",
         group = "py-veganism",
         order = "bbg"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-e-coli",
+        group = "py-veganism",
+        order = "bbh"
+    }, 
+    {
+        type = "item-subgroup",
+        name = "py-veganism-pseudodaemonas",
+        group = "py-veganism",
+        order = "bbi"
     },
     {
         type = "item-subgroup",

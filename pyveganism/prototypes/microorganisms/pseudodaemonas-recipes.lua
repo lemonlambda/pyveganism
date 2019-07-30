@@ -31,7 +31,7 @@ RECIPE {
         {type = "item", name = "iron-plate", amount = 1}
     },
     results = {
-        {type = "item", name = "rocket-fuel", amount = 5}
+        {type = "item", name = "rocket-fuel", amount = 10}
     },
     icons = {
         {icon = "__base__/graphics/icons/rocket-fuel.png"},
@@ -49,7 +49,7 @@ RECIPE {
     enabled = true,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "pseudodaemonas-medium", amount = 50}, 
+        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 50}, 
         {type = "fluid", name = "pressured-air", amount = 20}, 
         {type = "fluid", name = "citric-acid", amount = 10}, 
         {type = "item", name = "limestone", amount = 2},
@@ -74,7 +74,7 @@ RECIPE {
     enabled = true,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "pseudodaemonas-medium", amount = 25},
+        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 25},
         {type = "fluid", name = "pressured-air", amount = 20},
         {type = "fluid", name = "citric-acid", amount = 10}, 
         {type = "fluid", name = "pseudodaemonas", amount = 25}, 

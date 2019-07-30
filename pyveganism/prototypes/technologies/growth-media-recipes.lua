@@ -370,12 +370,13 @@ RECIPE {
     energy_required = 1,
     ingredients = {
         {type = "fluid", name = "deionized-water", amount = 100},
+        {type = "fluid", name = "plant-oil", amount = 50},
         {type = "item", name = "sugar", amount = 5}, 
-        {type = "item", name = "proteins", amount = 5}, 
+        {type = "item", name = "protein", amount = 5}, 
         {type = "item", name = "iron-ore", amount = 2}
     },
     results = {
-        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 50}
+        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 150}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/growth-medium-drop.png"}
