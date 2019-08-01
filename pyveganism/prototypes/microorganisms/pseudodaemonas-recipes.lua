@@ -17,7 +17,8 @@ RECIPE {
     },
     icon_size = 32,
     subgroup = "py-veganism-pseudodaemonas",
-    order = "aaa"
+    order = "aba",
+    main_product = ""
 }:add_unlock("rocket-fuel")
 
 RECIPE {
@@ -25,13 +26,13 @@ RECIPE {
     name = "pseudodaemonas-rocket-fuel",
     category = "crafting-with-fluid",
     enabled = false,
-    energy_required = 1,
+    energy_required = 50,
     ingredients = {
         {type = "fluid", name = "pseudodaemonas", amount = 50}, 
         {type = "item", name = "iron-plate", amount = 1}
     },
     results = {
-        {type = "item", name = "rocket-fuel", amount = 10}
+        {type = "item", name = "rocket-fuel", amount = 2}
     },
     icons = {
         {icon = "__base__/graphics/icons/rocket-fuel.png"},
@@ -39,7 +40,8 @@ RECIPE {
     },
     icon_size = 32,
     subgroup = "py-veganism-pseudodaemonas",
-    order = "aab"
+    order = "abb",
+    main_product = ""
 }:add_unlock("growth-media-3"):add_unlock("rocket-fuel")
 
 RECIPE {
@@ -56,7 +58,7 @@ RECIPE {
         {type = "item", name = "blood-bag", amount = 1}
     },
     results = {
-        {type = "fluid", name = "pseudodaemonas", amount = 50, probability = 0.5}
+        {type = "fluid", name = "pseudodaemonas", amount = 25}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/pseudodaemonas.png"},
@@ -64,7 +66,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-pseudodaemonas",
-    order = "aba"
+    order = "aaa",
+    main_product = ""
 }:add_unlock("growth-media-3"):add_unlock("rocket-fuel")
 
 RECIPE {
@@ -89,7 +92,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-pseudodaemonas",
-    order = "abb"
+    order = "aab",
+    main_product = ""
 }:add_unlock("growth-media-3"):add_unlock("rocket-fuel")
 
 if mods["pyrawores"] then

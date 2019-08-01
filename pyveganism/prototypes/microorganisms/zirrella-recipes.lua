@@ -17,7 +17,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-zirrella",
-    order = "aaa"
+    order = "aaa", 
+    main_product = ""
 }
 
 RECIPE {
@@ -40,7 +41,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-zirrella",
-    order = "aba"
+    order = "aba", 
+    main_product = ""
 }
 
 RECIPE {
@@ -63,7 +65,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-zirrella",
-    order = "aca"
+    order = "aca", 
+    main_product = ""
 }
 
 local size = py_veganism_globals["urea_icon"].size

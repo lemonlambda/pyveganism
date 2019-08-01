@@ -51,12 +51,6 @@ data:extend {
         group = "py-veganism", 
         order = "aca"
     },
-    {
-        type = "item-subgroup",
-        name = "py-veganism-samples",
-        group = "py-veganism",
-        order = "ada"
-    },
     --recipes
     {
         type = "item-subgroup",
@@ -72,45 +66,51 @@ data:extend {
     }, 
     {
         type = "item-subgroup",
-        name = "py-veganism-fiicorum",
+        name = "py-veganism-sludge",
         group = "py-veganism",
         order = "bbc"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-fiicorum",
+        group = "py-veganism",
+        order = "bbd"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-zirrella",
         group = "py-veganism",
-        order = "bbd"
+        order = "bbe"
     }, 
     {
         type = "item-subgroup", 
         name = "py-veganism-morgenroete",
         group = "py-veganism", 
-        order = "bbe"
+        order = "bbf"
     },
     {
         type = "item-subgroup",
         name = "py-veganism-proxae",
         group = "py-veganism",
-        order = "bbf"
+        order = "bbg"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-pemtenn",
         group = "py-veganism",
-        order = "bbg"
+        order = "bbh"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-e-coli",
         group = "py-veganism",
-        order = "bbh"
+        order = "bbi"
     }, 
     {
         type = "item-subgroup",
         name = "py-veganism-pseudodaemonas",
         group = "py-veganism",
-        order = "bbi"
+        order = "bbj"
     },
     {
         type = "item-subgroup",
@@ -168,8 +168,14 @@ data:extend {
     },
     {
         type = "item-subgroup",
-        name = "py-veganism-combustion",
+        name = "py-veganism-samples",
         group = "py-veganism",
         order = "zaa"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-combustion",
+        group = "py-veganism",
+        order = "zab"
     } 
 }

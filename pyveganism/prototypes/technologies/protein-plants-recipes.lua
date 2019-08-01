@@ -6,9 +6,9 @@ RECIPE {
     name = "extract-glycine-with-sulfuric-acid",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 2,
     ingredients = {
-        {type = "item", name = "protein", amount = 2}, 
+        {type = "item", name = "protein", amount = 15}, 
         {type = "fluid", name = "sulfuric-acid", amount = 40}
     },
     results = {
@@ -27,9 +27,9 @@ RECIPE {
     name = "extract-glycine-with-citric-acid",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 2,
     ingredients = {
-        {type = "item", name = "protein", amount = 2}, 
+        {type = "item", name = "protein", amount = 15}, 
         {type = "fluid", name = "citric-acid", amount = 20}
     },
     results = {
@@ -48,9 +48,9 @@ RECIPE {
     name = "extract-serine",
     category = "chemistry",
     enabled = false,
-    energy_required = 5,
+    energy_required = 2,
     ingredients = {
-        {type = "item", name = "protein", amount = 2}, 
+        {type = "item", name = "protein", amount = 15}, 
         {type = "fluid", name = "citric-acid", amount = 20}
     },
     results = {
@@ -76,11 +76,14 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "item", name = "glycine", amount = 3}, 
+        {type = "item", name = "protein", amount = 5},
+        {type = "fluid", name = "clean-water", amount = 180},
         {type = "fluid", name = "e-coli", amount = 20}, 
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     results = {
-        {type = "item", name = "serine", amount = 3}
+        {type = "item", name = "serine", amount = 4}, 
+        {type = "fluid", name = "waste-water", amount = 200}
     },
     icons = {
         {icon = "__pyfusionenergy__/graphics/icons/serine.png"},

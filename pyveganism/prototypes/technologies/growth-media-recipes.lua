@@ -18,7 +18,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "aaa"
+    order = "aaa",
+    main_product = ""
 }:add_unlock("growth-media-1")
 
 if mods["pyrawores"] then
@@ -42,7 +43,8 @@ if mods["pyrawores"] then
         },
         icon_size = 64,
         subgroup = "py-veganism-media",
-        order = "aac"
+        order = "aac",
+        main_product = ""
     }:add_unlock("growth-media-1")
 end
 
@@ -66,7 +68,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "aab"
+    order = "aab",
+    main_product = ""
 }:add_unlock("growth-media-1")
 
 --clean water recipes
@@ -288,15 +291,10 @@ if mods["pyhightech"] then
 end
 
 --ultra pure water recipes
-local category_edi = "chemistry"
-if mods["pyrawores"] then
-    category_edi = "electrolyzer"
-end
-
 RECIPE {
     type = "recipe",
     name = "electrodeionisation",
-    category = category_edi,
+    category = py_veganism_globals.electrodeionisation_category,
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -333,7 +331,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},
-        {icon = "__pyveganism__/graphics/icons/sugar.png"}
+        {icon = "__pyveganism__/graphics/icons/sugar-in-solution.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
@@ -355,7 +353,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/water-drop.png"},
-        {icon = "__pyveganism__/graphics/icons/molasses.png"}
+        {icon = "__pyveganism__/graphics/icons/sugar-in-solution.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
@@ -371,9 +369,9 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "deionized-water", amount = 100},
         {type = "fluid", name = "plant-oil", amount = 50},
-        {type = "item", name = "sugar", amount = 5}, 
-        {type = "item", name = "protein", amount = 5}, 
-        {type = "item", name = "iron-ore", amount = 2}
+        {type = "item", name = "sugar", amount = 10},
+        {type = "item", name = "protein", amount = 5},
+        {type = "item", name = "iron-ore", amount = 10}
     },
     results = {
         {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 150}
@@ -383,5 +381,9 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
-    order = "cab"
+    order = "cba"
 }:add_unlock("growth-media-3"):add_unlock("rocket-fuel")
+
+if mods["pyrawores"] then
+    RECIPE("pseudodaemonas-growth-medium"):add_ingredient{type = "item", name = "salt", amount = 5}
+end

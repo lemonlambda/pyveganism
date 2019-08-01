@@ -14,7 +14,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-samples",
-    order = "bae"
+    order = "bae", 
+    main_product = ""
 }:add_unlock("growth-media-2")
 
 RECIPE {
@@ -33,7 +34,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-samples",
-    order = "aaa"
+    order = "aaa", 
+    main_product = ""
 }:add_unlock("rocket-fuel")
 
 RECIPE {

@@ -125,3 +125,25 @@ RECIPE {
     subgroup = "py-veganism-canola",
     order = "aaf"
 }:add_unlock("oil-seeds")
+
+RECIPE {
+    type = "recipe",
+    name = "extract-protein-canola-meal",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "canola-meal", amount = 10}, 
+        {type = "fluid", name = "ethanol-solution", amount = 40}
+    },
+    results = {
+        {type = "item", name = "protein", amount = 7}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/canola-meal.png"},
+        {icon = "__pyveganism__/graphics/icons/refine.png"} 
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-canola",
+    order = "aag"
+}:add_unlock("protein-plants")

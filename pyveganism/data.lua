@@ -41,6 +41,8 @@ local enabled_concepts = {
     "microorganisms.proxae",
     "microorganisms.pseudodaemonas",
     "microorganisms.morgenroete",
+    "microorganisms.e-coli",
+    "microorganisms.pemtenn",
     --
     --fungi
     "fungi.atztazzae",

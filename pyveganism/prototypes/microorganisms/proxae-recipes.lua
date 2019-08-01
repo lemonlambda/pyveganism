@@ -17,7 +17,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-proxae",
-    order = "aaa"
+    order = "aaa",
+    main_product = ""
 }:add_unlock("sugar-plants")
 
 RECIPE {
@@ -39,7 +40,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-proxae",
-    order = "aba"
+    order = "aba",
+    main_product = ""
 }:add_unlock("sugar-plants")
 
 RECIPE {

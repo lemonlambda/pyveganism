@@ -42,7 +42,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-atztazzae",
-    order = "aaba"
+    order = "aaba",
+    main_product = ""
 }:add_unlock("vanadium-processing")
 
 RECIPE {
@@ -69,7 +70,8 @@ RECIPE {
     },    
     icon_size = 64,
     subgroup = "py-veganism-atztazzae",
-    order = "aabb"
+    order = "aabb",
+    main_product = ""
 }:add_unlock("vanadium-processing")
 
 RECIPE {
@@ -96,7 +98,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-atztazzae",
-    order = "aabc"
+    order = "aabc",
+    main_product = ""
 }:add_unlock("vanadium-processing")
 
 RECIPE {

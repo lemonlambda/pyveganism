@@ -20,7 +20,8 @@ if mods["pyrawores"] then
         icon = "__base__/graphics/icons/small-lamp.png",
         icon_size = 32,
         subgroup = "py-veganism-grow-equipment",
-        order = "aaa"
+        order = "aaa",
+        main_product = ""
     }:add_unlock("optics")
 end
 

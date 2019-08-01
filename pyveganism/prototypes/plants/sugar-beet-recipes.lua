@@ -9,7 +9,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "sugar-beet", amount = 6},
+        {type = "item", name = "sugar-beet", amount = 10},
         {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "sugar-beet",
@@ -47,7 +47,7 @@ RECIPE {
     name = "refine-sugar-beet",
     category = py_veganism_globals.sugar_refine_category,
     enabled = false,
-    energy_required = 5,
+    energy_required = 4,
     ingredients = {
         {type = "item", name = "sugar-beet-washed", amount = 20},
         {type = "item", name = "lime", amount = 6},
@@ -55,7 +55,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 50}
     },
     results = {
-        {type = "item", name = "sugar", amount = 20},
+        {type = "item", name = "sugar", amount = 30},
         {type = "item", name = "limestone", amount = 6},
         {type = "item", name = "plant-residues-dry", amount = 2},
         {type = "item", name = "molasses", amount = 5},

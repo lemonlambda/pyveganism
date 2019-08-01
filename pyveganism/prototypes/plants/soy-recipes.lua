@@ -116,7 +116,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "declassify-canola-meal",
+    name = "declassify-soy-meal",
     category = "crafting",
     enabled = false,
     energy_required = 0.05,
@@ -214,7 +214,7 @@ RECIPE {
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "protein", amount = 4}
+        {type = "item", name = "protein", amount = 9}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/soy-meal.png"},
@@ -258,7 +258,7 @@ RECIPE {
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "protein", amount = 4}
+        {type = "item", name = "protein", amount = 1}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/yuba.png"},
@@ -280,7 +280,7 @@ RECIPE {
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
-        {type = "item", name = "protein", amount = 4}
+        {type = "item", name = "protein", amount = 17}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/tempeh.png"},

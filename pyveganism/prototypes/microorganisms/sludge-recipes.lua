@@ -1,3 +1,6 @@
+--[[
+--> Sludge
+]]--
 RECIPE {
     type = "recipe",
     name = "enrichment-culture-activated-sludge",
@@ -17,7 +20,7 @@ RECIPE {
         {icon = "__pyveganism__/graphics/icons/enrichment-culture.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abca"
 }:add_unlock("growth-media-2")
 
@@ -40,7 +43,7 @@ RECIPE {
         {icon = "__pyveganism__/graphics/icons/pure-culture.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abcb"
 }:add_unlock("growth-media-2")
 
@@ -61,7 +64,7 @@ RECIPE {
         {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abcc"
 }:add_unlock("growth-media-2")
 
@@ -81,11 +84,13 @@ RECIPE {
         {icon = "__pyveganism__/graphics/icons/marsh-gas.png"}
     },
     icon_size = 64,
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abcd"
 }:add_unlock("growth-media-2")
 
--- usage marsh gas
+--[[
+--> Usage Marsh Gas
+]]--
 RECIPE {
     type = "recipe",
     name = "marsh-gas-to-syngas",
@@ -102,7 +107,7 @@ RECIPE {
         {icon = "__pycoalprocessing__/graphics/icons/syngas.png"}
     },
     icon_size = 32,
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abda"
 }:add_unlock("growth-media-2")
 
@@ -170,7 +175,7 @@ if mods["pyhightech"] then
             {icon = "__pyhightech__/graphics/icons/methane.png"}
         },
         icon_size = 32,
-        subgroup = "py-veganism-media",
+        subgroup = "py-veganism-sludge",
         order = "abdd"
     }:add_unlock("growth-media-2")    
 end
@@ -192,6 +197,6 @@ RECIPE {
         {icon = "__base__/graphics/icons/sulfur.png"}
     },
     icon_size = 32,
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abde"
 }:add_unlock("growth-media-2")

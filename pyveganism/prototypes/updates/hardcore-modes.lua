@@ -18,8 +18,8 @@ local nonvegetarian_recipes = {
     "ulric-coral",
     --pyfe
     "xyhiphoe-pool",
+    "kmauts-enclosure",
     ---no replacement yet
-    --"kmauts-enclosure",
     --pyht
     --"zipir"
 }

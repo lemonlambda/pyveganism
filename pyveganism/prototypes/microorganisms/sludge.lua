@@ -22,7 +22,7 @@ FLUID {
     base_color = {r = 0.5, g = 0.05, b = 0.1},
     flow_color = {r = 0.5, g = 0.05, b = 0.1},
     max_temperature = 100,
-    subgroup = "py-veganism-media"
+    subgroup = "py-veganism-sludge"
 }
 
 FLUID {
@@ -36,7 +36,7 @@ FLUID {
     base_color = {r = 0.5, g = 0.05, b = 0.1},
     flow_color = {r = 0.5, g = 0.05, b = 0.1},
     max_temperature = 100,
-    subgroup = "py-veganism-media"
+    subgroup = "py-veganism-sludge"
 }
 
 ITEM {
@@ -48,7 +48,7 @@ ITEM {
     icon = "__pyveganism__/graphics/icons/sewage-sludge-dry.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-veganism-media",
+    subgroup = "py-veganism-sludge",
     order = "abca",
     stack_size = 200
 }

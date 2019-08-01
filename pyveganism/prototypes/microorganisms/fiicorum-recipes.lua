@@ -1,6 +1,6 @@
 RECIPE {
     type = "recipe",
-    name = "fiicorum-enrichment-culture-1",
+    name = "enrichment-culture-fiicorum-1",
     category = "bio-reactor",
     enabled = true,
     energy_required = 2,
@@ -18,12 +18,13 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-fiicorum",
-    order = "aaa"
+    order = "aaa",
+    main_product = ""
 }
 
 RECIPE {
     type = "recipe",
-    name = "fiicorum-pure-culture-1",
+    name = "pure-culture-fiicorum-1",
     category = "bio-reactor",
     enabled = true,
     energy_required = 5,
@@ -41,12 +42,13 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-fiicorum",
-    order = "aba"
+    order = "aba",
+    main_product = ""
 }
 
 RECIPE {
     type = "recipe",
-    name = "fiicorum-hyperthermic-stress-1",
+    name = "hyperthermic-stress-fiicorum-1",
     category = "bio-reactor",
     enabled = true,
     energy_required = 5,
@@ -63,13 +65,14 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-fiicorum",
-    order = "aca"
+    order = "aca",
+    main_product = ""
 }
 
 if mods["pypetroleumhandling"] then
     RECIPE {
         type = "recipe",
-        name = "fiicorum-enrichment-culture-2",
+        name = "enrichment-culture-fiicorum-2",
         category = "bio-reactor",
         enabled = true,
         energy_required = 2,
@@ -87,12 +90,13 @@ if mods["pypetroleumhandling"] then
         },
         icon_size = 64,
         subgroup = "py-veganism-fiicorum",
-        order = "aab"
+        order = "aab",
+        main_product = ""
     }
 
     RECIPE {
         type = "recipe",
-        name = "fiicorum-pure-culture-2",
+        name = "pure-culture-fiicorum-2",
         category = "bio-reactor",
         enabled = true,
         energy_required = 5,
@@ -110,12 +114,13 @@ if mods["pypetroleumhandling"] then
         },
         icon_size = 64,
         subgroup = "py-veganism-fiicorum",
-        order = "abb"
+        order = "abb",
+        main_product = ""
     }
 
     RECIPE {
         type = "recipe",
-        name = "fiicorum-hyperthermic-stress-2",
+        name = "hyperthermic-stress-fiicorum-2",
         category = "bio-reactor",
         enabled = true,
         energy_required = 5,
@@ -132,6 +137,7 @@ if mods["pypetroleumhandling"] then
         },
         icon_size = 64,
         subgroup = "py-veganism-fiicorum",
-        order = "acb"
+        order = "acb",
+        main_product = ""
     }
 end

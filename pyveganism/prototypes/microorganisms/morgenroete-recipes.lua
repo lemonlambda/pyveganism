@@ -17,7 +17,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-morgenroete",
-    order = "aaa"
+    order = "aaa",
+    main_product = ""
 }:add_unlock("cultivation-expertise-2")
 
 RECIPE {
@@ -39,7 +40,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-morgenroete",
-    order = "aba"
+    order = "aba",
+    main_product = ""
 }:add_unlock("cultivation-expertise-2")
 
 RECIPE {
@@ -60,5 +62,6 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-morgenroete",
-    order = "aca"
+    order = "aca",
+    main_product = ""
 }:add_unlock("cultivation-expertise-2")

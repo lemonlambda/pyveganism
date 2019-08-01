@@ -48,6 +48,7 @@ Date: 2019.07.30
 
   Changes:
     - Rewrite of the growing recipe generator. Now with Humus and Lamps. 
+    - Fiicorum and zirella are now also available when pyht isn't enabled
 
   Factory-breaking Changes:
     - Tailings and Ash are no longer used in generated growing recipes, but as ingredients for fertilizer.

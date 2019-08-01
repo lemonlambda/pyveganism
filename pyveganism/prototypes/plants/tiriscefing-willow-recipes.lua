@@ -18,7 +18,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
-    order = "aaa"
+    order = "aba"
 }:add_unlock("coal-processing-1")
 
 RECIPE {
@@ -43,7 +43,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
-    order = "aab"
+    order = "abb"
 }:add_unlock("coal-processing-1")
 
 RECIPE {
@@ -66,7 +66,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
-    order = "aba"
+    order = "aaa"
 }:add_unlock("coal-processing-1")
 
 RECIPE {
@@ -89,5 +89,5 @@ RECIPE {
     },
     icon_size = 32,
     subgroup = "py-veganism-tiriscefing-willow",
-    order = "aca"
+    order = "aab"
 }:add_unlock("separation")

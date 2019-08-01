@@ -77,8 +77,9 @@ Sterile water: 20 kJ pro (boiling)
 Sterile water: 10 kJ pro (Chlor)
 Sterile water: 2 kJ pro (Chlordioxid)
 
-Solid Fat: 1000 kJ pro
-Plant Oil: 100 kJ pro
+Solid Fat:= 1000 kJ pro
+Plant Oil:= 100 kJ pro
+Protein:= 1000 kJ pro
 
 Oil Palm Fruit: 880 kJ pro
 Oil Palm Fruit Flesh: 
@@ -86,6 +87,19 @@ Oil Palm Kernel:
 Oil Palm Kernel Dry: 
 Oil Palm Kernel Open: 
 Impure Palm Oil: 
+Soy Pods: 880 kJ pro
+Washed Soy Pods: 900 kJ pro
+Edamame: 300 kJ pro
+Soy Beans: 300 kJ pro
+Soy Meal: 900 kJ pro
+Soy Milk: ~15 kJ pro
+Tofu: ~240 kJ pro
+Tempeh: ~1520 kJ pro
+Canola: 880 kJ pro
+Canola Seed: 440 kJ pro
+Dry Canola Seed: 540 kJ pro
+Peeled Canola Seed: 660 kJ pro
+Canola Meal: 675 kJ pro
 
 Fuel Values: 
 2500 kJ dry biomass

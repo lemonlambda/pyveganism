@@ -18,7 +18,8 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-e-coli",
-    order = "aaa"
+    order = "aaa",
+    main_product = ""
 }
 
 RECIPE {
@@ -41,5 +42,6 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-e-coli",
-    order = "aba"
+    order = "aba",
+    main_product = ""
 }:add_unlock("sugar-plants")
