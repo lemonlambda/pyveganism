@@ -20,7 +20,7 @@ RECIPE {
     subgroup = "py-veganism-e-coli",
     order = "aaa",
     main_product = ""
-}
+}:add_unlock("sugar-plants")
 
 RECIPE {
     type = "recipe",
