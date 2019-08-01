@@ -1,41 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.1
-Date: 2019.06.17
-  Features:
-    - Added tiriscefing willows and bone meal chain
-    - Added solfaen and agarose-gel chain
-    - Added fiicorum, zirella and urea chain
-    - Added canola, cocoa, coconut and oil palms
-    - Added oil plants to lard chain
-    - Added biomass
-
-  Factory-breaking Changes:
-    - Added more pipe-connections to the bio reactor
-
----------------------------------------------------------------------------------------------------
-Version: 0.0.2
-Date: 2019.07.08
-  Features:
-    - More uses for plant-residues
-    - Added atztazzae chain
-    - Added water purification
-    - Added sewage-sludge
-    - Added optional hardcore vegan/vegetarian mode
-    - Added plant oil saponification
-
-  Changes:
-    - Renamed biomass to plant residues
-
----------------------------------------------------------------------------------------------------
-Version: 0.0.3
-Date: 2019.07.10
-  Features:
-    - Added Plant Breeding research
-    - Added Cultivation Expertise research
-
----------------------------------------------------------------------------------------------------
 Version: 0.0.4
-Date: 2019.07.30
+Date: 2019.08.01
   Features:
     - Added blood donations and pseudodaemonas
     - Added proxae and citric acid
@@ -53,3 +18,38 @@ Date: 2019.07.30
   Factory-breaking Changes:
     - Tailings and Ash are no longer used in generated growing recipes, but as ingredients for fertilizer.
     - Canola pressing now returns canola meal instead of plant residues
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 2019.07.10
+  Features:
+    - Added Plant Breeding research
+    - Added Cultivation Expertise research
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 2019.07.08
+  Features:
+    - More uses for plant-residues
+    - Added atztazzae chain
+    - Added water purification
+    - Added sewage-sludge
+    - Added optional hardcore vegan/vegetarian mode
+    - Added plant oil saponification
+
+  Changes:
+    - Renamed biomass to plant residues
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 2019.06.17
+  Features:
+    - Added tiriscefing willows and bone meal chain
+    - Added solfaen and agarose-gel chain
+    - Added fiicorum, zirella and urea chain
+    - Added canola, cocoa, coconut and oil palms
+    - Added oil plants to lard chain
+    - Added biomass
+
+  Factory-breaking Changes:
+    - Added more pipe-connections to the bio reactor

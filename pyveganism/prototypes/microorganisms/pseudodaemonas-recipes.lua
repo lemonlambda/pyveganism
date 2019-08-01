@@ -3,7 +3,7 @@ RECIPE {
     name = "blood-rocket-fuel",
     category = "crafting",
     enabled = false,
-    energy_required = 1,
+    energy_required = 3,
     ingredients = {
         {type = "item", name = "blood-bag", amount = 1}, 
         {type = "item", name = "iron-plate", amount = 3}
@@ -29,7 +29,7 @@ RECIPE {
     energy_required = 50,
     ingredients = {
         {type = "fluid", name = "pseudodaemonas", amount = 50}, 
-        {type = "item", name = "iron-plate", amount = 1}
+        {type = "item", name = "tin-plate", amount = 3}
     },
     results = {
         {type = "item", name = "rocket-fuel", amount = 2}

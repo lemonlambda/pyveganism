@@ -435,7 +435,6 @@ function check_registered_entity(registered_entity)
     end
 end
 
-global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
 -- Checks some entries for validity and custom events
 function tick()
     local next = next
@@ -443,6 +442,7 @@ function tick()
     local register = global.registered_machines
     local index = global.last_index
     local current_entity
+    local checks = global.max_checks
 
     if index and register[index] then
         current_entity = register[index]
@@ -450,7 +450,7 @@ function tick()
         index, current_entity = next(register, index)
     end
 
-    while index and count < global.max_checks do
+    while index and count < checks do
         check_registered_entity(current_entity)
         index, current_entity = next(register, index)
         count = count + 1
@@ -473,14 +473,27 @@ end
 
 function init()
     global.registered_machines = {}
-    global.tick_last_finished_research = 0
-
-    global.PYV_VERSION = game.active_mods["pyveganism"]
 
     for _, surface in pairs(game.surfaces) do
         for _, entity in pairs(surface.find_entities_filtered{name = table.keys(relevant_machines)}) do
             register_beaconed_machine(entity)
         end
+    end
+    for _, surface in pairs(game.surfaces) do
+        for _, entity in pairs(surface.find_entities_filtered{name = "composting-silo"}) do
+            register_composting_silo(entity)
+        end
+    end
+
+    global.tick_last_finished_research = 0
+    global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
+    global.PYV_VERSION = game.active_mods["pyveganism"]
+end
+
+function load()
+    global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
+    if not global.max_checks then --just to be sure
+        global.max_checks = 50
     end
 end
 
@@ -491,7 +504,7 @@ function settings_update(event)
     if game.active_mods["pyveganism"] ~= global.PYV_VERSION then
         -- I published a new version. Reset recipes, techs and tech effects in case I changed something. 
         -- I do that a lot and don't want to forget a migration file. 
-        global.PYV_VERSION = PYV_VERSION
+        global.PYV_VERSION = game.active_mods["pyveganism"]
 
         for _, force in pairs(game.forces) do
             force.reset_recipes()
@@ -525,6 +538,7 @@ script.on_event(defines.events.on_research_finished, on_research_finished)
 -- maintenance routines
 script.on_nth_tick(10, tick)
 script.on_event(defines.events.on_runtime_mod_setting_changed, settings_update)
+script.on_load(load)
 
 -- events that could mean a recipe change
 script.on_event(defines.events.on_gui_closed, on_suspected_recipe_change)
