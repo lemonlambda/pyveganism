@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 2019.08.02
+  Bugfixes:
+    - Fixed a crash when the player dies after a blood donation
+    - Added a missing locale
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 2019.08.01
+  Bugfixes:
+    - Fixed a crash where the number of entity checks was nil
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 2019.08.01
   Features:

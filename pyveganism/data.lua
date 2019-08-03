@@ -1,7 +1,7 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 table = require("__stdlib__/stdlib/utils/table")
 
-local DEBUG = true
+local DEBUG = false
 
 require("prototypes.datastage-globals")
 require("prototypes.item-group")

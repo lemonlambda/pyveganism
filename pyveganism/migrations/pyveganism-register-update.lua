@@ -4,6 +4,4 @@ if not global.registered_machines then
             entity.destroy()
         end
     end
-
-    init()
 end

@@ -589,16 +589,17 @@ end
 
 function execute_blood_donation_effects(player, donation_count)
     local player_entity = player.character
-    if not player_entity or not player_entity.health then 
+    if not player_entity or not player_entity.valid or not player_entity.health then 
         return 
+    end
+
+    -- stickers first, because the player could die from the damage
+    for i = 1, math.min(donation_count, 5) do
+        give_sticker_to(player, "blood-donation-" .. i)
     end
 
     local damage = donation_count * 0.19 * player_entity.prototype.max_health
     player_entity.damage(damage, player_entity.force)
-
-    for i = 1, math.min(donation_count, 5) do
-        give_sticker_to(player, "blood-donation-" .. i)
-    end
 end
 
 function on_blood_donation(player_index)
