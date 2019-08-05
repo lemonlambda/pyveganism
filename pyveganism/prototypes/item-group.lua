@@ -4,7 +4,6 @@ data:extend {
         name = "py-veganism",
         order = "z",
         inventory_order = "z",
-        order = "z",
         icon = "__pyveganism__/graphics/icons/item-group.png",
         icon_size = 144
     },

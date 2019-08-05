@@ -201,7 +201,9 @@ end
 
 function remove_all_beacons_for(registered_entity)
     for _, beacon in pairs(registered_entity.beacons) do
-        beacon.destroy()
+        if beacon.valid then
+            beacon.destroy()
+        end
     end
     registered_entity.beacons = {}
 end
@@ -364,7 +366,9 @@ function on_entity_built(event)
         entity = event.entity
     elseif event.destination then
         entity = event.destination
-    else 
+    end
+
+    if not entity or not entity.valid then
         return
     end
 
@@ -461,7 +465,7 @@ end
 
 function on_suspected_recipe_change(event)
     local entity = event.entity
-    if not entity then
+    if not entity or not entity.valid then
         return
     end
 
@@ -473,6 +477,12 @@ end
 
 function init()
     global.registered_machines = {}
+
+    for _, surface in pairs(game.surfaces) do
+        for _, entity in pairs(surface.find_entities_filtered {name = {"pyveganism-beacon-cultivation-expertise", "pyveganism-beacon-plant-breeding"}}) do
+            entity.destroy()
+        end
+    end
 
     for _, surface in pairs(game.surfaces) do
         for _, entity in pairs(surface.find_entities_filtered{name = table.keys(relevant_machines)}) do
@@ -531,6 +541,7 @@ script.on_event(defines.events.script_raised_revive, on_entity_built)
 script.on_event(defines.events.on_player_mined_entity, on_entity_removed)
 script.on_event(defines.events.on_robot_mined_entity, on_entity_removed)
 script.on_event(defines.events.on_entity_died, on_entity_removed)
+script.on_event(defines.events.script_raised_destroy, on_entity_removed)
 
 -- research finishes
 script.on_event(defines.events.on_research_finished, on_research_finished)
