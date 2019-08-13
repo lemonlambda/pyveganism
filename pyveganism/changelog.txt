@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.8
+Date: 2019.08.12
+  Bugfixes:
+    - Fixed a crash when the loop in the on_tick-function stopped at an entity that got removed before the next call to the on_tick-function
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.7
 Date: 2019.08.06
   Bugfixes:

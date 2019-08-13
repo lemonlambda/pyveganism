@@ -446,15 +446,15 @@ function tick()
     local register = global.registered_machines
     local index = global.last_index
     local current_entity
-    local checks = global.max_checks
+    local number_of_checks = global.max_checks
 
     if index and register[index] then
-        current_entity = register[index]
+        current_entity = register[index] -- continue looping
     else
-        index, current_entity = next(register, index)
+        index, current_entity = next(register, nil) -- begin a new loop at the start (nil as a key returns the first pair)
     end
 
-    while index and count < checks do
+    while index and count < number_of_checks do
         check_registered_entity(current_entity)
         index, current_entity = next(register, index)
         count = count + 1
