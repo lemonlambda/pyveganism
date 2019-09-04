@@ -16,7 +16,8 @@ local carbon_dioxide_recipes = {
     ["grow-canola"] = {amount = 200, productivity_effect = 1.5},
     ["grow-soy"] = {amount = 200, productivity_effect = 1.5},
     ["grow-sugar-beet"] = {amount = 200, productivity_effect = 1.5},
-    ["grow-sugar-cane"] = {amount = 200, productivity_effect = 1.5}
+    ["grow-sugar-cane"] = {amount = 200, productivity_effect = 1.5},
+    ["grow-cadaver-arum"] = {amount = 300, productivity_effect = 1.2}
 }
 
 local lamp_appendix = "-lamp"
@@ -31,7 +32,8 @@ local lamp_recipes = {
     ["grow-canola"] = {amount = 1, productivity_effect = 2},
     ["grow-soy"] = {amount = 1, productivity_effect = 2},
     ["grow-sugar-beet"] = {amount = 1, productivity_effect = 2},
-    ["grow-sugar-cane"] = {amount = 1, productivity_effect = 2}
+    ["grow-sugar-cane"] = {amount = 1, productivity_effect = 2},
+    ["grow-cadaver-arum"] = {amount = 1, productivity_effect = 1.5}
 }
 
 local fertilizer_appendix = "-fertilizer"
@@ -90,7 +92,8 @@ local unlocks = {
     ["grow-sugar-cane"] = {"sugar-plants"},
     ["grow-tiriscefing-willow-1"] = {"coal-processing-1"}, 
     ["grow-tiriscefing-willow-2"] = {"coal-processing-1"},
-    ["grow-atztazzae"] = {"vanadium-processing"}
+    ["grow-atztazzae"] = {"vanadium-processing"},
+    ["grow-cadaver-arum"] = {"basic-electronics"}
 }
 
 local combination_details = {
@@ -148,6 +151,9 @@ local combination_details = {
     ["grow-tiriscefing-willow-2"] = {
         groups = {{HUMUS, FERTILIZER}}
     },
+    ["grow-cadaver-arum"] = {
+        groups = {{CARBON_DIOXIDE, LAMP}}
+    }
 }
 
 local function create_recipe_clone(name, new_name)

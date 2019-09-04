@@ -13,7 +13,10 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "oil-palm-fruit",
-    icons = {{icon = "__pyveganism__/graphics/icons/grow-oil-palm.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-oil-palm.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-oil-palm",
     order = "aba"
@@ -34,7 +37,7 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 7}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"}, 
+        {icon = "__pyveganism__/graphics/icons/oil-palm-fruit.png"},
         {icon = "__pyveganism__/graphics/icons/crack-open.png"}
     },
     icon_size = 64,

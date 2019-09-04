@@ -13,7 +13,10 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "coconut",
-    icons = {{icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-coconut-palm.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-coconut",
     order = "aba"
@@ -33,8 +36,8 @@ RECIPE {
         {type = "item", name = "plant-residues-dry", amount = 4}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/coconut.png"}, 
-        {icon = "__pyveganism__/graphics/icons/crack-open.png"}, 
+        {icon = "__pyveganism__/graphics/icons/coconut.png"},
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-coconut",
@@ -54,8 +57,8 @@ RECIPE {
         {type = "item", name = "copra-halved", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/copra.png"}, 
-        {icon = "__pyveganism__/graphics/icons/crack-open.png"}, 
+        {icon = "__pyveganism__/graphics/icons/copra.png"},
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-coconut",

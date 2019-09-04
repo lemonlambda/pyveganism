@@ -14,7 +14,8 @@ RECIPE {
     },
     main_product = "tiriscefing-willow",
     icons = {
-        {icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png"}
+        {icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-tiriscefing-willow",
@@ -39,6 +40,7 @@ RECIPE {
     main_product = "tiriscefing-willow",
     icons = {
         {icon = "__pyveganism__/graphics/icons/grow-tiriscefing-willow.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"},
         {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"}
     },
     icon_size = 64,

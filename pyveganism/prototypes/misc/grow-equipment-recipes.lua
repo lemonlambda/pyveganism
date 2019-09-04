@@ -127,3 +127,29 @@ RECIPE {
     subgroup = "py-veganism-grow-equipment",
     order = "ada"
 }:add_unlock("cultivation-expertise-4")
+
+if mods["pyhightech"] then
+    RECIPE {
+        type = "recipe",
+        name = "pyveganism-fertilizer-ammonium-sulfate",
+        category = "mixer",
+        enabled = false,
+        energy_required = 0.5,
+        ingredients = {
+            {type = "item", name = "tailings-dust", amount = 10},
+            {type = "item", name = "ammonium-sulfate", amount = 10}, 
+            {type = "item", name = "humus", amount = 8},
+            {type = "item", name = "limestone", amount = 4}
+        },
+        results = {
+            {type = "item", name = "py-fertilizer", amount = 8}
+        },
+        icons = {
+            {icon = py_veganism_globals["fertilizer_icon"].icon},
+            {icon = py_veganism_globals:get_vegan_icon(size)}
+        },
+        icon_size = size,
+        subgroup = "py-veganism-grow-equipment",
+        order = "aea"
+    }:add_unlock("cultivation-expertise-3")
+end

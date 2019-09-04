@@ -19,9 +19,8 @@ local nonvegetarian_recipes = {
     --pyfe
     "xyhiphoe-pool",
     "kmauts-enclosure",
-    ---no replacement yet
     --pyht
-    --"zipir"
+    "zipir"
 }
 
 function disable_recipe(name)

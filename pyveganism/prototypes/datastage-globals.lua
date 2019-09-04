@@ -3,7 +3,7 @@ py_veganism_globals = {
     plant_oil_pressing_category = "crafting-with-fluid",
     algae_growing_category = "bio-reactor",
     sugar_refine_category = "rectisol",
-    electrodeionisation_category = "chemical",
+    electrodeionisation_category = "chemistry",
     urea_icon = {icon = "__pyveganism__/graphics/icons/urea.png", size = 64},
     fertilizer_icon = {icon = "__pyveganism__/graphics/icons/fertilizer.png", size = 64},
     vegan_icon_small = "__pyveganism__/graphics/icons/vegan-small.png",

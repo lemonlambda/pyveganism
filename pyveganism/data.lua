@@ -53,17 +53,21 @@ local enabled_concepts = {
     "misc.grow-equipment"
 }
 
---[[if mods["pyhightech"] then
+if mods["pyhightech"] then
     local pyht_concepts = {
-        --microorganisms
+        --plants
+        "plants.cadaver-arum",
+        --
+        --miscellaneous
+        "misc.ammonium-sulfate"
     }
 
     table.merge(enabled_concepts, pyht_concepts, true)
-end]]
+end
 
 function try_load(file)
     local ok, err = pcall(require, file)
-    if not ok and not err:find('^module .* not found') then
+    if not ok and not err:find("^module .* not found") then
         error(err)
     end
 end

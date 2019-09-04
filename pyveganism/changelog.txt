@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.9
+Date: 2019.09.04
+  Features:
+    - Added cadaver-arum
+    - Added ammonium-sulfate
+  Bugfixes:
+    - Fixed a loading error when pyrawores isn't enabled
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.8
 Date: 2019.08.12
   Bugfixes:

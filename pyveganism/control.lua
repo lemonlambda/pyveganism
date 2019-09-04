@@ -509,7 +509,9 @@ end
 
 function settings_update(event)
     global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
+end
 
+function configuration_change(event)
     -- Check if the stored version number equals the version of the loaded mod
     if game.active_mods["pyveganism"] ~= global.PYV_VERSION then
         -- I published a new version. Reset recipes, techs and tech effects in case I changed something. 
@@ -549,6 +551,7 @@ script.on_event(defines.events.on_research_finished, on_research_finished)
 -- maintenance routines
 script.on_nth_tick(10, tick)
 script.on_event(defines.events.on_runtime_mod_setting_changed, settings_update)
+script.on_configuration_changed(configuration_change)
 script.on_load(load)
 
 -- events that could mean a recipe change

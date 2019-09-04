@@ -29,7 +29,7 @@ RECIPE {
     energy_required = 50,
     ingredients = {
         {type = "fluid", name = "pseudodaemonas", amount = 50}, 
-        {type = "item", name = "tin-plate", amount = 3}
+        {type = "item", name = "iron-plate", amount = 3}
     },
     results = {
         {type = "item", name = "rocket-fuel", amount = 2}
@@ -97,6 +97,7 @@ RECIPE {
 }:add_unlock("growth-media-3"):add_unlock("rocket-fuel")
 
 if mods["pyrawores"] then
+    RECIPE("pseudodaemonas-rocket-fuel"):replace_ingredient("iron-plate", "tin-plate")
     RECIPE("enrichment-culture-pseudodaemonas"):replace_ingredient("limestone", "sodium-hydroxide")
     RECIPE("enrichment-culture-pseudodaemonas"):replace_ingredient("pressured-air", "oxygen")
     RECIPE("pure-culture-pseudodaemonas"):replace_ingredient("limestone", "sodium-hydroxide")

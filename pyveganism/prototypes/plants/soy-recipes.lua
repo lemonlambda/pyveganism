@@ -1,6 +1,6 @@
 --[[
 --> Growing
-]]--
+]] --
 RECIPE {
     type = "recipe",
     name = "grow-soy",
@@ -16,16 +16,19 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "soy-pods",
-    icons = {{icon = "__pyveganism__/graphics/icons/grow-soy.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-soy.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-soy",
     order = "aca"
 }:add_unlock("oil-plants"):add_unlock("protein-plants")
+ --
 
 --[[
 --> Processing
-]]--
-RECIPE {
+]] RECIPE {
     type = "recipe",
     name = "wash-soy",
     category = "washer",
@@ -62,8 +65,8 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/soy-pods-washed.png"}, 
-        {icon = "__pyveganism__/graphics/icons/crack-open.png"}, 
+        {icon = "__pyveganism__/graphics/icons/soy-pods-washed.png"},
+        {icon = "__pyveganism__/graphics/icons/crack-open.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -84,7 +87,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/soy-beans.png"},
-        {icon = "__pyveganism__/graphics/icons/time.png"},
+        {icon = "__pyveganism__/graphics/icons/time.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -127,8 +130,8 @@ RECIPE {
         {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/soy-meal.png"}, 
-        {icon = "__pyveganism__/graphics/icons/arrow-down.png"}, 
+        {icon = "__pyveganism__/graphics/icons/soy-meal.png"},
+        {icon = "__pyveganism__/graphics/icons/arrow-down.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -142,15 +145,15 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "item", name = "soy-beans", amount = 5}, 
+        {type = "item", name = "soy-beans", amount = 5},
         {type = "fluid", name = "clean-water", amount = 100}
     },
     results = {
-        {type = "fluid", name = "soy-milk", amount = 100}, 
+        {type = "fluid", name = "soy-milk", amount = 100},
         {type = "item", name = "soy-meal", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/soy-milk.png"}, 
+        {icon = "__pyveganism__/graphics/icons/soy-milk.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -164,15 +167,15 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "soy-milk", amount = 80}, 
+        {type = "fluid", name = "soy-milk", amount = 80},
         {type = "fluid", name = "citric-acid", amount = 15}
     },
     results = {
-        {type = "item", name = "tofu-block", amount = 5}, 
+        {type = "item", name = "tofu-block", amount = 5},
         {type = "item", name = "yuba", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/tofu-block.png"}, 
+        {icon = "__pyveganism__/graphics/icons/tofu-block.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -186,31 +189,31 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "item", name = "soy-beans", amount = 20}, 
+        {type = "item", name = "soy-beans", amount = 20},
         {type = "fluid", name = "proxae", amount = 50}
     },
     results = {
         {type = "item", name = "tempeh", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/tempeh.png"}, 
+        {icon = "__pyveganism__/graphics/icons/tempeh.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
     order = "aah"
 }:add_unlock("protein-plants")
+ --
 
 --[[
 --> Extraction Recipes  
-]]--
-RECIPE {
+]] RECIPE {
     type = "recipe",
     name = "extract-protein-soy-meal",
     category = "chemistry",
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "soy-meal", amount = 10}, 
+        {type = "item", name = "soy-meal", amount = 10},
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
@@ -218,7 +221,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/soy-meal.png"},
-        {icon = "__pyveganism__/graphics/icons/refine.png"} 
+        {icon = "__pyveganism__/graphics/icons/refine.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -232,7 +235,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "tofu-block", amount = 10}, 
+        {type = "item", name = "tofu-block", amount = 10},
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
@@ -240,7 +243,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/tofu-block.png"},
-        {icon = "__pyveganism__/graphics/icons/refine.png"} 
+        {icon = "__pyveganism__/graphics/icons/refine.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -254,7 +257,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "yuba", amount = 10}, 
+        {type = "item", name = "yuba", amount = 10},
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
@@ -262,7 +265,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/yuba.png"},
-        {icon = "__pyveganism__/graphics/icons/refine.png"} 
+        {icon = "__pyveganism__/graphics/icons/refine.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",
@@ -276,7 +279,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "tempeh", amount = 10}, 
+        {type = "item", name = "tempeh", amount = 10},
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
@@ -284,7 +287,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/tempeh.png"},
-        {icon = "__pyveganism__/graphics/icons/refine.png"} 
+        {icon = "__pyveganism__/graphics/icons/refine.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-soy",

@@ -1,7 +1,7 @@
 {
     "name": "pyveganism",
-    "version": "0.0.8",
-    "title": "pY Veganism [ALPHA]",
+    "version": "0.0.9",
+    "title": "pY Veganism",
     "author": "tiriscef",
     "contact": "tiriscef@protonmail.com",
     "homepage": "https://forums.factorio.com/viewtopic.php?f=219&t=71587",
@@ -14,5 +14,5 @@
         "?pyrawores",
         "?pypetroleumhandling"
     ],
-    "description": "WIP. Inofficial. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals."
+    "description": "Inofficial. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals."
 }

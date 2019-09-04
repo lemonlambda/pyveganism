@@ -13,7 +13,10 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "sugar-cane",
-    icons = {{icon = "__pyveganism__/graphics/icons/grow-sugar-cane.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-sugar-cane.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-sugar-cane",
     order = "aba"

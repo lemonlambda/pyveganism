@@ -167,6 +167,12 @@ data:extend {
     },
     {
         type = "item-subgroup",
+        name = "py-veganism-cadaver-arum",
+        group = "py-veganism",
+        order = "bga"
+    },
+    {
+        type = "item-subgroup",
         name = "py-veganism-samples",
         group = "py-veganism",
         order = "zaa"

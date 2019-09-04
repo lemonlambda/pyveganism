@@ -13,7 +13,10 @@ RECIPE {
         {type = "item", name = "plant-residues", amount = 2}
     },
     main_product = "cocoa-fruit",
-    icons = {{icon = "__pyveganism__/graphics/icons/grow-cocoa.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-cocoa.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-cocoa",
     order = "aba"
@@ -55,7 +58,7 @@ RECIPE {
         {type = "item", name = "cocoa-fruit-roasted", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/cocoa-fruit-roasted.png"}, 
+        {icon = "__pyveganism__/graphics/icons/cocoa-fruit-roasted.png"},
         {icon = "__pyveganism__/graphics/icons/hyperthermic-stress.png"}
     },
     icon_size = 64,
@@ -77,7 +80,7 @@ RECIPE {
         {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/cocoa-beans.png"}, 
+        {icon = "__pyveganism__/graphics/icons/cocoa-beans.png"},
         {icon = "__pyveganism__/graphics/icons/crack-open.png"}
     },
     icon_size = 64,

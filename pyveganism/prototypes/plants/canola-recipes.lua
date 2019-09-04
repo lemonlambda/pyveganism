@@ -12,7 +12,10 @@ RECIPE {
         {type = "item", name = "canola", amount = 10}
     },
     main_product = "canola",
-    icons = {{icon = "__pyveganism__/graphics/icons/grow-canola.png"}},
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/grow-canola.png"},
+        {icon = "__pyveganism__/graphics/icons/grow.png"}
+    },
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aba"
@@ -118,8 +121,8 @@ RECIPE {
         {type = "item", name = "plant-residues-dry", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/canola-meal.png"}, 
-        {icon = "__pyveganism__/graphics/icons/arrow-down.png"}, 
+        {icon = "__pyveganism__/graphics/icons/canola-meal.png"},
+        {icon = "__pyveganism__/graphics/icons/arrow-down.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-canola",
@@ -133,7 +136,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "canola-meal", amount = 10}, 
+        {type = "item", name = "canola-meal", amount = 10},
         {type = "fluid", name = "ethanol-solution", amount = 40}
     },
     results = {
@@ -141,7 +144,7 @@ RECIPE {
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/canola-meal.png"},
-        {icon = "__pyveganism__/graphics/icons/refine.png"} 
+        {icon = "__pyveganism__/graphics/icons/refine.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-canola",
