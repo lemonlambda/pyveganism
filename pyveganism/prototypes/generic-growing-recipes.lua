@@ -268,6 +268,8 @@ local function create_ingredient_group_recipes(recipes, bottom_recipe_name, grou
 end
 
 local function create_combinations_for(recipe_name)
+    if not data.raw.recipe[recipe_name] then return end
+
     local details = combination_details[recipe_name]
     local existing_recipes = {
         {name = recipe_name, combination_count = 0}
