@@ -1,12 +1,6 @@
 local string = require("__stdlib__/stdlib/utils/string")
 local table = require("__stdlib__/stdlib/utils/table")
-
---[[
---> Registered Entities
-]]--
-
---[[
-    data structures for my pseudo object oriented approach
+--[[data structures for my pseudo object oriented approach
 
     global.registered_machines: table
         [lua_entity]: registered_entity
@@ -31,14 +25,12 @@ local table = require("__stdlib__/stdlib/utils/table")
     machine_details: table
         ["is_recipe_dependant"]: bool -- if the modules of this machine depend on the active recipe
         ["affecting_technologies"]: table -- with tech names as strings
-
-]]--
+]]
+--<< Registered Entities >>
 local TYPE_BEACONED_MACHINE = 1
 local TYPE_COMPOSTING_SILO = 2
 
---[[
---> Beaconed machine variables (must be final)
-]]--
+--<< Beaconed machine variables (must be final) >>
 function lvl_name(technology, level)
     return technology.name .. "-" .. level
 end
@@ -76,12 +68,12 @@ local technologies = {
             ["cadaveric-arum"] = true,
             ["kicalk-plantation"] = true,
             ["guar-gum-plantation"] = true
-        }, 
+        },
         module = "pyveganism-module-cultivation-expertise",
         beacon = "pyveganism-beacon-cultivation-expertise",
         max_finite_level = 6,
         get_module_count = get_tech_level
-    }, 
+    },
     ["plant-breeding"] = {
         name = "plant-breeding",
         machines = {
@@ -97,11 +89,6 @@ local technologies = {
             ["cadaveric-arum"] = true,
             ["kicalk-plantation"] = true,
             ["guar-gum-plantation"] = true
-        }, 
-        recipe_blacklist = {
-            ["grow-atztazzae"] = true,
-            ["grow-atztazzae-ash"] = true,
-            ["grow-atztazzae-fertilizer"] = true
         },
         module = "pyveganism-module-plant-breeding",
         beacon = "pyveganism-beacon-plant-breeding",
@@ -141,7 +128,7 @@ for _, tech in pairs(technologies) do
     for machine, _ in pairs(tech.machines) do
         if not relevant_machines[machine] then
             relevant_machines[machine] = {
-                is_recipe_dependant = false, 
+                is_recipe_dependant = false,
                 affecting_technologies = {}
             }
         end
@@ -152,11 +139,9 @@ for _, tech in pairs(technologies) do
         table.insert(relevant_machines[machine].affecting_technologies, tech.name)
     end
 end
+--
 
---[[
---> Implementation Beaconed Entities
-]]--
-
+--<< Implementation Beaconed Entities >>
 -- The current number of modules for this entity for this technology
 function current_module_count(entity, technology)
     if not (allowes_recipe(technology, get_active_recipe(entity))) then
@@ -168,16 +153,17 @@ end
 
 -- Creates and returns a beacon for the given entity and technology
 function create_beacon_for(entity, technology)
-    local beacon = entity.surface.create_entity{
+    local beacon =
+        entity.surface.create_entity {
         name = technology.beacon,
         position = entity.position,
-        force = entity.force,
+        force = entity.force
     }
 
     local module_count = current_module_count(entity, technology)
 
     if module_count > 0 then
-        beacon.get_module_inventory().insert{
+        beacon.get_module_inventory().insert {
             name = technology.module,
             count = module_count
         }
@@ -215,17 +201,15 @@ function refresh_beaconed_entity(registered_entity)
 
         beacon.get_module_inventory().clear()
         if module_count > 0 then
-            beacon.get_module_inventory().insert{
-                name = technology.module, 
+            beacon.get_module_inventory().insert {
+                name = technology.module,
                 count = module_count
             }
         end
     end
 end
 
---[[
---> Implementation Composting Silo
-]]--
+--<< Implementation Composting Silo >>
 local compostable_items = require("prototypes.composting-values")
 
 function analyze_silo_inventory(registered_silo)
@@ -245,7 +229,8 @@ end
 
 local composting_coefficient = 1. / 600. / 200. -- 1 Humus every 10 Seconds (600 ticks) when 200 Items are in the silo
 function get_composting_progress(item_count, item_types_count, time)
-    return item_count * item_types_count * time * composting_coefficient * math.max(1., math.min(5., item_count / 2000.))
+    return item_count * item_types_count * time * composting_coefficient *
+        math.max(1., math.min(5., item_count / 2000.))
 end
 
 function remove_compostable_items(registered_silo, type_count)
@@ -253,18 +238,20 @@ function remove_compostable_items(registered_silo, type_count)
         return
     end
     local inventory = registered_silo.entity.get_inventory(defines.inventory.chest)
-    
+
     local index_to_remove = math.random(type_count)
     local count = 1
 
     for item_name, _ in pairs(inventory.get_contents()) do
         if compostable_items[item_name] then
             if count == index_to_remove then
-                local removed_count = inventory.remove{name = item_name, count = math.floor(registered_silo.composting_progress)}
+                local removed_count =
+                    inventory.remove {name = item_name, count = math.floor(registered_silo.composting_progress)}
                 registered_silo.composting_progress = registered_silo.composting_progress - removed_count
-                registered_silo.pending_humus = registered_silo.pending_humus + removed_count * compostable_items[item_name]
+                registered_silo.pending_humus =
+                    registered_silo.pending_humus + removed_count * compostable_items[item_name]
                 break
-            else 
+            else
                 count = count + 1
             end
         end
@@ -274,14 +261,15 @@ end
 function process_compostable_items(registered_silo)
     local delta_time = game.tick - registered_silo.tick_last_refresh
     local details = analyze_silo_inventory(registered_silo)
-    registered_silo.composting_progress = registered_silo.composting_progress + get_composting_progress(details.count, details.type_count, delta_time)
+    registered_silo.composting_progress =
+        registered_silo.composting_progress + get_composting_progress(details.count, details.type_count, delta_time)
     remove_compostable_items(registered_silo, details.type_count)
 end
 
 function distribute_humus(registered_silo)
     local count = math.floor(registered_silo.pending_humus)
-    if count < 1 then 
-        return 
+    if count < 1 then
+        return
     end
 
     local inventory = registered_silo.entity.get_inventory(defines.inventory.chest)
@@ -300,9 +288,7 @@ function refresh_composting_silo(registered_silo)
     distribute_humus(registered_silo)
 end
 
---[[
---> Implementation Register
-]]--
+--<< Implementation Register >>
 function refresh(registered_entity)
     if not registered_entity.entity.valid then
         unregister(registered_entity)
@@ -343,7 +329,7 @@ function register_composting_silo(entity)
     global.registered_machines[entity] = {
         type = TYPE_COMPOSTING_SILO,
         entity = entity,
-        tick_last_refresh = game.tick, 
+        tick_last_refresh = game.tick,
         pending_humus = 0.,
         composting_progress = 0.
     }
@@ -479,18 +465,22 @@ function init()
     global.registered_machines = {}
 
     for _, surface in pairs(game.surfaces) do
-        for _, entity in pairs(surface.find_entities_filtered {name = {"pyveganism-beacon-cultivation-expertise", "pyveganism-beacon-plant-breeding"}}) do
+        for _, entity in pairs(
+            surface.find_entities_filtered {
+                name = {"pyveganism-beacon-cultivation-expertise", "pyveganism-beacon-plant-breeding"}
+            }
+        ) do
             entity.destroy()
         end
     end
 
     for _, surface in pairs(game.surfaces) do
-        for _, entity in pairs(surface.find_entities_filtered{name = table.keys(relevant_machines)}) do
+        for _, entity in pairs(surface.find_entities_filtered {name = table.keys(relevant_machines)}) do
             register_beaconed_machine(entity)
         end
     end
     for _, surface in pairs(game.surfaces) do
-        for _, entity in pairs(surface.find_entities_filtered{name = "composting-silo"}) do
+        for _, entity in pairs(surface.find_entities_filtered {name = "composting-silo"}) do
             register_composting_silo(entity)
         end
     end
@@ -514,8 +504,8 @@ end
 function configuration_change(event)
     -- Check if the stored version number equals the version of the loaded mod
     if game.active_mods["pyveganism"] ~= global.PYV_VERSION then
-        -- I published a new version. Reset recipes, techs and tech effects in case I changed something. 
-        -- I do that a lot and don't want to forget a migration file. 
+        -- I published a new version. Reset recipes, techs and tech effects in case I changed something.
+        -- I do that a lot and don't want to forget a migration file.
         global.PYV_VERSION = game.active_mods["pyveganism"]
 
         for _, force in pairs(game.forces) do
@@ -526,9 +516,7 @@ function configuration_change(event)
     end
 end
 
---[[
---> Eventhandlers   
-]]--
+--<< Eventhandlers >>
 -- initialisation
 script.on_init(init)
 
@@ -558,14 +546,10 @@ script.on_load(load)
 script.on_event(defines.events.on_gui_closed, on_suspected_recipe_change)
 script.on_event(defines.events.on_entity_settings_pasted, on_suspected_recipe_change)
 
---[[
---> Sample crafting effects
-]]--
-
---[[
-    global.blood_donations: table
+--[[global.blood_donations: table
         [player_name]: table (ticks as uint when the last donations occured)
-]]--
+]]
+--<< Sample crafting effects >>
 function log_blood_donation(player_name)
     if not global.blood_donations then
         global.blood_donations = {}
@@ -580,7 +564,7 @@ end
 function get_count_of_recent_blood_donations(player_name)
     local count = 0
     local current_tick = game.tick
-    for index, tick in pairs(global.blood_donations[player_name]) do
+    for _, tick in pairs(global.blood_donations[player_name]) do
         local time_past = current_tick - tick
         if time_past < 216000 then --216000 is 60 minutes (3600 seconds) at 60 ticks per second
             count = count + 1
@@ -593,18 +577,18 @@ function get_count_of_recent_blood_donations(player_name)
 end
 
 function give_sticker_to(player, sticker_name)
-    player.surface.create_entity{
-        name = sticker_name, 
-        position = player.position, 
-        force = player.force, 
+    player.surface.create_entity {
+        name = sticker_name,
+        position = player.position,
+        force = player.force,
         target = player.character
     }
 end
 
 function execute_blood_donation_effects(player, donation_count)
     local player_entity = player.character
-    if not player_entity or not player_entity.valid or not player_entity.health then 
-        return 
+    if not player_entity or not player_entity.valid or not player_entity.health then
+        return
     end
 
     -- stickers first, because the player could die from the damage
