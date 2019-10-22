@@ -109,12 +109,12 @@ RECIPE {
     enabled = false,
     energy_required = 50,
     ingredients = {
-        {type = "item", name = "atztazzae-mycel", amount = 1},
+        {type = "item", name = "atztazzae-mycel", amount = 1, catalyst_amount = 1},
         {type = "fluid", name = "pressured-water", amount = 20000}
     },
     results = {
         {type = "item", name = "atztazzae-mushroom", amount = 100}, 
-        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.99},
+        {type = "item", name = "atztazzae-mycel", amount = 1, probability = 0.99, catalyst_amount = 1},
     },
     main_product = "atztazzae-mushroom",
     icons = {
