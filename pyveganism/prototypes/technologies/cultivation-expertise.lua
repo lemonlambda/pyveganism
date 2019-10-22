@@ -139,6 +139,8 @@ TECHNOLOGY {
 ENTITY {
     type = "beacon",
     name = "pyveganism-beacon-cultivation-expertise",
+    icon = "__pyveganism__/graphics/technology/cultivation-expertise.png",
+    icon_size = 128,
     energy_usage = "10W",
     flags = { "hide-alt-info", "not-blueprintable", "not-deconstructable", "not-on-map", "not-flammable", "not-repairable", "no-automated-item-removal", "no-automated-item-insertion" },
     animation = {
@@ -190,8 +192,8 @@ ENTITY {
 ITEM {
     type = "module",
     name = "pyveganism-module-cultivation-expertise",
-    icon = "__pyveganism__/graphics/icons/empty.png",
-    icon_size = 1,
+    icon = "__pyveganism__/graphics/technology/cultivation-expertise.png",
+    icon_size = 128,
     flags = { "hidden", "hide-from-bonus-gui" },
     subgroup = "module",
     category = "speed",
