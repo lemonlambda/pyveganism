@@ -1,9 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.10
+Date: 2019.10.25
+  Changes:
+    - Gave the invisible beacons an icon to avoid breaking other mods
+    - Atztazzae mushroom growing recipes declare the mycel as catalyst
+    - This allowes to apply the effect of Plant Breeding to them
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.9
 Date: 2019.09.04
   Features:
     - Added cadaver-arum
     - Added ammonium-sulfate
+
   Bugfixes:
     - Fixed a loading error when pyrawores isn't enabled
 
