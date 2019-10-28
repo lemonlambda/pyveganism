@@ -199,12 +199,20 @@ function refresh_beaconed_entity(registered_entity)
         local technology = technologies[tech_name]
         local module_count = current_module_count(registered_entity.entity, technology)
 
-        beacon.get_module_inventory().clear()
-        if module_count > 0 then
-            beacon.get_module_inventory().insert {
-                name = technology.module,
-                count = module_count
-            }
+        if beacon.valid then
+            local beacon_inventory = beacon.get_module_inventory()
+            beacon_inventory.clear()
+            if module_count > 0 then
+                beacon_inventory.insert {
+                    name = technology.module,
+                    count = module_count
+                }
+            end
+        else
+            -- apparently there are cases where the beacon gets lost (maybe because some other mod accidentally destroys it?)
+            -- so we just create a new one
+            local new_beacon = create_beacon_for(registered_entity.entity, technology)
+            registered_entity.beacons[tech_name] = new_beacon
         end
     end
 end
