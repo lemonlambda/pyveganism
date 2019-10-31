@@ -5,12 +5,12 @@ data:extend {
         order = "aaa",
         setting_type = "startup",
         default_value = false
-    }, 
+    },
     {
         type = "bool-setting",
         name = "pyveganism-hardcore-vegetarian",
         order = "aab",
-        setting_type = "startup", 
+        setting_type = "startup",
         default_value = false
     },
     {
@@ -21,7 +21,7 @@ data:extend {
         default_value = 5,
         maximum_value = 2000,
         minimum_value = 1
-    }, 
+    },
     {
         type = "bool-setting",
         name = "pyveganism-refresh-beacons-on-finished-research",

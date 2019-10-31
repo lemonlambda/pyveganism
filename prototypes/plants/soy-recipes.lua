@@ -1,6 +1,4 @@
---[[
---> Growing
-]] --
+--<< Growing >>
 RECIPE {
     type = "recipe",
     name = "grow-soy",
@@ -24,11 +22,9 @@ RECIPE {
     subgroup = "py-veganism-soy",
     order = "aca"
 }:add_unlock("oil-plants"):add_unlock("protein-plants")
- --
 
---[[
---> Processing
-]] RECIPE {
+--<< Processing >>
+RECIPE {
     type = "recipe",
     name = "wash-soy",
     category = "washer",
@@ -109,7 +105,7 @@ RECIPE {
         {type = "item", name = "soy-meal", amount = 5}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/canola.png"},
+        {icon = "__pyveganism__/graphics/icons/soy-beans.png"},
         {icon = "__pyveganism__/graphics/icons/pressing.png"}
     },
     icon_size = 64,
@@ -202,11 +198,9 @@ RECIPE {
     subgroup = "py-veganism-soy",
     order = "aah"
 }:add_unlock("protein-plants")
- --
 
---[[
---> Extraction Recipes  
-]] RECIPE {
+--<< Extraction Recipes >>
+RECIPE {
     type = "recipe",
     name = "extract-protein-soy-meal",
     category = "chemistry",
