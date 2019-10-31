@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.12
+Date: 2019.10.28
+  Features:
+    - Added a composter entity that is code-wise a furnace to give a desync-save alternative to multiplayer games
+
+  Changes:
+    - Gave Plant Breeding and Cultivation Expertise an effect description that is similar to the ones in the base game
+    - Corrected the icon for Soy Bean Pressing
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.11
 Date: 2019.10.28
   Changes:

@@ -5,6 +5,7 @@ local DEBUG = false
 
 require("prototypes.datastage-globals")
 require("prototypes.item-group")
+require("prototypes.crafting-category")
 
 --add required features if some of the pymods are missing
 require("prototypes.updates.missing-pymods")

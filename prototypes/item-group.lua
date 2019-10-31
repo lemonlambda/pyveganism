@@ -45,9 +45,9 @@ data:extend {
         order = "abc"
     },
     {
-        type = "item-subgroup", 
+        type = "item-subgroup",
         name = "py-veganism-grow-equipment",
-        group = "py-veganism", 
+        group = "py-veganism",
         order = "aca"
     },
     --recipes
@@ -62,7 +62,7 @@ data:extend {
         name = "py-veganism-solfaen",
         group = "py-veganism",
         order = "bbb"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-sludge",
@@ -74,17 +74,17 @@ data:extend {
         name = "py-veganism-fiicorum",
         group = "py-veganism",
         order = "bbd"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-zirrella",
         group = "py-veganism",
         order = "bbe"
-    }, 
+    },
     {
-        type = "item-subgroup", 
+        type = "item-subgroup",
         name = "py-veganism-morgenroete",
-        group = "py-veganism", 
+        group = "py-veganism",
         order = "bbf"
     },
     {
@@ -92,19 +92,19 @@ data:extend {
         name = "py-veganism-proxae",
         group = "py-veganism",
         order = "bbg"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-pemtenn",
         group = "py-veganism",
         order = "bbh"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-e-coli",
         group = "py-veganism",
         order = "bbi"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-pseudodaemonas",
@@ -116,45 +116,45 @@ data:extend {
         name = "py-veganism-oil-plants",
         group = "py-veganism",
         order = "bce"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-cocoa",
         group = "py-veganism",
         order = "bcea"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-coconut",
         group = "py-veganism",
         order = "bceb"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-oil-palm",
         group = "py-veganism",
         order = "bcec"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-canola",
         group = "py-veganism",
         order = "bced"
-    }, 
+    },
     {
         type = "item-subgroup",
         name = "py-veganism-soy",
         group = "py-veganism",
         order = "bda"
-    }, 
+    },
     {
-        type = "item-subgroup", 
+        type = "item-subgroup",
         name = "py-veganism-sugar-cane",
         group = "py-veganism",
         order = "bea"
     },
     {
-        type = "item-subgroup", 
+        type = "item-subgroup",
         name = "py-veganism-sugar-beet",
         group = "py-veganism",
         order = "beb"
@@ -182,5 +182,11 @@ data:extend {
         name = "py-veganism-combustion",
         group = "py-veganism",
         order = "zab"
-    } 
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-composter",
+        group = "py-veganism",
+        order = "zac"
+    }
 }

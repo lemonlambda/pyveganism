@@ -251,7 +251,7 @@ local function create_ingredient_group_recipes(recipes, bottom_recipe_name, grou
 
     for _, ingredient in pairs(group) do
         local next_todo = {}
-        
+
         for _, recipe in pairs(recipes_todo) do
             if recipe.combination_count < max_combinations then
                 local created_recipe = creation_lookup[ingredient](recipe.name, bottom_recipe_name)
