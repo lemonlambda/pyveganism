@@ -3,7 +3,7 @@ local table = require("__stdlib__/stdlib/utils/table")
 --[[data structures for my pseudo object oriented approach
 
     global.registered_machines: table
-        [lua_entity]: registered_entity
+        [LuaEntity.unit_number]: registered_entity
 
     global.tick_last_finished_research: uint
 
@@ -323,7 +323,7 @@ function register_beaconed_machine(entity)
     local beacons = create_all_beacons_for(entity)
     local recipe = get_active_recipe(entity)
 
-    global.registered_machines[entity] = {
+    global.registered_machines[entity.unit_number] = {
         type = TYPE_BEACONED_MACHINE,
         entity = entity,
         beacons = beacons,
@@ -334,7 +334,7 @@ end
 
 -- Adds the composting silo to the register
 function register_composting_silo(entity)
-    global.registered_machines[entity] = {
+    global.registered_machines[entity.unit_number] = {
         type = TYPE_COMPOSTING_SILO,
         entity = entity,
         tick_last_refresh = game.tick,
@@ -348,7 +348,7 @@ function unregister(registered_entity)
     if registered_entity.type == TYPE_BEACONED_MACHINE then
         remove_all_beacons_for(registered_entity)
     end
-    global.registered_machines[registered_entity.entity] = nil
+    global.registered_machines[registered_entity.entity.unit_number] = nil
 end
 
 -- Eventhandler machine built
@@ -376,8 +376,10 @@ end
 
 -- Eventhandler machine removed
 function on_entity_removed(event)
-    if global.registered_machines[event.entity] then
-        unregister(global.registered_machines[event.entity])
+    local registry = global.registered_machines[event.entity.unit_number]
+
+    if registry then
+        unregister(registry)
     end
 end
 
@@ -463,8 +465,8 @@ function on_suspected_recipe_change(event)
         return
     end
 
-    local registered_entity = global.registered_machines[entity]
-    if global.registered_machines[entity] then
+    local registered_entity = global.registered_machines[entity.unit_number]
+    if registered_entity then
         check_registered_entity(registered_entity)
     end
 end

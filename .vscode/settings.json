@@ -1,0 +1,23 @@
+{
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ],
+    "Lua.diagnostics.globals": [
+        "global",
+        "game",
+        "settings",
+        "script",
+        "defines",
+        "RECIPE",
+        "data",
+        "ENTITY",
+        "ITEM",
+        "FLUID",
+        "mods",
+        "circuit_connector_definitions",
+        "TECHNOLOGY",
+        "DATA",
+        "default",
+        "util"
+    ]
+}

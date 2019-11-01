@@ -1,6 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.13
+Date: 2019.11.01
+  Bugfixes:
+    - Fixed a loading error when pyht or pyph isn't enabled
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.12
-Date: 2019.10.28
+Date: 2019.10.31
   Features:
     - Added a composter entity that is code-wise a furnace to provide a desync-save alternative to composting silos to multiplayer games
 
