@@ -52,7 +52,41 @@ local function split_number(number)
     return math.floor(number), number - math.floor(number)
 end
 
-for item, value in pairs(compostable_items) do
+local item_types = {
+    "item",
+    "tool",
+    "ammo",
+    "armor",
+    "blueprint-book",
+    "blueprint",
+    "capsule",
+    "deconstruction-item",
+    "gun",
+    "item-with-entity-data",
+    "item-with-inventory",
+    "item-with-label",
+    "item-with-tags",
+    "mining-tool",
+    "module",
+    "rail-planner",
+    "repair-tool",
+    "selection-tool"
+}
+
+local function item_exists(item)
+    for _, item_type in pairs(item_types) do
+        if data.raw[item_type][item] then
+            return true
+        end
+    end
+    return false
+end
+
+local function create_composting_recipe(item, value)
+    if not item_exists(item) then
+        return
+    end
+
     local before_comma, after_comma = split_number(value)
 
     local results_table = {}
@@ -79,4 +113,9 @@ for item, value in pairs(compostable_items) do
         order = "aab",
         hidden = true
     }
+end
+
+
+for item, value in pairs(compostable_items) do
+    create_composting_recipe(item, value)
 end
