@@ -1,6 +1,8 @@
 local string = require("__stdlib__/stdlib/utils/string")
 local table = require("__stdlib__/stdlib/utils/table")
---[[data structures for my pseudo object oriented approach
+
+--[[
+    data structures for my pseudo object oriented approach
 
     global.registered_machines: table
         [LuaEntity.unit_number]: registered_entity
@@ -97,8 +99,53 @@ local technologies = {
     }
 }
 
-function is_recipe_dependant(technology)
+function technology_is_recipe_dependant(technology)
     return technology.recipe_blacklist or technology.recipe_whitelist
+end
+
+function machine_is_recipe_dependant(machine_name)
+    for _, technology in pairs(technologies) do
+        if technology_is_recipe_dependant(technology) and technology.machines[machine_name] then
+            return true
+        end
+    end
+    return false
+end
+
+function machine_needs_beacons(machine_name)
+    for _, technology in pairs(technologies) do
+        if technology.machines[machine_name] then
+            return true
+        end
+    end
+    return false
+end
+
+function get_affecting_technologies(machine_name)
+    local ret = {}
+
+    for tech_name, technology in pairs(technologies) do
+        if technology.machines[machine_name] then
+            table.insert(ret, tech_name)
+        end
+    end
+
+    return ret
+end
+
+function get_relevant_machines()
+    local ret, machines = {}, {}
+
+    for _, technology in pairs(technologies) do
+        for machine_name, _ in pairs(technology.machines) do
+            if not machines[machine_name] then
+                table.insert(ret, machine_name)
+            end
+            machines[machine_name] = true
+        end
+    end
+
+    return ret
 end
 
 function allowes_recipe(technology, recipe)
@@ -120,26 +167,6 @@ function get_active_recipe(entity)
         return ""
     end
 end
-
--- Built relevant machines lookup table
--- it's supposed to have the machine name as key and a table with the required data as value
-local relevant_machines = {}
-for _, tech in pairs(technologies) do
-    for machine, _ in pairs(tech.machines) do
-        if not relevant_machines[machine] then
-            relevant_machines[machine] = {
-                is_recipe_dependant = false,
-                affecting_technologies = {}
-            }
-        end
-
-        if is_recipe_dependant(tech) then
-            relevant_machines[machine].is_recipe_dependant = true
-        end
-        table.insert(relevant_machines[machine].affecting_technologies, tech.name)
-    end
-end
---
 
 --<< Implementation Beaconed Entities >>
 -- The current number of modules for this entity for this technology
@@ -176,7 +203,7 @@ end
 function create_all_beacons_for(entity)
     local created_beacons = {}
 
-    for _, tech_name in pairs(relevant_machines[entity.name].affecting_technologies) do
+    for _, tech_name in pairs(get_affecting_technologies(entity.name)) do
         local technology = technologies[tech_name]
         local new_beacon = create_beacon_for(entity, technology)
         created_beacons[tech_name] = new_beacon
@@ -366,7 +393,7 @@ function on_entity_built(event)
         return
     end
 
-    if relevant_machines[entity.name] then
+    if machine_needs_beacons(entity.name) then
         register_beaconed_machine(entity)
     end
     if entity.name == "composting-silo" then
@@ -399,7 +426,7 @@ end
 
 -- Eventhandler recipe change (custom)
 function on_recipe_change(registered_entity)
-    if relevant_machines[registered_entity.entity.name].is_recipe_dependant then
+    if machine_is_recipe_dependant(registered_entity.entity.name) then
         refresh(registered_entity)
     end
 end
@@ -484,8 +511,9 @@ function init()
         end
     end
 
+    local relevant_machines = get_relevant_machines()
     for _, surface in pairs(game.surfaces) do
-        for _, entity in pairs(surface.find_entities_filtered {name = table.keys(relevant_machines)}) do
+        for _, entity in pairs(surface.find_entities_filtered {name = relevant_machines}) do
             register_beaconed_machine(entity)
         end
     end
@@ -556,7 +584,8 @@ script.on_load(load)
 script.on_event(defines.events.on_gui_closed, on_suspected_recipe_change)
 script.on_event(defines.events.on_entity_settings_pasted, on_suspected_recipe_change)
 
---[[global.blood_donations: table
+--[[
+    global.blood_donations: table
         [player_name]: table (ticks as uint when the last donations occured)
 ]]
 --<< Sample crafting effects >>
