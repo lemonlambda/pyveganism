@@ -252,20 +252,24 @@ function analyze_silo_inventory(registered_silo)
 
     local count = 0
     local type_count = 0
+    local humus_count = 0
     for item_name, item_count in pairs(contents) do
         if compostable_items[item_name] then
             count = count + item_count
             type_count = type_count + 1
         end
+        if item_name == "humus" then
+            humus_count = humus_count + item_count
+        end
     end
 
-    return {count = count, type_count = type_count}
+    return {count = count, type_count = type_count, humus_count = humus_count}
 end
 
 local composting_coefficient = 1. / 600. / 200. -- 1 Humus every 10 Seconds (600 ticks) when 200 Items are in the silo
-function get_composting_progress(item_count, item_types_count, time)
+function get_composting_progress(item_count, item_types_count, humus_count, time)
     return item_count * item_types_count * time * composting_coefficient *
-        math.max(1., math.min(5., item_count / 2000.))
+        math.max(1., math.min(5., item_count / 2000.)) * (1 + humus_count * 0.01)
 end
 
 function remove_compostable_items(registered_silo, type_count)
@@ -297,7 +301,7 @@ function process_compostable_items(registered_silo)
     local delta_time = game.tick - registered_silo.tick_last_refresh
     local details = analyze_silo_inventory(registered_silo)
     registered_silo.composting_progress =
-        registered_silo.composting_progress + get_composting_progress(details.count, details.type_count, delta_time)
+        registered_silo.composting_progress + get_composting_progress(details.count, details.type_count, details.humus_count, delta_time)
     remove_compostable_items(registered_silo, details.type_count)
 end
 
