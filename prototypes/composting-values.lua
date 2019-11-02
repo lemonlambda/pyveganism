@@ -40,6 +40,7 @@ return {
     ["solfaen-washed"] = 1,
     ["atztazzae-mushroom"] = 1,
     ["atztazzae-mycel"] = 10,
+    ["cadaver-arum-fruit"] = 1,
     -- base
     ["wood"] = 1.5,
     ["raw-fish"] = 0.5,

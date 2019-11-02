@@ -7,7 +7,7 @@ local ASH = 5
 local carbon_dioxide_appendix = "-carbon-dioxide"
 local carbon_dioxide_icon = {icon = "__pyveganism__/graphics/icons/with-carbon-dioxide.png"}
 local carbon_dioxide_ingredient_function = function(recipe, details)
-    recipe:add_ingredient{type = "fluid", name = "carbon-dioxide", amount = details.amount}
+    recipe:add_ingredient {type = "fluid", name = "carbon-dioxide", amount = details.amount}
 end
 local carbon_dioxide_recipes = {
     ["grow-coconut-palm"] = {amount = 200, productivity_effect = 1.5},
@@ -23,7 +23,7 @@ local carbon_dioxide_recipes = {
 local lamp_appendix = "-lamp"
 local lamp_icon = {icon = "__pyveganism__/graphics/icons/with-lamp.png"}
 local lamp_ingredient_function = function(recipe, details)
-    recipe:add_ingredient{type = "item", name = "small-lamp", amount = details.amount}
+    recipe:add_ingredient {type = "item", name = "small-lamp", amount = details.amount}
 end
 local lamp_recipes = {
     ["grow-coconut-palm"] = {amount = 1, productivity_effect = 2},
@@ -39,7 +39,7 @@ local lamp_recipes = {
 local fertilizer_appendix = "-fertilizer"
 local fertilizer_icon = {icon = "__pyveganism__/graphics/icons/with-fertilizer.png"}
 local fertilizer_ingredient_function = function(recipe, details)
-    recipe:add_ingredient{type = "item", name = "py-fertilizer", amount = details.amount}
+    recipe:add_ingredient {type = "item", name = "py-fertilizer", amount = details.amount}
 end
 local fertilizer_recipes = {
     ["grow-coconut-palm"] = {amount = 1, energy_required_effect = 0.7},
@@ -58,7 +58,7 @@ local humus_appendix = "-humus"
 local humus_icon = {icon = "__pyveganism__/graphics/icons/with-humus.png"}
 local humus_ingredient_function = function(recipe, details)
     recipe:remove_ingredient("soil")
-    recipe:add_ingredient{type = "item", name = "humus", amount = details.amount}
+    recipe:add_ingredient {type = "item", name = "humus", amount = details.amount}
 end
 local humus_recipes = {
     ["grow-coconut-palm"] = {amount = 10, energy_required_effect = 0.7},
@@ -70,13 +70,16 @@ local humus_recipes = {
     ["grow-sugar-cane"] = {amount = 10, energy_required_effect = 0.7},
     ["grow-atztazzae"] = {amount = 30, energy_required_effect = 0.5},
     ["grow-tiriscefing-willow-1"] = {amount = 30, energy_required_effect = 0.667},
-    ["grow-tiriscefing-willow-2"] = {amount = 30, energy_required_effect = 0.667}
+    ["grow-tiriscefing-willow-2"] = {amount = 30, energy_required_effect = 0.667},
+    ["log2"] = {amount = 5, productivity_effect = 1.334, keep_original_icon = true},
+    ["fawogae"] = {amount = 2, energy_required_effect = 0.6, productivity_effect = 1.5, keep_original_icon = true},
+    ["ralesia"] = {amount = 35, energy_required_effect = 5./7.7, productivity_effect = 1.5, keep_original_icon = true}
 }
 
 local ash_appendix = "-ash"
 local ash_icon = {icon = "__pyveganism__/graphics/icons/with-ash.png"}
 local ash_ingredient_function = function(recipe, details)
-    recipe:add_ingredient{type = "item", name = "ash", amount = details.amount}
+    recipe:add_ingredient {type = "item", name = "ash", amount = details.amount}
 end
 local ash_recipes = {
     ["grow-atztazzae"] = {amount = 20, energy_required_effect = 0.5}
@@ -90,59 +93,63 @@ local unlocks = {
     ["grow-soy"] = {"oil-plants", "protein-plants"},
     ["grow-sugar-beet"] = {"sugar-plants"},
     ["grow-sugar-cane"] = {"sugar-plants"},
-    ["grow-tiriscefing-willow-1"] = {"coal-processing-1"}, 
+    ["grow-tiriscefing-willow-1"] = {"coal-processing-1"},
     ["grow-tiriscefing-willow-2"] = {"coal-processing-1"},
     ["grow-atztazzae"] = {"vanadium-processing"},
-    ["grow-cadaver-arum"] = {"basic-electronics"}
+    ["grow-cadaver-arum"] = {"basic-electronics"},
+    ["ralesia"] = {"coal-processing-1"},
+    ["log2"] = {"coal-processing-1"}
 }
 
 local combination_details = {
     ["grow-coconut-palm"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
-        },
+        }
     },
     ["grow-oil-palm"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
         }
     },
     ["grow-cocoa"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
         }
     },
     ["grow-canola"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
         }
     },
     ["grow-soy"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
         }
     },
     ["grow-sugar-beet"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
         }
     },
     ["grow-sugar-cane"] = {
         groups = {
-            {CARBON_DIOXIDE, LAMP}, 
+            {CARBON_DIOXIDE, LAMP},
             {HUMUS, FERTILIZER}
         }
     },
     ["grow-atztazzae"] = {
         groups = {
-            {FERTILIZER}, {ASH}, {HUMUS}
-        }, 
+            {FERTILIZER},
+            {ASH},
+            {HUMUS}
+        },
         max_combinations = 1
     },
     ["grow-tiriscefing-willow-1"] = {
@@ -153,6 +160,15 @@ local combination_details = {
     },
     ["grow-cadaver-arum"] = {
         groups = {{CARBON_DIOXIDE, LAMP}}
+    },
+    ["log2"] = {
+        groups = {{HUMUS}}
+    },
+    ["fawogae"] = {
+        groups = {{HUMUS}}
+    },
+    ["ralesia"] = {
+        groups = {{HUMUS}}
     }
 }
 
@@ -163,8 +179,8 @@ local function create_recipe_clone(name, new_name)
 end
 
 local function add_unlocks(recipe, unlock_techs)
-    if not unlock_techs then 
-        return 
+    if not unlock_techs then
+        return
     end
     for _, tech in pairs(unlock_techs) do
         recipe:add_unlock(tech)
@@ -185,7 +201,9 @@ end
 
 local function create_recipe(name, appendix, details, unlock_techs, icon, ingredient_function)
     local new_recipe = create_recipe_clone(name, name .. appendix)
-    table.insert(new_recipe.icons, icon)
+    if not details.keep_original_icon then
+        table.insert(new_recipe.icons, icon)
+    end
     add_unlocks(new_recipe, unlock_techs)
     apply_effects(new_recipe, details)
     ingredient_function(new_recipe, details)
@@ -193,51 +211,51 @@ local function create_recipe(name, appendix, details, unlock_techs, icon, ingred
 end
 
 local creation_lookup = {
-    [CARBON_DIOXIDE] = function(recipe_name, bottom_recipe_name) 
+    [CARBON_DIOXIDE] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
-            recipe_name, 
-            carbon_dioxide_appendix, 
+            recipe_name,
+            carbon_dioxide_appendix,
             carbon_dioxide_recipes[bottom_recipe_name],
-            unlocks[bottom_recipe_name], 
-            carbon_dioxide_icon, 
+            unlocks[bottom_recipe_name],
+            carbon_dioxide_icon,
             carbon_dioxide_ingredient_function
         )
     end,
     [LAMP] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
-            recipe_name, 
-            lamp_appendix, 
+            recipe_name,
+            lamp_appendix,
             lamp_recipes[bottom_recipe_name],
-            unlocks[bottom_recipe_name], 
-            lamp_icon, 
+            unlocks[bottom_recipe_name],
+            lamp_icon,
             lamp_ingredient_function
         )
     end,
     [FERTILIZER] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
-            recipe_name, 
-            fertilizer_appendix, 
+            recipe_name,
+            fertilizer_appendix,
             fertilizer_recipes[bottom_recipe_name],
-            unlocks[bottom_recipe_name], 
-            fertilizer_icon, 
+            unlocks[bottom_recipe_name],
+            fertilizer_icon,
             fertilizer_ingredient_function
         )
     end,
     [HUMUS] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
-            recipe_name, 
-            humus_appendix, 
+            recipe_name,
+            humus_appendix,
             humus_recipes[bottom_recipe_name],
-            unlocks[bottom_recipe_name], 
-            humus_icon, 
+            unlocks[bottom_recipe_name],
+            humus_icon,
             humus_ingredient_function
         )
-    end, 
+    end,
     [ASH] = function(recipe_name, bottom_recipe_name)
         return create_recipe(
-            recipe_name, 
+            recipe_name,
             ash_appendix,
-            ash_recipes[bottom_recipe_name], 
+            ash_recipes[bottom_recipe_name],
             unlocks[bottom_recipe_name],
             ash_icon,
             ash_ingredient_function
@@ -245,7 +263,7 @@ local creation_lookup = {
     end
 }
 
-local function create_ingredient_group_recipes(recipes, bottom_recipe_name, group,  max_combinations)
+local function create_ingredient_group_recipes(recipes, bottom_recipe_name, group, max_combinations)
     local created_recipes = {}
     local recipes_todo = recipes
 
@@ -268,7 +286,9 @@ local function create_ingredient_group_recipes(recipes, bottom_recipe_name, grou
 end
 
 local function create_combinations_for(recipe_name)
-    if not data.raw.recipe[recipe_name] then return end
+    if not data.raw.recipe[recipe_name] then
+        return
+    end
 
     local details = combination_details[recipe_name]
     local existing_recipes = {
