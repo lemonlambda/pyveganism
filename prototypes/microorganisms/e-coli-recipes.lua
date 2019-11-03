@@ -29,12 +29,12 @@ RECIPE {
     enabled = true,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "sugar-growth-medium", amount = 50},
-        {type = "fluid", name = "e-coli", amount = 50}, 
+        {type = "fluid", name = "sugar-growth-medium", amount = 50, catalyst_amount = 50},
+        {type = "fluid", name = "e-coli", amount = 50},
         {type = "item", name = "limestone", amount = 2}
     },
     results = {
-        {type = "fluid", name = "e-coli", amount = 100}
+        {type = "fluid", name = "e-coli", amount = 100, catalyst_amount = 50}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/e-coli.png"},

@@ -1,6 +1,4 @@
---[[
---> Sludge
-]]--
+--<< Sludge >>
 RECIPE {
     type = "recipe",
     name = "enrichment-culture-activated-sludge",
@@ -32,10 +30,10 @@ RECIPE {
     energy_required = 6,
     ingredients = {
         {type = "fluid", name = "water", amount = 100},
-        {type = "fluid", name = "activated-sludge", amount = 100}
+        {type = "fluid", name = "activated-sludge", amount = 100, catalyst_amount = 100}
     },
     results = {
-        {type = "fluid", name = "activated-sludge", amount = 180}, 
+        {type = "fluid", name = "activated-sludge", amount = 180, catalyst_amount = 100},
         {type = "fluid", name = "sewage-sludge", amount = 20}
     },
     icons = {
@@ -54,7 +52,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "sewage-sludge", amount = 10},
+        {type = "fluid", name = "sewage-sludge", amount = 10}
     },
     results = {
         {type = "item", name = "sewage-sludge-dry", amount = 7}
@@ -75,7 +73,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "sewage-sludge", amount = 10},
+        {type = "fluid", name = "sewage-sludge", amount = 10}
     },
     results = {
         {type = "fluid", name = "marsh-gas", amount = 50}
@@ -88,9 +86,7 @@ RECIPE {
     order = "abcd"
 }:add_unlock("growth-media-2")
 
---[[
---> Usage Marsh Gas
-]]--
+--<< Usage Marsh Gas >>
 RECIPE {
     type = "recipe",
     name = "marsh-gas-to-syngas",
@@ -98,7 +94,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "marsh-gas", amount = 80},
+        {type = "fluid", name = "marsh-gas", amount = 80}
     },
     results = {
         {type = "fluid", name = "syngas", amount = 100}
@@ -166,7 +162,7 @@ if mods["pyhightech"] then
         enabled = false,
         energy_required = 1,
         ingredients = {
-            {type = "fluid", name = "marsh-gas", amount = 100},
+            {type = "fluid", name = "marsh-gas", amount = 100}
         },
         results = {
             {type = "fluid", name = "methane", amount = 100}
@@ -177,7 +173,7 @@ if mods["pyhightech"] then
         icon_size = 32,
         subgroup = "py-veganism-sludge",
         order = "abdd"
-    }:add_unlock("growth-media-2")    
+    }:add_unlock("growth-media-2")
 end
 
 RECIPE {

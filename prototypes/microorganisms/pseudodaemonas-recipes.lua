@@ -5,7 +5,7 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "item", name = "blood-bag", amount = 1}, 
+        {type = "item", name = "blood-bag", amount = 1},
         {type = "item", name = "iron-plate", amount = 3}
     },
     results = {
@@ -28,7 +28,7 @@ RECIPE {
     enabled = false,
     energy_required = 50,
     ingredients = {
-        {type = "fluid", name = "pseudodaemonas", amount = 50}, 
+        {type = "fluid", name = "pseudodaemonas", amount = 50},
         {type = "item", name = "iron-plate", amount = 3}
     },
     results = {
@@ -51,9 +51,9 @@ RECIPE {
     enabled = true,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 50}, 
-        {type = "fluid", name = "pressured-air", amount = 20}, 
-        {type = "fluid", name = "citric-acid", amount = 10}, 
+        {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 50},
+        {type = "fluid", name = "pressured-air", amount = 20},
+        {type = "fluid", name = "citric-acid", amount = 10},
         {type = "item", name = "limestone", amount = 2},
         {type = "item", name = "blood-bag", amount = 1}
     },
@@ -79,12 +79,12 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "pseudodaemonas-growth-medium", amount = 25},
         {type = "fluid", name = "pressured-air", amount = 20},
-        {type = "fluid", name = "citric-acid", amount = 10}, 
-        {type = "fluid", name = "pseudodaemonas", amount = 25}, 
+        {type = "fluid", name = "citric-acid", amount = 10},
+        {type = "fluid", name = "pseudodaemonas", amount = 25, catalyst_amount = 25},
         {type = "item", name = "limestone", amount = 2}
     },
     results = {
-        {type = "fluid", name = "pseudodaemonas", amount = 50}
+        {type = "fluid", name = "pseudodaemonas", amount = 50, catalyst_amount = 25}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/pseudodaemonas.png"},

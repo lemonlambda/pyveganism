@@ -29,10 +29,10 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "sugar-growth-medium", amount = 50},
-        {type = "fluid", name = "pemtenn", amount = 250}
+        {type = "fluid", name = "pemtenn", amount = 250, catalyst_amount = 250}
     },
     results = {
-        {type = "fluid", name = "pemtenn", amount = 300}
+        {type = "fluid", name = "pemtenn", amount = 300, catalyst_amount = 250}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/pemtenn.png"},

@@ -30,10 +30,10 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "water", amount = 250},
         {type = "item", name = "fawogae", amount = 10},
-        {type = "fluid", name = "zirrella", amount = 50}
+        {type = "fluid", name = "zirrella", amount = 50, catalyst_amount = 50}
     },
     results = {
-        {type = "fluid", name = "zirrella", amount = 300}
+        {type = "fluid", name = "zirrella", amount = 300, catalyst_amount = 50}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/zirrella.png"},

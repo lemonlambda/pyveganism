@@ -29,10 +29,10 @@ RECIPE {
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "urea-medium", amount = 150},
-        {type = "fluid", name = "morgenroete", amount = 50}
+        {type = "fluid", name = "morgenroete", amount = 50, catalyst_amount = 50}
     },
     results = {
-        {type = "fluid", name = "morgenroete", amount = 100}
+        {type = "fluid", name = "morgenroete", amount = 100, catalyst_amount = 50}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/morgenroete.png"},

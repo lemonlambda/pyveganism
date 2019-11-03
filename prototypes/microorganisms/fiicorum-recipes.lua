@@ -31,10 +31,10 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "water", amount = 50},
         {type = "fluid", name = "steam", amount = 50},
-        {type = "fluid", name = "fiicorum", amount = 250}
+        {type = "fluid", name = "fiicorum", amount = 250, catalyst_amount = 250}
     },
     results = {
-        {type = "fluid", name = "fiicorum", amount = 300}
+        {type = "fluid", name = "fiicorum", amount = 300, catalyst_amount = 250}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/fiicorum.png"},
