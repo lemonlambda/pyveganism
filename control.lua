@@ -12,7 +12,7 @@ local table = require("__stdlib__/stdlib/utils/table")
     registered_entity: table
         ["type"]: int/enum
         ["entity"]: lua_entity (of the machine)
-        ["beacons"]: beacons_table
+        ["beacon"]: beacon_entity
         ["recipe"]: recipe_name
         ["tick_last_refresh"]: tick of the last refresh
         ["pending_humus"]: float
@@ -32,13 +32,53 @@ local table = require("__stdlib__/stdlib/utils/table")
 local TYPE_BEACONED_MACHINE = 1
 local TYPE_COMPOSTING_SILO = 2
 
+local BEACON_NAME = "pyveganism-hidden-beacon"
+local SPEED_MODULE_NAME = "pyveganism-speed-"
+local PRODUCTIVITY_MODULE_NAME = "pyveganism-productivity-"
+
 --<< Beaconed machine variables (must be final) >>
 function lvl_name(technology, level)
     return technology.name .. "-" .. level
 end
 
+function get_cached_tech_level(technology, force)
+    local index = force.index
+    local tech_name = technology.name
+
+    if global.technology_levels[index] then
+        if global.technology_levels[index][tech_name] then
+            if global.technology_levels[index][tech_name].tick >= global.tick_last_finished_research then
+                return global.technology_levels[index][tech_name].level
+            end
+        end
+    end
+
+    return nil
+end
+
+function cache_tech_level(technology, force, level)
+    local index = force.index
+
+    if not global.technology_levels[index] then
+        global.technology_levels[index] = {}
+    end
+
+    global.technology_levels[index][technology.name] = {
+        tick = game.tick,
+        level = level
+    }
+end
+
 -- Returns the level for standard upgrade-based techs
 function get_tech_level(technology, force)
+    -- determining the tech level seems to be quite expensive (due to api calls and string operations)
+    -- so we limit the amounts of unnecessary determinations by caching the results
+    local cached_level = get_cached_tech_level(technology, force)
+    if cached_level then
+        return cached_level
+    end
+
+    -- determine the level if there is no valid cached one
     local level = 0
     while force.technologies[lvl_name(technology, level + 1)].researched do
         level = level + 1
@@ -50,7 +90,14 @@ function get_tech_level(technology, force)
         level = force.technologies[lvl_name(technology, (level + 1))].level - 1
     end
 
+    cache_tech_level(technology, force, level)
     return level
+end
+
+function get_module_count(technology, level)
+    local increase = (1 + technology.increase_per_level) ^ level - 1
+
+    return math.floor(increase * 100)
 end
 
 -- All the technologies that need to create beacons at runtime
@@ -69,12 +116,13 @@ local technologies = {
             ["botanical-nursery-mk04"] = true,
             ["cadaveric-arum"] = true,
             ["kicalk-plantation"] = true,
-            ["guar-gum-plantation"] = true
+            ["guar-gum-plantation"] = true,
+            ["moondrop-greenhouse"] = true,
+            ["plankton-farm"] = true
         },
-        module = "pyveganism-module-cultivation-expertise",
-        beacon = "pyveganism-beacon-cultivation-expertise",
-        max_finite_level = 6,
-        get_module_count = get_tech_level
+        productivity_increase_per_level = 0,
+        speed_increase_per_level = 0.1,
+        max_finite_level = 6
     },
     ["plant-breeding"] = {
         name = "plant-breeding",
@@ -90,12 +138,25 @@ local technologies = {
             ["botanical-nursery-mk04"] = true,
             ["cadaveric-arum"] = true,
             ["kicalk-plantation"] = true,
-            ["guar-gum-plantation"] = true
+            ["guar-gum-plantation"] = true,
+            ["moondrop-greenhouse"] = true,
+            ["plankton-farm"] = true
         },
-        module = "pyveganism-module-plant-breeding",
-        beacon = "pyveganism-beacon-plant-breeding",
-        max_finite_level = 4,
-        get_module_count = get_tech_level
+        productivity_increase_per_level = 0.07,
+        speed_increase_per_level = 0,
+        max_finite_level = 4
+    },
+    ["pyveganism-biotechnology"] = {
+        name = "pyveganism-biotechnology",
+        machines = {
+            ["moondrop-greenhouse"] = true,
+            ["bio-reactor"] = true,
+            ["plankton-farm"] = true,
+            ["genlab-mk01"] = true
+        },
+        productivity_increase_per_level = 0.1,
+        speed_increase_per_level = 0.1,
+        max_finite_level = 4
     }
 }
 
@@ -148,7 +209,7 @@ function get_relevant_machines()
     return ret
 end
 
-function allowes_recipe(technology, recipe)
+function technology_allowes_recipe(technology, recipe)
     if technology.recipe_blacklist then
         return not technology.recipe_blacklist[recipe]
     end
@@ -169,34 +230,80 @@ function get_active_recipe(entity)
 end
 
 --<< Implementation Beaconed Entities >>
--- The current number of modules for this entity for this technology
-function current_module_count(entity, technology)
-    if not (allowes_recipe(technology, get_active_recipe(entity))) then
-        return 0
+function set_binary_modules(beacon_inventory, module_name, value)
+    local new_value = value
+    local strength = 1
+
+    while value > 0 do
+        new_value = math.floor(value / 2)
+
+        if new_value * 2 ~= value then
+            beacon_inventory.insert {
+                name = module_name .. strength,
+                count = 1
+            }
+        end
+
+        strength = strength * 2
+        value = new_value
+    end
+end
+
+function set_beacon_boni(beacon, productivity, speed)
+    local inventory = beacon.get_module_inventory()
+    inventory.clear()
+
+    set_binary_modules(inventory, PRODUCTIVITY_MODULE_NAME, productivity)
+    set_binary_modules(inventory, SPEED_MODULE_NAME, speed)
+end
+
+-- The current number boni for this entity
+function get_current_boni(entity)
+    local productivity = 100
+    local speed = 100
+
+    local name = entity.name
+    local force = entity.force
+    for _, technology in pairs(technologies) do
+        if technology.machines[name] then
+            if technology_allowes_recipe(technology, get_active_recipe(entity)) then
+                local level = get_tech_level(technology, force)
+
+                productivity = productivity * ((technology.productivity_increase_per_level + 1) ^ level)
+                speed = speed * ((technology.speed_increase_per_level + 1) ^ level)
+            end
+        end
     end
 
-    return technology:get_module_count(entity.force)
+    return math.floor(productivity - 100), math.floor(speed - 100)
 end
 
 -- Creates and returns a beacon for the given entity and technology
-function create_beacon_for(entity, technology)
+function create_beacon_for(entity)
     local beacon =
         entity.surface.create_entity {
-        name = technology.beacon,
+        name = BEACON_NAME,
         position = entity.position,
         force = entity.force
     }
 
-    local module_count = current_module_count(entity, technology)
-
-    if module_count > 0 then
-        beacon.get_module_inventory().insert {
-            name = technology.module,
-            count = module_count
-        }
-    end
+    local productivity, speed = get_current_boni(entity)
+    set_beacon_boni(beacon, productivity, speed)
 
     return beacon
+end
+
+function refresh_beaconed_entity(registered_entity)
+    local beacon = registered_entity.beacon
+    if beacon.valid then
+        local productivity, speed = get_current_boni(registered_entity.entity)
+        set_beacon_boni(beacon, productivity, speed)
+    else
+        -- apparently there are cases where the beacon gets lost (maybe because some other mod accidentally destroys it?)
+        -- so we just create a new one
+        local new_beacon = create_beacon_for(registered_entity.entity)
+        registered_entity.beacon = new_beacon
+    end
 end
 
 -- Creates all beacons for the given entity and returns a beacons_table of them
@@ -210,38 +317,6 @@ function create_all_beacons_for(entity)
     end
 
     return created_beacons
-end
-
-function remove_all_beacons_for(registered_entity)
-    for _, beacon in pairs(registered_entity.beacons) do
-        if beacon.valid then
-            beacon.destroy()
-        end
-    end
-    registered_entity.beacons = {}
-end
-
-function refresh_beaconed_entity(registered_entity)
-    for tech_name, beacon in pairs(registered_entity.beacons) do
-        local technology = technologies[tech_name]
-        local module_count = current_module_count(registered_entity.entity, technology)
-
-        if beacon.valid then
-            local beacon_inventory = beacon.get_module_inventory()
-            beacon_inventory.clear()
-            if module_count > 0 then
-                beacon_inventory.insert {
-                    name = technology.module,
-                    count = module_count
-                }
-            end
-        else
-            -- apparently there are cases where the beacon gets lost (maybe because some other mod accidentally destroys it?)
-            -- so we just create a new one
-            local new_beacon = create_beacon_for(registered_entity.entity, technology)
-            registered_entity.beacons[tech_name] = new_beacon
-        end
-    end
 end
 
 --<< Implementation Composting Silo >>
@@ -269,7 +344,8 @@ end
 local composting_coefficient = 1. / 600. / 200. -- 1 Humus every 10 Seconds (600 ticks) when 200 Items are in the silo
 function get_composting_progress(item_count, item_types_count, humus_count, time)
     return item_count * item_types_count * time * composting_coefficient *
-        math.max(1., math.min(5., item_count / 2000.)) * math.min(5, 1 + humus_count * 0.001)
+        math.max(1., math.min(5., item_count / 2000.)) *
+        math.min(5, 1 + humus_count * 0.001)
 end
 
 function remove_compostable_items(registered_silo, type_count)
@@ -301,7 +377,8 @@ function process_compostable_items(registered_silo)
     local delta_time = game.tick - registered_silo.tick_last_refresh
     local details = analyze_silo_inventory(registered_silo)
     registered_silo.composting_progress =
-        registered_silo.composting_progress + get_composting_progress(details.count, details.type_count, details.humus_count, delta_time)
+        registered_silo.composting_progress +
+        get_composting_progress(details.count, details.type_count, details.humus_count, delta_time)
     remove_compostable_items(registered_silo, details.type_count)
 end
 
@@ -351,13 +428,13 @@ end
 
 -- Adds the machine to the register and creates all the needed beacons
 function register_beaconed_machine(entity)
-    local beacons = create_all_beacons_for(entity)
+    local beacon = create_beacon_for(entity)
     local recipe = get_active_recipe(entity)
 
     global.registered_machines[entity.unit_number] = {
         type = TYPE_BEACONED_MACHINE,
         entity = entity,
-        beacons = beacons,
+        beacon = beacon,
         recipe = recipe,
         tick_last_refresh = game.tick
     }
@@ -377,11 +454,14 @@ end
 -- Removes the machine from the register and removes all it's beacons
 function unregister(registered_entity)
     if registered_entity.type == TYPE_BEACONED_MACHINE then
-        remove_all_beacons_for(registered_entity)
+        if registered_entity.beacon.valid then
+            registered_entity.beacon.destroy()
+        end
     end
     global.registered_machines[registered_entity.entity.unit_number] = nil
 end
 
+-- << Eventhandlers >>
 -- Eventhandler machine built
 function on_entity_built(event)
     --https://forums.factorio.com/viewtopic.php?f=34&t=73331#p442695
@@ -503,15 +583,19 @@ function on_suspected_recipe_change(event)
 end
 
 function init()
+    global.technology_levels = {}
     global.registered_machines = {}
 
+    -- remove existing beacons
     for _, surface in pairs(game.surfaces) do
         for _, entity in pairs(
             surface.find_entities_filtered {
-                name = {"pyveganism-beacon-cultivation-expertise", "pyveganism-beacon-plant-breeding"}
+                name = BEACON_NAME
             }
         ) do
-            entity.destroy()
+            if entity.valid then
+                entity.destroy()
+            end
         end
     end
 

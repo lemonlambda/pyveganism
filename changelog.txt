@@ -1,8 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.14
+Date: 2019.11.03
+  Features:
+    - Added Biotechnology research
+    - Added recipes with humus for Ralesia, Logs and Fawogae
+
+  Changes:
+    - Phytoplankton Farms and Moondrop Greenhouses now benefit from Plant Breeding and Cultivation Expertise
+    - The boni from Plant Breeding and Cultivation Expertise research levels now stack multiplicatively
+    - The effect of Plant Breeding was increased to 7% per level
+    - The Composting speed of Composting Silo is now increased if there is humus inside the silo (up to 5 times at 4000 Humus)
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.13
 Date: 2019.11.01
   Bugfixes:
     - Fixed a loading error when pyht or pyph isn't enabled
+    - Changed some implementation details that could be causing desyncs
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.12
