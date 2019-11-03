@@ -269,7 +269,7 @@ end
 local composting_coefficient = 1. / 600. / 200. -- 1 Humus every 10 Seconds (600 ticks) when 200 Items are in the silo
 function get_composting_progress(item_count, item_types_count, humus_count, time)
     return item_count * item_types_count * time * composting_coefficient *
-        math.max(1., math.min(5., item_count / 2000.)) * (1 + humus_count * 0.01)
+        math.max(1., math.min(5., item_count / 2000.)) * math.min(5, 1 + humus_count * 0.001)
 end
 
 function remove_compostable_items(registered_silo, type_count)
