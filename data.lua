@@ -20,9 +20,11 @@ local enabled_concepts = {
     "technologies.growth-media",
     "technologies.plant-breeding",
     "technologies.cultivation-expertise",
+    "technologies.biotechnology",
     --
     --buildings
     "buildings.composting-silo",
+    "buildings.hidden-beacon",
     --
     --plants
     "plants.tiriscefing-willow",
