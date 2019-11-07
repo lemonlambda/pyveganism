@@ -34,7 +34,7 @@ TECHNOLOGY {
     effects = {
         {
             type = "nothing",
-            effect_description = {"description.pyveganism-biotechnology"}
+            effect_description = {"description.biotechnology"}
         }
     },
     unit = {
@@ -58,7 +58,7 @@ TECHNOLOGY {
     effects = {
         {
             type = "nothing",
-            effect_description = {"description.pyveganism-biotechnology"}
+            effect_description = {"description.biotechnology"}
         }
     },
     unit = {
@@ -83,7 +83,7 @@ TECHNOLOGY {
     effects = {
         {
             type = "nothing",
-            effect_description = {"description.pyveganism-biotechnology"}
+            effect_description = {"description.biotechnology"}
         }
     },
     unit = {
@@ -109,7 +109,7 @@ TECHNOLOGY {
     effects = {
         {
             type = "nothing",
-            effect_description = {"description.pyveganism-biotechnology"}
+            effect_description = {"description.biotechnology"}
         }
     },
     unit = {

@@ -183,8 +183,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "fluid", name = "marsh-gas", amount = 200},
-        {type = "fluid", name = "pressured-air", amount = 50}
+        {type = "fluid", name = "marsh-gas", amount = 200}
     },
     results = {
         {type = "item", name = "sulfur", amount = 5}

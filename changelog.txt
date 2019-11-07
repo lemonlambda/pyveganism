@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.15
+Date: 2019.11.07
+  Changes:
+    - Gave handcrafting recipes a description to avoid confusion in test subj... players
+
+  Bugfixes:
+    - Fixed missing locales in Biotechnology research
+    - Added catalyst_amounts to pure culture recipes to avoid that Biotechnology kind of breaks them
+    - Fixed that the marsh gas to sulphur recipe wasn't working because the desulfurisation units don't have enough fluid boxes
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2019.11.03
   Features:

@@ -32,10 +32,6 @@ local table = require("__stdlib__/stdlib/utils/table")
 local TYPE_BEACONED_MACHINE = 1
 local TYPE_COMPOSTING_SILO = 2
 
-local BEACON_NAME = "pyveganism-hidden-beacon"
-local SPEED_MODULE_NAME = "pyveganism-speed-"
-local PRODUCTIVITY_MODULE_NAME = "pyveganism-productivity-"
-
 --<< Beaconed machine variables (must be final) >>
 function lvl_name(technology, level)
     return technology.name .. "-" .. level
@@ -230,6 +226,11 @@ function get_active_recipe(entity)
 end
 
 --<< Implementation Beaconed Entities >>
+local BEACON_NAME = "pyveganism-hidden-beacon"
+local SPEED_MODULE_NAME = "pyveganism-speed-"
+local PRODUCTIVITY_MODULE_NAME = "pyveganism-productivity-"
+
+-- assumes that value is an integer
 function set_binary_modules(beacon_inventory, module_name, value)
     local new_value = value
     local strength = 1
