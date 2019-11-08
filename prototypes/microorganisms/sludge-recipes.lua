@@ -11,7 +11,7 @@ RECIPE {
         {type = "item", name = "soil", amount = 20}
     },
     results = {
-        {type = "fluid", name = "activated-sludge", amount = 1}
+        {type = "fluid", name = "activated-sludge", amount = 10}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/activated-sludge.png"},
