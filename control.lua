@@ -496,14 +496,15 @@ end
 
 -- Eventhandler research
 function on_research_finished(event)
-    global.tick_last_finished_research = game.tick
+    for _, tech in pairs(technologies) do
+        if string.starts_with(event.research.name, tech.name) then
+            global.tick_last_finished_research = game.tick
 
-    if settings.global["pyveganism-refresh-beacons-on-finished-research"].value then
-        for _, tech in pairs(technologies) do
-            if string.starts_with(event.research.name, tech.name) then
+            if settings.global["pyveganism-refresh-beacons-on-finished-research"].value then
                 refresh_all_entries()
-                return
             end
+
+            return
         end
     end
 end
