@@ -11,7 +11,7 @@ RECIPE {
         {type = "item", name = "soil", amount = 20}
     },
     results = {
-        {type = "fluid", name = "activated-sludge", amount = 1}
+        {type = "fluid", name = "activated-sludge", amount = 10}
     },
     icons = {
         {icon = "__pyveganism__/graphics/icons/activated-sludge.png"},
@@ -183,8 +183,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "fluid", name = "marsh-gas", amount = 200},
-        {type = "fluid", name = "pressured-air", amount = 50}
+        {type = "fluid", name = "marsh-gas", amount = 200}
     },
     results = {
         {type = "item", name = "sulfur", amount = 5}

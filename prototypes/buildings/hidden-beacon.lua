@@ -3,8 +3,11 @@ ENTITY {
     name = "pyveganism-hidden-beacon",
     icon = "__pyveganism__/graphics/technology/cultivation-expertise.png",
     icon_size = 128,
+    localised_name = {"item-description.pyv-hidden"},
+    localised_description = {"item-description.pyv-hidden"},
     energy_usage = "10W",
     flags = {
+        "hidden",
         "hide-alt-info",
         "not-blueprintable",
         "not-deconstructable",
@@ -62,6 +65,8 @@ for i = 0, 20 do
     ITEM {
         type = "module",
         name = "pyveganism-productivity-" .. strength,
+        localised_name = {"item-description.pyv-hidden"},
+        localised_description = {"item-description.pyv-hidden"},
         icon = "__pyveganism__/graphics/technology/plant-breeding.png",
         icon_size = 128,
         flags = {"hidden", "hide-from-bonus-gui"},
@@ -69,12 +74,15 @@ for i = 0, 20 do
         category = "productivity",
         tier = 0,
         stack_size = 1,
-        effect = {productivity = {bonus = 0.01 * strength}}
+        effect = {productivity = {bonus = 0.01 * strength}},
+        order = "a" .. string.format("%09d", strength)
     }
 
     ITEM {
         type = "module",
         name = "pyveganism-speed-" .. strength,
+        localised_name = {"item-description.pyv-hidden"},
+        localised_description = {"item-description.pyv-hidden"},
         icon = "__pyveganism__/graphics/technology/plant-breeding.png",
         icon_size = 128,
         flags = {"hidden", "hide-from-bonus-gui"},
@@ -82,6 +90,7 @@ for i = 0, 20 do
         category = "speed",
         tier = 0,
         stack_size = 1,
-        effect = {speed = {bonus = 0.01 * strength}}
+        effect = {speed = {bonus = 0.01 * strength}},
+        order = "b" .. string.format("%09d", strength)
     }
 end
