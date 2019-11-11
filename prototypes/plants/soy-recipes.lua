@@ -113,7 +113,7 @@ RECIPE {
     order = "aad"
 }:add_unlock("oil-plants")
 
-RECIPE {
+--[[RECIPE {
     type = "recipe",
     name = "declassify-soy-meal",
     category = "crafting",
@@ -132,7 +132,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-soy",
     order = "aae"
-}:add_unlock("oil-plants")
+}:add_unlock("oil-plants")]]
 
 RECIPE {
     type = "recipe",

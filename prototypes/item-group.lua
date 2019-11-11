@@ -188,5 +188,11 @@ data:extend {
         name = "py-veganism-composter",
         group = "py-veganism",
         order = "zac"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-veganism-trash",
+        group = "py-veganism",
+        order = "zad"
     }
 }
