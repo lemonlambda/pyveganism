@@ -68,6 +68,49 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
+    name = "marsh-gas-fermentation",
+    category = "bio-reactor",
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+        {type = "fluid", name = "activated-sludge", amount = 40},
+        {type = "item", name = "plant-residues", amount = 5}
+    },
+    results = {
+        {type = "fluid", name = "marsh-gas", amount = 200}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/marsh-gas.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-sludge",
+    order = "abcd"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
+    name = "marsh-gas-dry-fermentation",
+    category = "bio-reactor",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "item", name = "plant-residues-dry", amount = 4},
+        {type = "fluid", name = "activated-sludge", amount = 40},
+        {type = "fluid", name = "water", amount = 100}
+    },
+    results = {
+        {type = "fluid", name = "marsh-gas", amount = 200}
+    },
+    icons = {
+        {icon = "__pyveganism__/graphics/icons/marsh-gas.png"}
+    },
+    icon_size = 64,
+    subgroup = "py-veganism-sludge",
+    order = "abce"
+}:add_unlock("growth-media-2")
+
+RECIPE {
+    type = "recipe",
     name = "marsh-gas",
     category = "bio-reactor",
     enabled = false,
@@ -83,7 +126,7 @@ RECIPE {
     },
     icon_size = 64,
     subgroup = "py-veganism-sludge",
-    order = "abcd"
+    order = "abcf"
 }:add_unlock("growth-media-2")
 
 --<< Usage Marsh Gas >>

@@ -313,9 +313,7 @@ RECIPE {
     order = "ada"
 }:add_unlock("growth-media-4")
 
---[[
---> Growth Media
-]]--
+--<< Growth Media >>
 RECIPE {
     type = "recipe",
     name = "sugar-growth-medium-from-sugar",
