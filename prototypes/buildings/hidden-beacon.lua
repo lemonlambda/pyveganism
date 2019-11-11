@@ -59,12 +59,15 @@ ENTITY {
     collision_box = nil
 }
 
-for i = 0, 20 do
+for i = 0, 15 do
     local strength = 2 ^ i
+    if i == 15 then
+        strength = strength - 1
+    end
 
     ITEM {
         type = "module",
-        name = "pyveganism-productivity-" .. strength,
+        name = "pyveganism-productivity-" .. i,
         localised_name = {"item-description.pyv-hidden"},
         localised_description = {"item-description.pyv-hidden"},
         icon = "__pyveganism__/graphics/technology/plant-breeding.png",
@@ -80,7 +83,7 @@ for i = 0, 20 do
 
     ITEM {
         type = "module",
-        name = "pyveganism-speed-" .. strength,
+        name = "pyveganism-speed-" .. i,
         localised_name = {"item-description.pyv-hidden"},
         localised_description = {"item-description.pyv-hidden"},
         icon = "__pyveganism__/graphics/technology/plant-breeding.png",

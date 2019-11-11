@@ -245,9 +245,9 @@ local PRODUCTIVITY_MODULE_NAME = "pyveganism-productivity-"
 -- assumes that value is an integer
 function set_binary_modules(beacon_inventory, module_name, value)
     local new_value = value
-    local strength = 1
+    local strength = 0
 
-    while value > 0 do
+    while value > 0 and strength < 16 do
         new_value = math.floor(value / 2)
 
         if new_value * 2 ~= value then
@@ -257,7 +257,7 @@ function set_binary_modules(beacon_inventory, module_name, value)
             }
         end
 
-        strength = strength * 2
+        strength = strength + 1
         value = new_value
     end
 end
