@@ -17,6 +17,19 @@ RECIPE("mixer"):set_enabled()
 RECIPE("fawogae").hidden = false
 data.raw["assembling-machine"]["fawogae-plantation"].fixed_recipe = nil
 
+if mods["pyhightech"] then
+    -- remove those weird effect restrictions to allow my techs to work
+    data.raw["assembling-machine"]["moondrop-greenhouse-mk01"].allowed_effects = {"speed", "productivity"}
+    data.raw["assembling-machine"]["moondrop-greenhouse-mk02"].allowed_effects = {"speed", "productivity"}
+    data.raw["assembling-machine"]["moondrop-greenhouse-mk03"].allowed_effects = {"speed", "productivity"}
+    data.raw["assembling-machine"]["moondrop-greenhouse-mk04"].allowed_effects = {"speed", "productivity"}
+
+    data.raw["assembling-machine"]["cadaveric-arum-mk01"].allowed_effects = {"speed", "productivity"}
+    data.raw["assembling-machine"]["cadaveric-arum-mk02"].allowed_effects = {"speed", "productivity"}
+    data.raw["assembling-machine"]["cadaveric-arum-mk03"].allowed_effects = {"speed", "productivity"}
+    data.raw["assembling-machine"]["cadaveric-arum-mk04"].allowed_effects = {"speed", "productivity"}
+end
+
 -- Add more pipe connections to the bio reactor, so that it can have recipe with up to 4 fluid in-/outputs
 data.raw["assembling-machine"]["bio-reactor"]["fluid_boxes"] = {
     --North

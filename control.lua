@@ -319,19 +319,6 @@ function refresh_beaconed_entity(registered_entity)
     end
 end
 
--- Creates all beacons for the given entity and returns a beacons_table of them
-function create_all_beacons_for(entity)
-    local created_beacons = {}
-
-    for _, tech_name in pairs(get_affecting_technologies(entity.name)) do
-        local technology = technologies[tech_name]
-        local new_beacon = create_beacon_for(entity, technology)
-        created_beacons[tech_name] = new_beacon
-    end
-
-    return created_beacons
-end
-
 --<< Implementation Composting Silo >>
 local compostable_items = require("prototypes.composting-values")
 
@@ -354,7 +341,7 @@ function analyze_silo_inventory(registered_silo)
     return {count = count, type_count = type_count, humus_count = humus_count}
 end
 
-local composting_coefficient = 1. / 600. / 200. -- 1 Humus every 10 Seconds (600 ticks) when 200 Items are in the silo
+local composting_coefficient = 1. / 600. / 400. -- 1 Humus every 10 Seconds (600 ticks) when 400 Items are in the silo
 function get_composting_progress(item_count, item_types_count, humus_count, time)
     return item_count * item_types_count * time * composting_coefficient *
         math.max(1., math.min(5., item_count / 2000.)) *

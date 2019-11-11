@@ -1,8 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.16
-Date: 2019.11.07
+Date: 2019.11.11
+  Features:
+    - Plant residue to marsh gas fermentation recipes
+
   Changes:
     - Some plants can now be 'trashed' to plant residues
+    - Reduced lag due to beacon actualisation after research completion
+    - Enrichment culture recipe for activated sludge now yields a reasonable amount of output
+    - Greatly increased the speed of composters and nerfed the speed of composting silos
 
   Bugfixes:
     - Fixed that pyht's mk-update broke the beacon effects on Moondrop Greenhouses
