@@ -103,7 +103,7 @@ local function create_composting_recipe(item, value)
         name = "pyv-composter-" .. item,
         category = "pyv-composter",
         enabled = true,
-        energy_required = 3,
+        energy_required = 1,
         ingredients = {
             {type = "item", name = item, amount = 1}
         },
@@ -114,7 +114,6 @@ local function create_composting_recipe(item, value)
         hidden = true
     }
 end
-
 
 for item, value in pairs(compostable_items) do
     create_composting_recipe(item, value)

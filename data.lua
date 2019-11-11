@@ -84,6 +84,7 @@ for _, concept in pairs(enabled_concepts) do
 end
 
 require("prototypes.generic-growing-recipes")
+require("prototypes.trash-plant-recipes")
 
 if DEBUG then
     require("prototypes.testing")

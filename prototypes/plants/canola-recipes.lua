@@ -108,7 +108,7 @@ RECIPE {
     order = "aae"
 }:add_unlock("oil-seeds")
 
-RECIPE {
+--[[RECIPE {
     type = "recipe",
     name = "declassify-canola-meal",
     category = "crafting",
@@ -127,7 +127,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-veganism-canola",
     order = "aaf"
-}:add_unlock("oil-seeds")
+}:add_unlock("oil-seeds")]]
 
 RECIPE {
     type = "recipe",

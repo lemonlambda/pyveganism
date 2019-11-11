@@ -18,9 +18,6 @@ local table = require("__stdlib__/stdlib/utils/table")
         ["pending_humus"]: float
         ["composting_progress"]: float
 
-    beacons_table: table
-        [tech_name]: lua_entity (of the beacon)
-
     relevant_machines: table
         [machine_name]: machine_details
 
