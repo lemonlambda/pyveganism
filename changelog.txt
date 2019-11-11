@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.16
+Date: 2019.11.07
+  Changes:
+    - Some plants can now be 'trashed' to plant residues
+
+  Bugfixes:
+    - Fixed that pyht's mk-update broke the beacon effects on Moondrop Greenhouses
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.15
 Date: 2019.11.07
   Changes:
