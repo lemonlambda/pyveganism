@@ -237,6 +237,13 @@ function get_active_recipe(entity)
     end
 end
 
+function add_to_production_statistics(registered_entity, name, amount, liquid)
+    local force = registered_entity.entity.force
+    local statistics = liquid and force.fluid_production_statistics or force.item_production_statistics
+
+    statistics.on_flow(name, amount)
+end
+
 --<< Implementation Beaconed Entities >>
 local BEACON_NAME = "pyveganism-hidden-beacon"
 local SPEED_MODULE_NAME = "pyveganism-speed-"
@@ -365,6 +372,8 @@ function remove_compostable_items(registered_silo, type_count)
                 registered_silo.composting_progress = registered_silo.composting_progress - removed_count
                 registered_silo.pending_humus =
                     registered_silo.pending_humus + removed_count * compostable_items[item_name]
+
+                add_to_production_statistics(registered_silo, item_name, -removed_count)
                 break
             else
                 count = count + 1
@@ -394,6 +403,8 @@ function distribute_humus(registered_silo)
     if inventory.can_insert(item_stack) then
         local inserted_count = inventory.insert(item_stack)
         registered_silo.pending_humus = registered_silo.pending_humus - inserted_count
+
+        add_to_production_statistics(registered_silo, "humus", inserted_count)
     end
 end
 
