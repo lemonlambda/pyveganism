@@ -24,7 +24,6 @@ local enabled_concepts = {
     --
     --buildings
     "buildings.composting-silo",
-    "buildings.hidden-beacon",
     --
     --plants
     "plants.tiriscefing-willow",

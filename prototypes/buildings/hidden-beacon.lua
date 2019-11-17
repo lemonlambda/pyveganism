@@ -47,7 +47,7 @@ ENTITY {
     },
     distribution_effectivity = 1,
     module_specification = {
-        module_slots = 65535
+        module_slots = 40
     },
     allowed_effects = {
         "consumption",

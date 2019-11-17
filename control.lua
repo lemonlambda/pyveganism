@@ -87,12 +87,6 @@ function get_tech_level(technology, force)
     return level
 end
 
-function get_module_count(technology, level)
-    local increase = (1 + technology.increase_per_level) ^ level - 1
-
-    return math.floor(increase * 100)
-end
-
 -- All the technologies that need to create beacons at runtime
 local technologies = {
     ["cultivation-expertise"] = {
@@ -160,7 +154,8 @@ local technologies = {
             ["moondrop-greenhouse-mk04"] = true,
             ["bio-reactor"] = true,
             ["plankton-farm"] = true,
-            ["genlab-mk01"] = true
+            ["genlab-mk01"] = true,
+            ["pyv-composter"] = true
         },
         productivity_increase_per_level = 0.1,
         speed_increase_per_level = 0.1,
@@ -349,10 +344,13 @@ function analyze_silo_inventory(registered_silo)
 end
 
 local composting_coefficient = 1. / 600. / 400. -- 1 Humus every 10 Seconds (600 ticks) when 400 Items are in the silo
-function get_composting_progress(item_count, item_types_count, humus_count, time)
+function get_composting_progress(item_count, item_types_count, humus_count, time, force)
+    local biotech_level = get_tech_level(technologies["pyveganism-biotechnology"], force)
+
     return item_count * item_types_count * time * composting_coefficient *
         math.max(1., math.min(5., item_count / 2000.)) *
-        math.min(5, 1 + humus_count * 0.001)
+        math.min(5, 1 + humus_count * 0.001) *
+        (technologies["pyveganism-biotechnology"].speed_increase_per_level + 1) ^ biotech_level
 end
 
 function remove_compostable_items(registered_silo, type_count)
@@ -385,9 +383,10 @@ end
 function process_compostable_items(registered_silo)
     local delta_time = game.tick - registered_silo.tick_last_refresh
     local details = analyze_silo_inventory(registered_silo)
+    local force = registered_silo.entity.force
     registered_silo.composting_progress =
         registered_silo.composting_progress +
-        get_composting_progress(details.count, details.type_count, details.humus_count, delta_time)
+        get_composting_progress(details.count, details.type_count, details.humus_count, delta_time, force)
     remove_compostable_items(registered_silo, details.type_count)
 end
 
@@ -488,10 +487,11 @@ function on_entity_built(event)
         return
     end
 
-    if machine_needs_beacons(entity.name) then
+    local name = entity.name
+    if machine_needs_beacons(name) then
         register_beaconed_machine(entity)
     end
-    if entity.name == "composting-silo" then
+    if name == "composting-silo" then
         register_composting_silo(entity)
     end
 end
@@ -597,6 +597,7 @@ end
 function init()
     global.technology_levels = {}
     global.registered_machines = {}
+    global.tick_last_finished_research = 0
 
     -- remove existing beacons
     for _, surface in pairs(game.surfaces) do
@@ -623,7 +624,6 @@ function init()
         end
     end
 
-    global.tick_last_finished_research = 0
     global.max_checks = settings.global["pyveganism-checks-per-tick"].value * 10
     global.PYV_VERSION = game.active_mods["pyveganism"]
 end

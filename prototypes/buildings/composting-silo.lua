@@ -78,6 +78,7 @@ ENTITY {
     },
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
+    allowed_effects = {"speed"},
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     animation = {
         filename = "__pyveganism__/graphics/entity/composting-silo-hr.png",

@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.18
+Date: 2019.11.14
+  Changes:
+    - Composting speed is influenced by Biotechnology
+    - Humus produced and items consumed by Composting Silos now appear in the production statistic
+
+  Bugfixes:
+    - Fixed a crash when adding pyv to an existing map
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.17
 Date: 2019.11.11
   Bugfixes:
