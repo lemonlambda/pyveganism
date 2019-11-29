@@ -23,7 +23,7 @@ local nonvegetarian_recipes = {
     "zipir"
 }
 
-function disable_recipe(name)
+local function disable_recipe(name)
     --seems like I don't need to check if the recipe exists
     --so the optional pymods are no problem
     local recipe = RECIPE(name)

@@ -8,10 +8,10 @@ recipe_bio_reactor:set_enabled()
 recipe_bio_reactor:replace_ingredient("advanced-circuit", "electronic-circuit")
 recipe_bio_reactor:replace_ingredient("gasturbinemk02", "gasturbinemk01")
 recipe_bio_reactor:remove_ingredient("super-alloy")
-recipe_bio_reactor:remove_ingredient("mixer")
+recipe_bio_reactor:remove_ingredient("mixer-mk01")
 
 RECIPE("chemical-plant"):set_enabled()
-RECIPE("mixer"):set_enabled()
+RECIPE("mixer-mk01"):set_enabled()
 --RECIPE("genlab"):set_enabled()
 
 RECIPE("fawogae").hidden = false

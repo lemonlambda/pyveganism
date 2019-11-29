@@ -1,5 +1,4 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
-table = require("__stdlib__/stdlib/utils/table")
 
 local DEBUG = false
 
@@ -64,10 +63,12 @@ if mods["pyhightech"] then
         "misc.ammonium-sulfate"
     }
 
-    table.merge(enabled_concepts, pyht_concepts, true)
+    for _, concept in pairs(pyht_concepts) do
+        table.insert(enabled_concepts, concept)
+    end
 end
 
-function try_load(file)
+local function try_load(file)
     local ok, err = pcall(require, file)
     if not ok and not err:find("^module .* not found") then
         error(err)
