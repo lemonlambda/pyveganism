@@ -298,7 +298,10 @@ local function create_combinations_for(recipe_name)
 
     for _, group in pairs(combination_details[recipe_name].groups) do
         local created_recipes = create_ingredient_group_recipes(existing_recipes, recipe_name, group, max_combinations)
-        table.merge(existing_recipes, created_recipes, true)
+
+        for _, recipe in pairs(created_recipes) do
+            table.insert(existing_recipes, recipe)
+        end
     end
 end
 
