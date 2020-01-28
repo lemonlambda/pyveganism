@@ -86,7 +86,7 @@ RECIPE {
     },
     main_product = "bonemeal",
     icons = {
-        {icon = "__pycoalprocessing__/graphics/icons/bonemeal.png"},
+        {icon = "__pycoalprocessinggraphics__/graphics/icons/bonemeal.png"},
         {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
     },
     icon_size = 32,

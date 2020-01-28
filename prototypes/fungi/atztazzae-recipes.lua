@@ -142,7 +142,7 @@ RECIPE {
         {type = "fluid", name = "waste-water", amount = 100}
     },
     icons = {
-        {icon = "__pyfusionenergy__/graphics/icons/vanabins.png"},
+        {icon = "__pyfusionenergygraphics__/graphics/icons/vanabins.png"},
         {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
     },
     icon_size = 32,

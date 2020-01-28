@@ -7,7 +7,7 @@ py_veganism_globals = {
     urea_icon = {icon = "__pyveganism__/graphics/icons/urea.png", size = 64},
     fertilizer_icon = {icon = "__pyveganism__/graphics/icons/fertilizer.png", size = 64},
     vegan_icon_small = "__pyveganism__/graphics/icons/vegan-small.png",
-    vegan_icon = "__pyveganism__/graphics/icons/vegan.png",
+    vegan_icon = "__pyveganism__/graphics/icons/vegan.png"
 }
 
 function py_veganism_globals:get_vegan_icon(size)
@@ -21,10 +21,10 @@ function py_veganism_globals:get_vegan_icon(size)
 end
 
 if mods["pyhightech"] then
-    py_veganism_globals.urea_icon = {icon = "__pyhightech__/graphics/icons/urea.png", size = 32}
-    py_veganism_globals.fertilizer_icon = {icon = "__pyhightech__/graphics/icons/fertilizer.png", size = 32}
+    py_veganism_globals.urea_icon = {icon = "__pyhightechgraphics__/graphics/icons/urea.png", size = 32}
+    py_veganism_globals.fertilizer_icon = {icon = "__pyhightechgraphics__/graphics/icons/fertilizer.png", size = 32}
     py_veganism_globals.plant_oil_pressing_category = "pulp"
-    py_veganism_globals.algae_growing_category = "moon"    
+    py_veganism_globals.algae_growing_category = "moon"
 end
 
 if mods["pypetroleumhandling"] then

@@ -12,7 +12,7 @@ RECIPE {
         {type = "item", name = "mukmoux-fat", amount = 4}
     },
     icons = {
-        {icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png"},
+        {icon = "__pycoalprocessinggraphics__/graphics/icons/mukmoux-fat.png"},
         {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
     },
     icon_size = 32,
@@ -65,7 +65,7 @@ if mods["pyrawores"] then
             {type = "fluid", name = "steam", amount = 400}
         },
         icons = {
-            {icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png"},
+            {icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png"},
             {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
         },
         icon_size = 32,
@@ -90,7 +90,7 @@ RECIPE {
         {type = "fluid", name = "glycerol", amount = 100}
     },
     icons = {
-        {icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png"},
+        {icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png"},
         {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
     },
     icon_size = 32,

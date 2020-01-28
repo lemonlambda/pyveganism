@@ -13,7 +13,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     main_product = "combustion-mixture1",
     subgroup = "py-veganism-combustion",
@@ -95,7 +95,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "carbon-dioxide", amount = 1000}
     },
-    icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/carbon-dioxide.png",
     icon_size = 32,
     subgroup = "py-veganism-biomass",
     order = "aad"

@@ -135,7 +135,7 @@ RECIPE {
         {type = "item", name = "bio-sample01", amount = 4}
     },
     main_product = "bio-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/bio-sample01.png",
     icon_size = 32,
     subgroup = "py-veganism-solfaen",
     order = "afa"

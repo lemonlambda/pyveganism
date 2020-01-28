@@ -143,7 +143,7 @@ RECIPE {
         {type = "fluid", name = "syngas", amount = 100}
     },
     icons = {
-        {icon = "__pycoalprocessing__/graphics/icons/syngas.png"}
+        {icon = "__pycoalprocessinggraphics__/graphics/icons/syngas.png"}
     },
     icon_size = 32,
     subgroup = "py-veganism-sludge",
@@ -169,7 +169,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 800},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     main_product = "combustion-mixture1",
     subgroup = "py-veganism-combustion",
@@ -190,7 +190,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 600},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     main_product = "combustion-mixture1",
     subgroup = "py-veganism-combustion",
@@ -211,7 +211,7 @@ if mods["pyhightech"] then
             {type = "fluid", name = "methane", amount = 100}
         },
         icons = {
-            {icon = "__pyhightech__/graphics/icons/methane.png"}
+            {icon = "__pyhightechgraphics__/graphics/icons/methane.png"}
         },
         icon_size = 32,
         subgroup = "py-veganism-sludge",
