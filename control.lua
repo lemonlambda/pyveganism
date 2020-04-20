@@ -490,8 +490,6 @@ function on_entity_built(event)
     local name = entity.name
     if machine_needs_beacons(name) then
         register_beaconed_machine(entity)
-
-        game.print("yep")
     end
     if name == "composting-silo" then
         register_composting_silo(entity)
