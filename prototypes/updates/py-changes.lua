@@ -12,10 +12,6 @@ recipe_bio_reactor:remove_ingredient("mixer-mk01")
 
 RECIPE("chemical-plant"):set_enabled()
 RECIPE("mixer-mk01"):set_enabled()
---RECIPE("genlab"):set_enabled()
-
-RECIPE("fawogae").hidden = false
-data.raw["assembling-machine"]["fawogae-plantation"].fixed_recipe = nil
 
 -- Add more pipe connections to the bio reactor, so that it can have recipe with up to 4 fluid in-/outputs
 data.raw["assembling-machine"]["bio-reactor"]["fluid_boxes"] = {
