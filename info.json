@@ -1,6 +1,6 @@
 {
     "name": "pyveganism",
-    "version": "0.0.20",
+    "version": "0.0.21",
     "title": "pY Veganism",
     "author": "tiriscef",
     "contact": "tiriscef@protonmail.com",
@@ -14,5 +14,5 @@
         "?pyrawores",
         "?pypetroleumhandling"
     ],
-    "description": "Inofficial. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals."
+    "description": "Inofficial. Add plants and biotechnical processes to allow you to play pyanodons mods without exploiting virtual animals. Doesn't work too well together with Pyanodons Alien Life."
 }

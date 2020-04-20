@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.21
+Date: 2020.04.20
+  Changes:
+    - Plant Breeding, Cultivation Expertise and Biotechnology now affect the new machines of pyal
+    - I know that Cultivation Expertise and the speed-part of Biotechnology don't work as intended together with pyal's plants-as-modules system. But I can't fix this without quickly running into limitations of the factorio engine.
+
+  Bugfixes:
+    - Fixed a loading error caused by an outdated alteration to pyanodons prototypes which don't even exist anymore
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.20
+Date: 2020.01.28
+  Changes:
+    - Update for factorio 0.18
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.19
 Date: 2019.11.29
   Bugfixes:
