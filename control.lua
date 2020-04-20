@@ -17,13 +17,6 @@ local table = require("__stdlib__/stdlib/utils/table")
         ["tick_last_refresh"]: tick of the last refresh
         ["pending_humus"]: float
         ["composting_progress"]: float
-
-    relevant_machines: table
-        [machine_name]: machine_details
-
-    machine_details: table
-        ["is_recipe_dependant"]: bool -- if the modules of this machine depend on the active recipe
-        ["affecting_technologies"]: table -- with tech names as strings
 ]]
 --<< Registered Entities >>
 local TYPE_BEACONED_MACHINE = 1
@@ -93,25 +86,25 @@ local technologies = {
         name = "cultivation-expertise",
         machines = {
             ["fawogae-plantation"] = true,
-            ["fawogae-plantation-mk02"] = true,
-            ["fawogae-plantation-mk03"] = true,
-            ["fawogae-plantation-mk04"] = true,
             ["ralesia-plantation"] = true,
             ["botanical-nursery"] = true,
-            ["botanical-nursery-mk02"] = true,
-            ["botanical-nursery-mk03"] = true,
-            ["botanical-nursery-mk04"] = true,
-            ["cadaveric-arum-mk01"] = true,
-            ["cadaveric-arum-mk02"] = true,
-            ["cadaveric-arum-mk03"] = true,
-            ["cadaveric-arum-mk04"] = true,
+            ["cadaveric-arum"] = true,
+            ["cadavericarum"] = true, -- for some reason pyal re-adds them with a different name
             ["kicalk-plantation"] = true,
             ["guar-gum-plantation"] = true,
-            ["moondrop-greenhouse-mk01"] = true,
-            ["moondrop-greenhouse-mk02"] = true,
-            ["moondrop-greenhouse-mk03"] = true,
-            ["moondrop-greenhouse-mk04"] = true,
-            ["plankton-farm"] = true
+            ["moondrop-greenhouse"] = true,
+            ["plankton-farm"] = true,
+            ["moss-farm"] = true,
+            ["navens-culture"] = true,
+            ["yaedols-culture"] = true,
+            ["bhoddos-culture"] = true,
+            ["fwf"] = true,
+            ["grods-swamp"] = true,
+            ["rennea-plantation"] = true,
+            ["sap-extractor"] = true,
+            ["seaweed-crop"] = true,
+            ["tuuphra-plantation"] = true,
+            ["yotoi-aloe-orchard"] = true
         },
         productivity_increase_per_level = 0,
         speed_increase_per_level = 0.1,
@@ -121,25 +114,25 @@ local technologies = {
         name = "plant-breeding",
         machines = {
             ["fawogae-plantation"] = true,
-            ["fawogae-plantation-mk02"] = true,
-            ["fawogae-plantation-mk03"] = true,
-            ["fawogae-plantation-mk04"] = true,
             ["ralesia-plantation"] = true,
             ["botanical-nursery"] = true,
-            ["botanical-nursery-mk02"] = true,
-            ["botanical-nursery-mk03"] = true,
-            ["botanical-nursery-mk04"] = true,
-            ["cadaveric-arum-mk01"] = true,
-            ["cadaveric-arum-mk02"] = true,
-            ["cadaveric-arum-mk03"] = true,
-            ["cadaveric-arum-mk04"] = true,
+            ["cadaveric-arum"] = true,
+            ["cadavericarum"] = true,
             ["kicalk-plantation"] = true,
             ["guar-gum-plantation"] = true,
-            ["moondrop-greenhouse-mk01"] = true,
-            ["moondrop-greenhouse-mk02"] = true,
-            ["moondrop-greenhouse-mk03"] = true,
-            ["moondrop-greenhouse-mk04"] = true,
-            ["plankton-farm"] = true
+            ["moondrop-greenhouse"] = true,
+            ["plankton-farm"] = true,
+            ["moss-farm"] = true,
+            ["navens-culture"] = true,
+            ["yaedols-culture"] = true,
+            ["bhoddos-culture"] = true,
+            ["fwf"] = true,
+            ["grods-swamp"] = true,
+            ["rennea-plantation"] = true,
+            ["sap-extractor"] = true,
+            ["seaweed-crop"] = true,
+            ["tuuphra-plantation"] = true,
+            ["yotoi-aloe-orchard"] = true
         },
         productivity_increase_per_level = 0.07,
         speed_increase_per_level = 0,
@@ -148,20 +141,33 @@ local technologies = {
     ["pyveganism-biotechnology"] = {
         name = "pyveganism-biotechnology",
         machines = {
-            ["moondrop-greenhouse-mk01"] = true,
-            ["moondrop-greenhouse-mk02"] = true,
-            ["moondrop-greenhouse-mk03"] = true,
-            ["moondrop-greenhouse-mk04"] = true,
+            ["moondrop-greenhouse"] = true,
             ["bio-reactor"] = true,
             ["plankton-farm"] = true,
-            ["genlab-mk01"] = true,
-            ["pyv-composter"] = true
+            ["genlab"] = true,
+            ["pyv-composter"] = true,
+            ["incubator"] = true
         },
         productivity_increase_per_level = 0.1,
         speed_increase_per_level = 0.1,
         max_finite_level = 4
     }
 }
+-- add the -mk0x suffixes
+-- this is because the original mod is a bit inconsistent with the names
+-- so I'll just cover a larger array of name variants
+for _, technology in pairs(technologies) do
+    local to_add = {}
+    for machine_name in pairs(technology.machines) do
+        for i = 1, 4 do
+            to_add[#to_add+1] = machine_name .. "-mk0" .. i
+        end
+    end
+
+    for _, machine in pairs(to_add) do
+        technology.machines[machine] = true
+    end
+end
 
 function technology_is_recipe_dependant(technology)
     return technology.recipe_blacklist or technology.recipe_whitelist
@@ -475,13 +481,7 @@ end
 -- Eventhandler machine built
 function on_entity_built(event)
     --https://forums.factorio.com/viewtopic.php?f=34&t=73331#p442695
-    if event.created_entity then
-        entity = event.created_entity
-    elseif event.entity then
-        entity = event.entity
-    elseif event.destination then
-        entity = event.destination
-    end
+    local entity = event.created_entity or event.entity or event.destination
 
     if not entity or not entity.valid then
         return
@@ -490,6 +490,8 @@ function on_entity_built(event)
     local name = entity.name
     if machine_needs_beacons(name) then
         register_beaconed_machine(entity)
+
+        game.print("yep")
     end
     if name == "composting-silo" then
         register_composting_silo(entity)
