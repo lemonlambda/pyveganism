@@ -3,7 +3,7 @@ ENTITY {
     name = "pyveganism-hidden-beacon",
     icon = "__pyveganism__/graphics/technology/cultivation-expertise.png",
     icon_size = 128,
-    localised_name = {"item-description.pyv-hidden"},
+    localised_name = {"item-description.hidden-beacon"},
     localised_description = {"item-description.pyv-hidden"},
     energy_usage = "10W",
     flags = {

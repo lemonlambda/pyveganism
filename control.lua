@@ -160,7 +160,7 @@ for _, technology in pairs(technologies) do
     local to_add = {}
     for machine_name in pairs(technology.machines) do
         for i = 1, 4 do
-            to_add[#to_add+1] = machine_name .. "-mk0" .. i
+            to_add[#to_add + 1] = machine_name .. "-mk0" .. i
         end
     end
 
@@ -359,25 +359,28 @@ function get_composting_progress(item_count, item_types_count, humus_count, time
         (technologies["pyveganism-biotechnology"].speed_increase_per_level + 1) ^ biotech_level
 end
 
-function remove_compostable_items(registered_silo, type_count)
-    if registered_silo.composting_progress < 1 then
+function remove_compostable_items(silo, type_count)
+    if silo.composting_progress < 1 then
+        return
+    elseif type_count < 1 then
+        -- I don't fully understand how, but it occured that the composting_progress completed
+        -- even though there are no compostable items in the silo.
+        silo.composting_progress = 0
         return
     end
-    local inventory = registered_silo.entity.get_inventory(defines.inventory.chest)
+    local inventory = silo.entity.get_inventory(defines.inventory.chest)
 
     local index_to_remove = math.random(type_count)
     local count = 1
 
-    for item_name, _ in pairs(inventory.get_contents()) do
+    for item_name in pairs(inventory.get_contents()) do
         if compostable_items[item_name] then
             if count == index_to_remove then
-                local removed_count =
-                    inventory.remove {name = item_name, count = math.floor(registered_silo.composting_progress)}
-                registered_silo.composting_progress = registered_silo.composting_progress - removed_count
-                registered_silo.pending_humus =
-                    registered_silo.pending_humus + removed_count * compostable_items[item_name]
+                local removed_count = inventory.remove {name = item_name, count = math.floor(silo.composting_progress)}
+                silo.composting_progress = silo.composting_progress - removed_count
+                silo.pending_humus = silo.pending_humus + removed_count * compostable_items[item_name]
 
-                add_to_production_statistics(registered_silo, item_name, -removed_count)
+                add_to_production_statistics(silo, item_name, -removed_count)
                 break
             else
                 count = count + 1
@@ -386,14 +389,14 @@ function remove_compostable_items(registered_silo, type_count)
     end
 end
 
-function process_compostable_items(registered_silo)
-    local delta_time = game.tick - registered_silo.tick_last_refresh
-    local details = analyze_silo_inventory(registered_silo)
-    local force = registered_silo.entity.force
-    registered_silo.composting_progress =
-        registered_silo.composting_progress +
+function process_compostable_items(silo)
+    local delta_time = game.tick - silo.tick_last_refresh
+    local details = analyze_silo_inventory(silo)
+    local force = silo.entity.force
+    silo.composting_progress =
+        silo.composting_progress +
         get_composting_progress(details.count, details.type_count, details.humus_count, delta_time, force)
-    remove_compostable_items(registered_silo, details.type_count)
+    remove_compostable_items(silo, details.type_count)
 end
 
 function distribute_humus(registered_silo)

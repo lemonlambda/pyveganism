@@ -26,7 +26,7 @@ data:extend {
         type = "bool-setting",
         name = "pyveganism-refresh-beacons-on-finished-research",
         order = "aab",
-        setting_type = "runtime-global", 
+        setting_type = "runtime-global",
         default_value = false
     }
 }

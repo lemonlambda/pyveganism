@@ -13,9 +13,9 @@ RECIPE {
     },
     icons = {
         {icon = "__base__/graphics/icons/rocket-fuel.png"},
-        {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
+        {icon = "__pyveganism__/graphics/icons/vegan.png"}
     },
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-veganism-pseudodaemonas",
     order = "aba",
     main_product = ""
@@ -32,13 +32,13 @@ RECIPE {
         {type = "item", name = "iron-plate", amount = 3}
     },
     results = {
-        {type = "item", name = "rocket-fuel", amount = 2}
+        {type = "item", name = "rocket-fuel", amount = 20}
     },
     icons = {
         {icon = "__base__/graphics/icons/rocket-fuel.png"},
-        {icon = "__pyveganism__/graphics/icons/vegan-small.png"}
+        {icon = "__pyveganism__/graphics/icons/vegan.png"}
     },
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-veganism-pseudodaemonas",
     order = "abb",
     main_product = ""

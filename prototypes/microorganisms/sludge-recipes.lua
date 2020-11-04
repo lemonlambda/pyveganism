@@ -234,7 +234,7 @@ RECIPE {
     icons = {
         {icon = "__base__/graphics/icons/sulfur.png"}
     },
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-veganism-sludge",
     order = "abde"
 }:add_unlock("growth-media-2")

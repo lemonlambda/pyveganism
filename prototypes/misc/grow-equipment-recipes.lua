@@ -18,7 +18,7 @@ if mods["pyrawores"] then
             {type = "item", name = "small-lamp", amount = 4}
         },
         icon = "__base__/graphics/icons/small-lamp.png",
-        icon_size = 32,
+        icon_size = 64,
         subgroup = "py-veganism-grow-equipment",
         order = "aaa",
         main_product = ""

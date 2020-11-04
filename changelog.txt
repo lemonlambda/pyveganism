@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.22
+Date: 2020.11.04
+  Changes:
+    - Buffed rocket fuel from pseudodaemonas yields.
+
+  Bugfixes:
+    - Fixed a crash caused by composting silos consuming more items than they contain.
+    - Fixed some broken recipe icons.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.21
 Date: 2020.04.20
   Changes:
