@@ -10,15 +10,3 @@ FLUID {
     max_temperature = 100,
     subgroup = "py-veganism-media"
 }
-
-ITEM {
-    type = "item",
-    name = "crystalline-citric-acid",
-    enabled = false,
-    icon = "__pyveganism__/graphics/icons/crystalline-citric-acid.png",
-    icon_size = 64,
-    flags = {},
-    subgroup = "py-veganism-media",
-    order = "caa",
-    stack_size = 200
-}

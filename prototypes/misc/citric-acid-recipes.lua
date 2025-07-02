@@ -5,8 +5,8 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "crystalline-citric-acid", amount = 1},
-        {type = "fluid", name = "water", amount = 100}
+        {type = "item",  name = "citric-acid", amount = 1},
+        {type = "fluid", name = "water",       amount = 100}
     },
     results = {
         {type = "fluid", name = "citric-acid", amount = 100}
@@ -29,10 +29,10 @@ RECIPE {
         {type = "fluid", name = "citric-acid", amount = 100}
     },
     results = {
-        {type = "item", name = "crystalline-citric-acid", amount = 1}
+        {type = "item", name = "citric-acid", amount = 1}
     },
     icons = {
-        {icon = "__pyveganism__/graphics/icons/crystalline-citric-acid.png"}
+        {icon = "__pyalternativeenergygraphics__/graphics/icons/citric-acid.png"}
     },
     icon_size = 64,
     subgroup = "py-veganism-media",
