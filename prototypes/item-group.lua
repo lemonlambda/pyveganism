@@ -179,6 +179,12 @@ data:extend {
     },
     {
         type = "item-subgroup",
+        name = "py-veganism-burlap",
+        group = "py-veganism",
+        order = "daa",
+    },
+    {
+        type = "item-subgroup",
         name = "py-veganism-samples",
         group = "py-veganism",
         order = "zaa"

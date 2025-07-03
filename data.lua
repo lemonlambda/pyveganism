@@ -21,8 +21,6 @@ local enabled_concepts = {
     "technologies.cultivation-expertise",
     "technologies.biotechnology",
     --
-    --buildings
-    "buildings.bio-printer-mk00",
     --
     --plants
     "plants.tiriscefing-willow",
@@ -84,6 +82,11 @@ local enabled_concepts = {
     "misc.ammonium-sulfate-recipes",
     "misc.tofu-recipes",
     "misc.meat-alternatives",
+    "misc.burlap",
+
+    --buildings
+    "buildings.bio-printer-mk00",
+    "buildings.ball-mill-mk00",
 }
 
 for _, concept in pairs(enabled_concepts) do

@@ -123,6 +123,11 @@ for i=0,5 do
             type = "item",
             name = "vrauks-codex",
             amount = 1
+        },
+        {
+            type = "item",
+            name = "sack",
+            amount = 1
         }
     })
 
@@ -207,6 +212,11 @@ for i=0,3 do
         {
             type = "item",
             name = "vrauks-codex",
+            amount = 1
+        },
+        {
+            type = "item",
+            name = "sack",
             amount = 1
         }
     })
@@ -304,6 +314,11 @@ RECIPE {
             name = "formic-acid",
             amount = 25
         },
+        {
+            type = "item",
+            name = "sack",
+            amount = 1
+        }
     },
     icons = new_icon,
     subgroup = "py-veganism-vrauk",
